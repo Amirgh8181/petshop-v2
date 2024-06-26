@@ -1,21 +1,23 @@
 "use client"
 import { usePathname } from "next/navigation"
 import Link from "next/link"
+import { useTranslations } from "next-intl"
 
 const NavItem = () => {
     const pathname = usePathname()
+    const t=useTranslations("navItem")
     // navItem for render
     const navItem = [
-        { name: "Home", href: "/" },
-        { name: "Shop", href: "/Shop" },
-        { name: "Clinics", href: "/Clinics" },
-        { name: "Question", href: "/Question" },
-        { name: "Shelters", href: "/Shelters" },
+        { name: t("Home"), href: "/" },
+        { name: t("Shop"), href: "/Shop" },
+        { name: t("Personality"), href: "/Question" },
+        { name: t("Clinics"), href: "/Clinics" },
+        { name: t("Shelters"), href: "/Shelters" },
     ]
     return (
-        <ul className="flex flex-col lg:flex-row justify-center items-center lg:space-x-2 lg:space-y-0 space-y-6">
+        <ul className="flex flex-col lg:flex-row justify-center items-center md:space-y-0 space-y-6">
             {navItem.map(item =>
-                <li key={item.href} className="text-3xl md:text-base xl:text-lg text-white md:text-black">
+                <li key={item.href} className="text-3xl md:text-base xl:text-lg text-white md:text-black mx-2">
                     <Link href={item.href}
                         className=
                         {

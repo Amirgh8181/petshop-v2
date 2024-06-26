@@ -1,5 +1,25 @@
 {
-    "Index": {
-      "title": "Hello world!"
-    }
+  "metadata": {
+    "title":"PetClub",
+    "description":"petClub is a site to maintain and improve the quality of life of your pets and animal",
+    "category":"animal",
+    "author":"amir gheybi",
+    "keywords":"pet",
+    "keywords1":"animal",
+    "keywords2":"petShop",
+    "keywords3":"animalShop",
+    "keywords4":"petToy",
+    "keywords5":"animalToy",
+    "keywords6":"petFood",
+    "keywords7":"animalFood"
+  },
+  "navItem":{
+    "Home":"Home",
+    "Shop":"Shop",
+    "Personality":"Personality Test",
+    "Clinics":"Clinics",
+    "Shelters":"Shelters",
+    "sign in":"SignIn"
   }
+
+}

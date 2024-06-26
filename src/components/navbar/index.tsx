@@ -4,16 +4,17 @@ import LanguageChanger from '../LanguageChanger'
 import NavItem from './NavItem'
 import Link from 'next/link'
 import HamMenu from './HamMenu'
-import ham from "../../../public/svg/ham.svg"
-import close from "../../../public/svg/close.svg"
-import logo from "../../../public/images/logo/logo-text-black.png"
+import ham from "@/public/svg/ham.svg"
+import close from "@/public/svg/close.svg"
+import logo from "@/public/images/logo/logo-text-black.png"
 import Image from 'next/image'
 import { RiLoginBoxFill } from 'react-icons/ri'
+import { useTranslations } from 'next-intl'
 
 const NavBar = () => {
     const MOBILE_THRESHOLD: number = 768
     const [openMenu, setOpenMenu] = useState<boolean>(false)
-
+    const t=useTranslations("navItem")
     const toggleMenu = (arg: boolean) => {
         setOpenMenu(arg)
     }
@@ -33,7 +34,7 @@ const NavBar = () => {
                         <Image src={close} width={close.width} height={close.height} alt='ham svg' className="swap-on fill-current scale-75" />
                     </label>
                     <Link href={"/"} className="btn btn-ghost text-xl">
-                        <Image src={logo} alt='logo' width={100} height={100} className=''/>
+                        <Image src={logo} alt='logo' width={100} height={100} className='scale-125' />
                     </Link>
                 </div>
                 <div className="navbar-center hidden md:flex">
@@ -42,9 +43,9 @@ const NavBar = () => {
                 <div className="navbar-end">
                     <LanguageChanger />
                     <Link href={"Auth/SignIn"} className="btn">
-                        sign in
-                        <RiLoginBoxFill size={"20px"}/>
-                        </Link>
+                        {t("sign in")}
+                        <RiLoginBoxFill size={"20px"} />
+                    </Link>
                 </div>
             </div>
             <HamMenu openMenu={openMenu} />
