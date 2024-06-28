@@ -1,16 +1,15 @@
 import { useTranslations } from 'next-intl';
 import Image from 'next/image';
 import heroImage from "../../../public/images/hero/hero-big.png"
+import { WaveBg } from '@/src/assets/svgs';
+
 export default function Home() {
   const t = useTranslations('Index');
   return (
-    <div style={{
-      backgroundImage: `url("/svg/wave.svg")`,
-      backgroundRepeat: "no-repeat",
-      objectFit: "cover"
-    }}
-      className='w-full h-screen flex justify-center pt-8'
+    <div
+      className='w-full h-screen flex justify-center pt-8 relative'
     >
+      <WaveBg className="w-full h-screen absolute inset-0 text-primary" />
       <div className="hero  w-[80%] h-[80%] glass rounded-box">
         <div className="hero-content flex-col lg:flex-row-reverse">
           <Image

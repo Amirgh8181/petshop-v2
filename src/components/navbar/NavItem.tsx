@@ -15,15 +15,15 @@ const NavItem = () => {
         { name: t("Shelters"), href: "/Shelters" },
     ]
     return (
-        <ul className="flex flex-col lg:flex-row justify-center items-center md:space-y-0 space-y-6">
+        <ul className="flex flex-col md:flex-row justify-center items-center md:space-y-0 space-y-6">
             {navItem.map(item =>
-                <li key={item.href} className="text-3xl md:text-base xl:text-lg text-white md:text-black mx-2">
+                <li key={item.href} className="text-3xl md:text-base xl:text-lg mx-2">
                     <Link href={item.href}
                         className=
                         {
                             `link ${pathname === item.href ?
-                                "md:bg-petBlue md:text-white bg-gray-200 text-petBlue" :
-                                "md:hover:text-petBlue md:hover:bg-petBlue/20 hover:bg-gray-400 transition-colors duration-300"
+                                "md:bg-darkPetBlue md:dark:bg-petBlue md:text-white bg-gray-200 text-petBlue" :
+                                "md:hover:text-white  md:hover:bg-darkPetBlue/20 md:dark:hover:bg-petBlue/20 hover:bg-gray-400 transition-colors duration-300"
                             } no-underline p-2 rounded-btn`
                         }
                     >

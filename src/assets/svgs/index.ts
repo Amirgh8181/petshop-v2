@@ -1,0 +1,5 @@
+export {default as WaveBg} from "@/public/svg/wave.svg"
+export {default as MoonSvg} from "@/public/svg/moon.svg"
+export {default as SunSvg} from "@/public/svg/sun.svg"
+export {default as OpenHamMenu} from "@/public/svg/ham.svg"
+export {default as CloseHamMenu} from "@/public/svg/close.svg"

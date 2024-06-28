@@ -17,8 +17,8 @@ const LanguageChanger = () => {
     ];
     return (
         <div className="dropdown dropdown-hover dropdown-end">
-            <button tabIndex={0} role='button' className="aspect-square btn text-xl m-1 px-2">
-                <AiOutlineGlobal />
+            <button tabIndex={0} role='button' className="aspect-square btn m-1 px-2">
+                <AiOutlineGlobal className='text-2xl'/>
             </button>
             <ul className="dropdown-content menu shadow bg-base-100 rounded-btn text-center space-y-1 md:w-[10vmax] w-[15vmax]">
 

@@ -8,7 +8,7 @@ const HamMenu = ({ openMenu }: { openMenu: boolean }) => {
 
             {
                 openMenu &&
-                <div className='w-full h-screen flex items-center justify-center fixed bg-petBlue z-30 inset-0'>
+                <div className='w-full h-screen flex items-center justify-center fixed bg-primary z-30 inset-0'>
                     <NavItem />
                 </div>
             }

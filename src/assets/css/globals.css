@@ -29,9 +29,7 @@ details > summary {
 details summary::-webkit-details-marker {
   display:none;
 }
+
 .btn{
-  @apply px-2 py-1
-}
-.btn:hover{
-  @apply bg-petBlue text-white transition-all duration-300
+  @apply p-0
 }
