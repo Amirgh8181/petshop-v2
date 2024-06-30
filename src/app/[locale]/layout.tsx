@@ -71,7 +71,7 @@ export default async function RootLayout({
 
 
   return (
-    <html lang={locale} dir={locale === "fa" ? "rtl" : "ltr"} className="scroll-smooth">
+    <html lang={locale} dir={locale === "fa" ? "rtl" : "ltr"} className="scroll-smooth transition-colors duration-500">
       <NextIntlClientProvider messages={messages} locale={locale}>
         <body className={`${inter.className} dark:text-white text-black`}>
           <ThemeProvider>

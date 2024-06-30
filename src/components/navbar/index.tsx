@@ -13,6 +13,7 @@ import SwitchTheme from './SwitchTheme'
 import Logo from '../UI/Logo/Logo'
 import { CloseHamMenu, OpenHamMenu } from '@/src/assets/svgs'
 import HamMenuBtn from '../UI/HamMenuBtn'
+import ScaleYBox from '../UI/Animation/ScaleYBox'
 
 const NavBar = () => {
     const MOBILE_THRESHOLD: number = 768
@@ -29,7 +30,7 @@ const NavBar = () => {
     }
     return (
         <>
-            <div className='fixed top-0 bg-primary/50 backdrop-blur-2xl z-40 w-full'>
+            <ScaleYBox boxClass='fixed top-0 bg-primary/50 origin-top backdrop-blur-2xl z-40 w-full'>
 
 
                 <div className="navbar xl:w-[70%] bg-transparent mx-auto">
@@ -50,7 +51,7 @@ const NavBar = () => {
                         </Link>
                     </div>
                 </div>
-            </div>
+            </ScaleYBox>
             <HamMenu openMenu={openMenu} />
         </>
     )
