@@ -3,8 +3,9 @@ import { Inter } from "next/font/google";
 import "@/src/assets/css/globals.css";
 import { getMessages, getTranslations } from "next-intl/server";
 import { NextIntlClientProvider } from "next-intl";
-import NavBar from "@/src/components/navbar";
+import NavBar from "@/src/components/Navbar";
 import ThemeProvider from "@/src/context/ThemeContext";
+import Footer from "@/src/components/Footer";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -79,6 +80,7 @@ export default async function RootLayout({
             flex flex-col justify-center items-center hideScrollbar">
               {children}
             </main>
+            <Footer />
           </ThemeProvider>
         </body>
       </NextIntlClientProvider>
