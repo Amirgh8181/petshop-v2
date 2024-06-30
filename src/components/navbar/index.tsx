@@ -29,7 +29,7 @@ const NavBar = () => {
     }
     return (
         <>
-            <div className='fixed top-0 bg-primary/70 backdrop-blur-2xl z-40 w-full'>
+            <div className='fixed top-0 bg-primary/50 backdrop-blur-2xl z-40 w-full'>
 
 
                 <div className="navbar xl:w-[70%] bg-transparent mx-auto">

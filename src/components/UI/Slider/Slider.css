@@ -1,0 +1,14 @@
+.swiper {
+  @apply w-full flex justify-between items-center;
+}
+.swiper-wrapper {
+  @apply flex justify-evenly ;
+}
+
+.swiper-slide {
+  @apply flex flex-col justify-center items-center;
+}
+
+.paging-prev-button-prev.swiper-button-disabled {
+    @apply opacity-0
+}

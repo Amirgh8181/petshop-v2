@@ -33,3 +33,12 @@ details summary::-webkit-details-marker {
 .btn{
   @apply p-0
 }
+.hideScrollbar::-webkit-scrollbar{
+    display: none;
+  }
+  
+  /* Hide scrollbar for IE, Edge and Firefox */
+  .hideScrollbar {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+  }

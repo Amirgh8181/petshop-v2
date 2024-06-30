@@ -70,12 +70,13 @@ export default async function RootLayout({
 
 
   return (
-    <html lang={locale} dir={locale === "fa" ? "rtl" : "ltr"}>
+    <html lang={locale} dir={locale === "fa" ? "rtl" : "ltr"} className="scroll-smooth">
       <NextIntlClientProvider messages={messages} locale={locale}>
         <body className={`${inter.className} dark:text-white text-black`}>
           <ThemeProvider>
             <NavBar />
-            <main className="my-16 xl:container mx-auto">
+            <main className="xl:container min-h-screen mx-auto overflow-y-scroll snap-y snap-mandatory scroll-smooth
+            flex flex-col justify-center items-center hideScrollbar">
               {children}
             </main>
           </ThemeProvider>

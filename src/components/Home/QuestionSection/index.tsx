@@ -5,18 +5,21 @@ import QuestionImage from '../../UI/QuestionSection/QuestionImage';
 const QuestionContainer = () => {
 
     return (
-        <div className='w-full min-h-screen flex flex-col md:flex-row items-center justify-center bg-petBlue
-        space-y-4 rounded-3xl'
+        <div className='w-full h-screen grid place-items-center'
         >
-            <div
-                className='md:w-1/2 w-full md:h-full h-1/4 flex items-center justify-center'
-            >
-                <QuestionText />
-            </div>
-            <div
-                className='md:w-1/2 w-full md:h-full h-3/4 flex items-center justify-center'
-            >
-                <QuestionImage />
+            <div className='w-[90%] h-auto p-8 flex flex-col md:flex-row items-center justify-center bg-primary space-y-4 md:space-y-0 rounded-3xl snap-center'>
+
+
+                <div
+                    className='md:w-1/2 w-full md:h-full h-1/4 flex items-center justify-center'
+                >
+                    <QuestionText />
+                </div>
+                <div
+                    className='md:w-1/2 w-full md:h-full h-3/4 flex items-center justify-center'
+                >
+                    <QuestionImage />
+                </div>
             </div>
         </div>
     )
