@@ -5,7 +5,7 @@ import { useTranslations } from "next-intl"
 
 const NavItem = () => {
     const pathname = usePathname()
-    const t=useTranslations("navItem")
+    const t = useTranslations("navItem")
     // navItem for render
     const navItem = [
         { name: t("Home"), href: "/" },
@@ -21,9 +21,9 @@ const NavItem = () => {
                     <Link href={item.href}
                         className=
                         {
-                            `link ${pathname === item.href ?
-                                "md:bg-darkPetBlue md:dark:bg-petBlue md:text-white bg-gray-200 text-petBlue" :
-                                "md:hover:text-white  md:hover:bg-darkPetBlue/20 md:dark:hover:bg-petBlue/20 hover:bg-gray-400 transition-colors duration-300"
+                            `${pathname === `${item.href}` || pathname === `${item.href}/[slug]`
+                                ? "md:bg-darkPetBlue md:dark:bg-petBlue md:text-white bg-gray-200 text-petBlue"
+                                : "md:hover:text-white  md:hover:bg-darkPetBlue/20 md:dark:hover:bg-petBlue/20 hover:bg-gray-400 transition-colors duration-300"
                             } no-underline p-2 rounded-btn`
                         }
                     >

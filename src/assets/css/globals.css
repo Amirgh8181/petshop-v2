@@ -31,7 +31,7 @@ details summary::-webkit-details-marker {
 }
 
 .btn{
-  @apply p-0
+  @apply p-0 transition-colors duration-500
 }
 .hideScrollbar::-webkit-scrollbar{
     display: none;
@@ -42,3 +42,11 @@ details summary::-webkit-details-marker {
     -ms-overflow-style: none;  /* IE and Edge */
     scrollbar-width: none;  /* Firefox */
   }
+
+
+  @layer components{
+    .heroSection{
+      @apply md:w-1/2 md:h-full w-full h-1/2
+    }
+  }
+  

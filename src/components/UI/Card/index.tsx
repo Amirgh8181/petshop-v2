@@ -10,6 +10,8 @@ interface CardUiProps {
     hrefProduct: string,
 }
 
+
+
 const CardUi = ({ imageSrc, imageAlt, title, price, hrefProduct }: CardUiProps) => {
     return (
         <div className="card card-compact bg-base-100/20 glass w-[90%] shadow-inner shadow-primary flex flex-col justify-center items-center">

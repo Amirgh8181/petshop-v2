@@ -6,7 +6,7 @@ import { NextIntlClientProvider } from "next-intl";
 import NavBar from "@/src/components/Navbar";
 import ThemeProvider from "@/src/context/ThemeContext";
 import Footer from "@/src/components/Footer";
-
+import icon from "@/public/images/logo/logo.png"
 const inter = Inter({ subsets: ["latin"] });
 
 export async function generateMetadata({ params: { locale } }: { params: { locale: string } }) {
@@ -24,13 +24,13 @@ export async function generateMetadata({ params: { locale } }: { params: { local
       icon: [
         {
           media: '(prefers-color-scheme: light)',
-          url: '/images/logo/icon.png',
-          href: '/images/logo/icon.png',
+          url: "/images/logo/siteTitle.png",
+          href: "/images/logo/siteTitle.png",
         },
         {
           media: '(prefers-color-scheme: dark)',
-          url: '/images/logo/icon.png',
-          href: '/images/logo/icon.png',
+          url: "/images/logo/siteTitle.png",
+          href: "/images/logo/siteTitle.png",
         },
       ]
     },

@@ -2,6 +2,7 @@ import React from 'react'
 import Logo from '../UI/Logo/Logo'
 import { FaInstagram, FaPhone, FaWhatsapp } from 'react-icons/fa'
 import { TiSocialTwitter } from 'react-icons/ti'
+import Link from 'next/link'
 
 const Footer = () => {
     const icons = [
@@ -19,7 +20,7 @@ const Footer = () => {
                     <div className=''>
                         <div className='flex space-x-2'>
                             <div>Support</div>
-                            <div>About</div>
+                            <Link href={"/#aboutUs"}>About</Link>
                         </div>
                         <div className=''>2023 Dev Ventures Project</div>
                     </div>
