@@ -9,7 +9,7 @@ const ShopPreview = async () => {
 let req: ShopItem[] = await getProducts()
 
     return (
-        <section id="ShopPreview" className='w-full my-[5vmax]'>
+        <section id="ShopPreview" className='w-full my-[5vmax] overflow-hidden'>
             {/* <PreviewSectionsHeader previewLink='/Shop' previewSectionName='Shop' /> */}
             <SwiperItem data={req}/>
         </section>
