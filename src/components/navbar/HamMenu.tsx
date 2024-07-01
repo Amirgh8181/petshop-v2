@@ -1,6 +1,6 @@
 import { AnimatePresence } from "framer-motion";
-import ScaleYBox from "../UI/Animation/ScaleYBox";
 import NavItem from "./NavItem";
+import ScaleAnimation from "../UI/Animation/ScaleAnimation";
 
 
 const HamMenu = ({ openMenu }: { openMenu: boolean }) => {
@@ -9,9 +9,9 @@ const HamMenu = ({ openMenu }: { openMenu: boolean }) => {
         <AnimatePresence>
             {
                 openMenu &&
-                <ScaleYBox boxClass='w-full h-screen flex items-center justify-center fixed bg-primary z-30 inset-0 origin-top'>
+                <ScaleAnimation scaleYVal boxClass='w-full h-screen flex items-center justify-center fixed bg-primary z-30 inset-0 origin-top'>
                     <NavItem />
-                </ScaleYBox>
+                </ScaleAnimation>
             }
         </AnimatePresence>
 

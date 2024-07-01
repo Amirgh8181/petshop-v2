@@ -1,5 +1,6 @@
 import Image from 'next/image'
 import Link from 'next/link'
+import ScaleAnimation from '../../UI/Animation/ScaleAnimation'
 
 interface categType {
     image: string,
@@ -21,7 +22,7 @@ const Category = () => {
     return (
         <div className='w-full h-screen flex flex-col items-center justify-center space-y-6'>
             <h6>Shop by collection</h6>
-            <div className='w-full flex justify-center mx-auto md:space-x-4 text-center'>
+            <ScaleAnimation once scaleVal boxClass='w-full flex justify-center mx-auto md:space-x-4 text-center'>
                 {categDetails.map(item =>
                     <Link href={item.link} key={item.type}
                         className='group flex flex-col justify-center items-center space-y-2  cursor-pointer'
@@ -31,7 +32,7 @@ const Category = () => {
                         <div className='md:text-sm text-xs font-bold '>{item.type}</div>
                     </Link>
                 )}
-            </div>
+            </ScaleAnimation>
         </div>
     )
 }

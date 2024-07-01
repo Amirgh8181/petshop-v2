@@ -1,5 +1,5 @@
 import React from 'react'
-import { animationComponentProps } from './ScaleYBox'
+import { animationComponentProps } from './ScaleAnimation'
 import { motion } from "framer-motion"
 
 const OpacityContent = ({ boxClass, children, delay, duration, whenAnimate, whenExit }: animationComponentProps) => {

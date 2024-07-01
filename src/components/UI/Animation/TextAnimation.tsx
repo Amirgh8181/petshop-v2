@@ -14,7 +14,17 @@ export interface TypingAnimationProps {
     typeAnimation: "typing" | "lineOpacity"
 }
 
-const TextAnimations = ({ text, boxClass, delay, staggerTime, el: Wrapper = "p", duration, amountView, once, typeAnimation }: TypingAnimationProps) => {
+const TextAnimations = ({
+    text,
+    boxClass,
+    delay,
+    staggerTime,
+    el: Wrapper = "p",
+    duration,
+    amountView,
+    once,
+    typeAnimation
+}: TypingAnimationProps) => {
     const textArray: string[] = Array.isArray(text) ? text : [text]
     const boxRef = useRef(null)
     const isInView = useInView(boxRef, { amount: amountView ?? 0.5, once })
