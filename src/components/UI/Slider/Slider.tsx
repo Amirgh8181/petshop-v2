@@ -12,6 +12,7 @@ import './Slider.css'
 import { Autoplay, FreeMode, A11y } from 'swiper/modules';
 import { MdNavigateNext, MdNavigateBefore } from "react-icons/md";
 import { useLocale } from 'next-intl';
+import TranslateAnimation from '../Animation/TranslateAnimation';
 
 interface sliderProps {
     children: React.ReactNode,
@@ -23,7 +24,7 @@ interface sliderProps {
 
 
 
-export default function Slider({ children, slideIn0, slideIn480, slideIn720 }:sliderProps ) {
+export default function Slider({ children, slideIn0, slideIn480, slideIn720 }: sliderProps) {
 
     const local = useLocale()
     const swiperRef = useRef<SwiperCore>();
@@ -47,36 +48,39 @@ export default function Slider({ children, slideIn0, slideIn480, slideIn720 }:sl
         <div className='w-full h-screen flex justify-center items-center px-2'>
 
             <div onClick={() => swiperRef.current?.slidePrev()} className={`btn bg-primary ${local === "fa" && 'rotate-180'}`}>
-                <MdNavigateBefore className='text-3xl'/>
+                <MdNavigateBefore className='text-3xl' />
             </div>
+            <TranslateAnimation xVal={1000}>
+                <Swiper
 
-            <Swiper
+                    breakpoints={sliderPerView}
+                    autoplay={{
+                        delay: 2500,
+                        disableOnInteraction: false,
+                        pauseOnMouseEnter: true
+                    }}
+                    pagination={{
+                        clickable: true,
+                    }}
 
-                breakpoints={sliderPerView}
-                autoplay={{
-                    delay: 2500,
-                    disableOnInteraction: false,
-                    pauseOnMouseEnter: true
-                }}
-                pagination={{
-                    clickable: true,
-                }}
+                    freeMode={{
+                        enabled: true,
+                    }}
+                    onBeforeInit={(swiper) => {
+                        swiperRef.current = swiper;
+                    }}
+                    modules={[Autoplay, FreeMode, A11y]}
 
-                freeMode={{
-                    enabled: true,
-                }}
-                onBeforeInit={(swiper) => {
-                    swiperRef.current = swiper;
-                }}
-                modules={[Autoplay, FreeMode, A11y]}
+                >
 
-            >
-                {children}
-            </Swiper >
+
+                    {children}
+                </Swiper >
+            </TranslateAnimation>
             <div onClick={() => swiperRef.current?.slideNext()} className={`btn bg-primary ${local === "fa" && 'rotate-180'}`}>
-                <MdNavigateNext className='text-3xl'/>
+                <MdNavigateNext className='text-3xl' />
             </div>
-        </div>
+        </div >
 
 
     );

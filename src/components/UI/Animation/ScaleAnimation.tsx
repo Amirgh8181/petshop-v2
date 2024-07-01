@@ -13,7 +13,7 @@ export interface animationComponentProps {
     once?: boolean
 }
 
-interface scaleAnimations extends animationComponentProps {
+interface scaleAnimationsProps extends animationComponentProps {
     scaleYVal?: boolean
     scaleXVal?: boolean
     scaleVal?: boolean
@@ -30,7 +30,7 @@ const ScaleAnimation = ({
     scaleVal,
     once,
     amountView
-}: scaleAnimations) => {
+}: scaleAnimationsProps) => {
     const scaleRef = useRef(null)
     const isInView = useInView(scaleRef, { amount: amountView ?? 0.5, once })
     const sclaeYVariant = {
