@@ -15,5 +15,18 @@ export interface CartItem extends ShopItem {
   count: number
 }
 
+export interface clinicAndSheltersData {
+  _id: string,
+  name: string,
+  address:string,
+  phone:string,
+  doctorName:string,
+  shortDescription: string,
+  doctorDescription: string,
+  attachmentFile: string,
+  createdAt: string,
+  updatedAt: string,
+  __v: number
+}
 
 
