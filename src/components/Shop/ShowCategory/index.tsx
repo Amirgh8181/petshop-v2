@@ -20,12 +20,12 @@ const Category = () => {
     ]
 
     return (
-        <div className='w-full h-screen flex flex-col items-center justify-center space-y-6'>
+        <div className='w-full flex flex-col items-center justify-center space-y-6'>
             <h6>Shop by collection</h6>
-            <ScaleAnimation once scaleVal boxClass='w-full flex justify-center mx-auto md:space-x-4 text-center'>
+            <ScaleAnimation once scaleVal childClass='flex ' boxClass='w-full flex justify-center mx-auto md:space-x-4 text-center'>
                 {categDetails.map(item =>
                     <Link href={item.link} key={item.type}
-                        className='group flex flex-col justify-center items-center space-y-2  cursor-pointer'
+                        className='group flex flex-col justify-center items-center space-y-2 cursor-pointer'
                     >
                         <Image src={item.image} alt='categ img' width={100} height={100}
                             className='w-[65%] aspect-square rounded-full border shadow-xl group-hover:scale-110 transition-all duration-400' />

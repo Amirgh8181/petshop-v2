@@ -11,6 +11,7 @@ export interface animationComponentProps {
     whenExit?: string
     amountView?: number,
     once?: boolean
+    childClass?: string
 }
 
 interface scaleAnimationsProps extends animationComponentProps {
@@ -29,7 +30,8 @@ const ScaleAnimation = ({
     scaleXVal,
     scaleVal,
     once,
-    amountView
+    amountView,
+    childClass
 }: scaleAnimationsProps) => {
     const scaleRef = useRef(null)
     const isInView = useInView(scaleRef, { amount: amountView ?? 0.5, once })
@@ -67,8 +69,9 @@ const ScaleAnimation = ({
             exit='exit'
             className={boxClass}
         >
-            <motion.div 
+            <motion.div
                 variants={sclaeYVariant}
+                className={childClass}
             >
                 {children}
             </motion.div>

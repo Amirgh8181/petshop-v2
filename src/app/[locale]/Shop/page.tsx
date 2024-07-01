@@ -10,7 +10,7 @@ const Shop = async () => {
   loading = false
 
   return (
-    <>
+    <main className='space-y-[5vmax] mb-7'>
       <ShopHero />
       <Category />
        {
@@ -20,7 +20,7 @@ const Shop = async () => {
       } 
       
       <OtherSection />
-    </>
+    </main>
   )
 }
 

@@ -1,33 +1,33 @@
+import { ShopItem } from '@/root/types'
 import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
 
 interface CardUiProps {
-    imageSrc: string,
-    imageAlt: string,
-    title: string,
-    price: string,
-    hrefProduct: string,
+    product: ShopItem
 }
 
 
 
-const CardUi = ({ imageSrc, imageAlt, title, price, hrefProduct }: CardUiProps) => {
+const CardUi = ({ product }: CardUiProps) => {
     return (
-        <div className="card card-compact bg-base-100/20 glass w-[90%] shadow-inner shadow-primary flex flex-col justify-center items-center">
-            <figure>
-                <Image
-                    src={imageSrc}
-                    alt={imageAlt}
-                    width={300}
-                    height={300}
-                    className='w-[80%] aspect-square object-contain' />
+        <div className="card card-compact dark:bg-primary/60 bg-primary/10 glass w-[90%] shadow-inner 
+        hadow-primary flex flex-col justify-center items-center group">
+            <figure className='p-3'>
+                <div className='w-full aspect-[16/10] overflow-hidden rounded-btn'>
+                    <Image
+                        src={product.attachmentFile}
+                        alt={"item"}
+                        width={300}
+                        height={300}
+                        className='w-full h-full group-hover:scale-125 rounded-btn transition-transform duration-500' />
+                </div>
             </figure>
             <div className="card-body items-center w-full">
-                <h2 className="card-title text-center">{title}</h2>
-                <p>{price}</p>
+                <h2 className="card-title text-sm md:text-lg text-center">{product.name}</h2>
+                <p className='text-xs md:text-sm'>{product.price}</p>
                 <div className="card-actions w-full">
-                    <Link href={hrefProduct} className="btn btn-primary w-[80%] mx-auto">Buy Now</Link>
+                    <Link href={`/Shop/${product._id}`} className="btn btn-primary w-[80%] mx-auto">Buy Now</Link>
                 </div>
             </div>
         </div>

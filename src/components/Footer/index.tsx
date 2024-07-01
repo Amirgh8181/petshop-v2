@@ -28,7 +28,7 @@ const Footer = () => {
             </aside>
             <nav className="grid-flow-col gap-4 md:place-self-center md:justify-self-end mx-8 text-white">
                     {icons.map((item, index) =>
-                        <div className={`${item.style} tooltip`} key={index} data-tip={item.tooltipMassage}>{item.icon}</div>
+                        <div className={`${item.style} tooltip transition-colors duration-300`} key={index} data-tip={item.tooltipMassage}>{item.icon}</div>
                     )}
             </nav>
         </footer>

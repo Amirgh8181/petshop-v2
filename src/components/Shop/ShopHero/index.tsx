@@ -7,15 +7,18 @@ import React from 'react'
 const ShopHero = () => {
     return (
         <HeroContainer>
-              <HeroText
-                titleh2='Enjoy 15% of money'
-                description='Food that is healthy for your kitty'
+            <div className='heroSection'>
+                <HeroText
+                    titleh1='Buy and Enjoy'
+                    titleh2='Enjoy 15% of money'
+                    description='Food that is healthy for your kitty'
                 />
-            <HeroImage
-                animateImg={false}
-                mainImage='/images/Shop/hero.png'
-                width='max-w-[80%]'
-            />
+            </div>
+            <div className='heroSection'>
+                <HeroImage
+                    mainImage='/images/Shop/hero.png'
+                />
+            </div>
         </HeroContainer>
     )
 }
@@ -23,3 +26,7 @@ const ShopHero = () => {
 export default ShopHero
 
 
+/*
+
+
+*/

@@ -1,9 +1,8 @@
-"use client"
 import React from 'react'
-import ProduceCart from '../../UI/CartProduce/ProduceCart'
 import { ShopItem } from '@/root/types'
 import Link from 'next/link'
-import CardUi2 from '../../UI/Card/Card'
+import CardUi from '../../UI/Card'
+import ScaleAnimation from '../../UI/Animation/ScaleAnimation'
 
 const ProductPreview = ({ products }: { products: ShopItem[] }) => {
 
@@ -13,7 +12,9 @@ const ProductPreview = ({ products }: { products: ShopItem[] }) => {
             <div className='w-full grid place-items-center'>
                 <div className='grid md:grid-cols-4 grid-cols-2 place-items-center w-[90%] py-6 md:gap-6 gap-4'>
                     {products.slice(0, 12).map(item =>
-                        <CardUi2 product={item} />
+                        <ScaleAnimation scaleVal once>
+                            <CardUi product={item} />
+                        </ScaleAnimation>
                     )}
                 </div>
             </div>

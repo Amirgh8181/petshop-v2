@@ -4,7 +4,7 @@ import React from 'react'
 
 const UiCart = () => {
   return (
-    <div className='md:w-[60vw] w-[90vw] md:aspect-[16/6]  flex md:flex-row flex-col items-center justify-between rounded-[3.5rem] bg-petBlue overflow-hidden'>
+    <div className='md:w-[60vw] w-[90vw] md:aspect-[16/6]  flex md:flex-row flex-col items-center justify-between rounded-[3.5rem] bg-primary overflow-hidden'>
       <div className='md:w-1/2 w-full'>
         <Image src={'/images/Shop/uicart.jfif'} alt='ui cart img' width={700} height={700}
           className='w-full h-full' />
@@ -15,7 +15,7 @@ const UiCart = () => {
         <p className='md:text-sm text-xs w-[90%]'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.</p>
         <div className='w-full flex justify-center'>
           <Link
-            className='w-[60%] lg:w-[40%] aspect-[9/2]'
+            className='w-[60%] lg:w-[40%] aspect-[9/2] btn'
             href='/Shop/category/All'>
             Collection
           </Link>

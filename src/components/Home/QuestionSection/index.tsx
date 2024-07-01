@@ -2,12 +2,13 @@
 import React from 'react'
 import QuestionText from '../../UI/QuestionSection/QuestionText';
 import QuestionImage from '../../UI/QuestionSection/QuestionImage';
+import ScaleAnimation from '../../UI/Animation/ScaleAnimation';
 const QuestionContainer = () => {
 
     return (
-        <div className='w-full h-screen grid place-items-center'
+        <ScaleAnimation once amountView={0.5} scaleVal boxClass='w-full h-screen grid place-items-center'
         >
-            <div className='w-[90%] h-auto p-8 flex flex-col md:flex-row items-center justify-center bg-primary space-y-4 md:space-y-0 rounded-3xl snap-center'>
+            <div className='w-[90%] h-auto p-8 flex flex-col md:flex-row items-center justify-center bg-primary space-y-4 md:space-y-0 rounded-3xl mx-auto'>
 
 
                 <div
@@ -21,7 +22,7 @@ const QuestionContainer = () => {
                     <QuestionImage />
                 </div>
             </div>
-        </div>
+        </ScaleAnimation>
     )
 }
 

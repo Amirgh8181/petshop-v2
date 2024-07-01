@@ -10,9 +10,9 @@ const CategoyPageHeader = ({ type }: { type: string }) => {
     const categ = ["All", "Beds", "Furnitures", "Treats", "Food", "Health", "Toys"]
 
     return (
-        <div>
+        <>
             <HeroContainer>
-                <div className='md:w-[45%] w-full h-full flex justify-center items-center '>
+                <div className='heroSection flex justify-center items-center '>
                     <Image src={'/images/Shop/category/categoy-hero.webp'}
                         alt='category hero pic'
                         width={700}
@@ -20,27 +20,19 @@ const CategoyPageHeader = ({ type }: { type: string }) => {
                         className='md:max-w-[80%] aspect-[16/12] rounded-[3rem] relative object-cover' />
                 </div>
 
-                <div className='md:w-1/2 w-full h-[60%] px-8 space-y-4 flex flex-col justify-center text-white'>
-
-                    <div className="flex items-center justify-center space-x-2">
-                        <span className="text-sm font-medium">lorem ipsum</span>
-                        <div className="flex-grow h-px bg-gray-300" />
-                    </div>
-                    <div className='flex flex-col justify-center space-y-4 h-full md:w-[60%] w-[80%]'>
-                        <div className='md:text-4xl text-2xl font-bold'>Duis aute irure dolor in </div>
-                        <div className='text-sm'>consectetur adipiscing elit, sed do eiusmod tempor incididunt ut </div>
-                    </div>
-                    <div className="flex items-center justify-center space-x-2">
-                        <div className="flex-grow h-px bg-gray-300" />
-                        <span className="text-sm font-medium">lorem ipsum</span>
+                <div className='heroSection flex items-center px-8 text-white'>
+                    <div className='h-[60%]'>
+                        <div className='divider divider-start'>lorem ipsum</div>
+                        <div className='flex flex-col justify-center h-[90%]'>
+                            <div className='md:text-4xl text-2xl font-bold'>Duis aute irure dolor in </div>
+                            <div className='text-sm'>consectetur adipiscing elit, sed do eiusmod tempor incididunt ut </div>
+                        </div>
+                        <div className='divider divider-end'>lorem ipsum</div>
                     </div>
                 </div>
             </HeroContainer>
 
-            <div
-                className='flex md:flex-row flex-col md:justify-between items-center space-y-6 
-            md:space-y-0 w-full md:h-12 md:px-8 mt-4'>
-                <ul className='flex items-center justify-around md:w-[60%] w-full  h-full  md:font-bold'>
+                <ul className='flex items-center justify-around md:w-[60%] w-full h-full md:font-bold mt-[2vmax]'>
                     {categ.map(item =>
                         <Link href={`/Shop/category/${item}`} key={item}
                             className={type === item ?
@@ -51,10 +43,7 @@ const CategoyPageHeader = ({ type }: { type: string }) => {
                         </Link>
                     )}
                 </ul>
-
-
-            </div>
-        </div>
+        </>
 
     )
 }

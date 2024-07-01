@@ -10,7 +10,7 @@ const HeroSection = () => {
 
   return (
     <div
-      className='w-full h-screen flex justify-center items-center relative snap-center'
+      className='w-full h-screen flex justify-center items-center relative'
     >
       <WaveBg className="w-full h-[105%] absolute inset-0 text-primary" />
       <div className="hero  w-[80%] h-[80%] glass rounded-box mt-[4vmax]">

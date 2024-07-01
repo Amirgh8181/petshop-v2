@@ -1,8 +1,11 @@
-import React from 'react'
+"use client"
+import { useRef } from 'react'
 import { animationComponentProps } from './ScaleAnimation'
-import { motion } from "framer-motion"
+import { motion, useInView } from "framer-motion"
 
-const OpacityContent = ({ boxClass, children, delay, duration, whenAnimate, whenExit }: animationComponentProps) => {
+const OpacityContent = ({ boxClass, children, delay, duration, whenAnimate, whenExit, amountView, once }: animationComponentProps) => {
+    const opacityRef = useRef(null)
+    const isInView = useInView(opacityRef, { amount: amountView ?? 0.5, once })
     const opacityVariant = {
         initial: {
             opacity: 0
@@ -25,13 +28,19 @@ const OpacityContent = ({ boxClass, children, delay, duration, whenAnimate, when
         }
     }
     return (
-        <motion.div className={boxClass}
-            variants={opacityVariant}
+        <motion.div
+            ref={opacityRef}
+            className='w-full h-auto '
             initial='initial'
-            animate='animate'
+            animate={isInView ? 'animate' : "initial"}
             exit='exit'
         >
-            {children}
+            <motion.div
+                className={boxClass}
+                variants={opacityVariant}
+            >
+                {children}
+            </motion.div>
         </motion.div>
     )
 }

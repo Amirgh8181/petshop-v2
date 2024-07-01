@@ -1,5 +1,5 @@
 .swiper {
-  @apply w-full flex justify-between items-center;
+  @apply w-full flex justify-between items-center ;
 }
 .swiper-wrapper {
   @apply flex justify-evenly ;

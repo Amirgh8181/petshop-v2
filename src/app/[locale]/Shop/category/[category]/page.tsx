@@ -1,7 +1,6 @@
 import { ShopItem } from '@/root/types';
 import CategoyPageHeader from '@/src/components/Shop/CategoyPageHeader';
-import CardUi2 from '@/src/components/UI/Card/Card';
-import ProduceCart from '@/src/components/UI/CartProduce/ProduceCart';
+import CardUi from '@/src/components/UI/Card';
 import getShopItems from '@/src/lib/getShopItems';
 
 
@@ -18,19 +17,19 @@ const Category = async ({ params }: categprops) => {
         : request.filter(q => q.category === category)
 
     return (
-        <div>
+        <main className='space-y-[3vmax] mb-7'>
             <div className='w-full mt-6'>
                 <CategoyPageHeader type={category} />
             </div>
-            <div className='grid md:grid-cols-4 grid-cols-2 gap-8'>
+            <div className='grid place-items-center md:grid-cols-4 grid-cols-2 gap-8'>
                 {
                     data.map(item =>
 
-                        <CardUi2 product={item} />
+                        <CardUi product={item} />
                     )
                 }
             </div >
-        </div>
+        </main>
     )
 }
 

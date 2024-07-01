@@ -1,12 +1,21 @@
 "use client"
 import { SwiperSlide } from "swiper/react"
+import CardUi from "../../UI/Card"
+import { ShopItem } from "@/root/types"
+import Slider from "../../UI/Slider/Slider"
 
-const SwiperItem = ({ children }: { children: React.ReactNode }) => {
+const SwiperItem = ({ data }: { data: ShopItem[] }) => {
+    console.log(data);
+
     return (
+        <Slider >
+            {data.map(item =>
+                <SwiperSlide>
+                    <CardUi product={item} />
+                </SwiperSlide>
+            )}
 
-        <SwiperSlide>
-            {children}
-        </SwiperSlide>
+        </Slider>
     )
 }
 

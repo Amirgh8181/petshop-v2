@@ -76,8 +76,7 @@ export default async function RootLayout({
         <body className={`${inter.className} dark:text-white text-black`}>
           <ThemeProvider>
             <NavBar />
-            <main className="xl:container min-h-screen mx-auto overflow-y-scroll snap-y snap-mandatory scroll-smooth
-            flex flex-col justify-center items-center hideScrollbar">
+            <main className="xl:container min-h-screen mx-auto flex flex-col justify-center items-center">
               {children}
             </main>
             <Footer />
