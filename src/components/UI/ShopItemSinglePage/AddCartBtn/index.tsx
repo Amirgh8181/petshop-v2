@@ -1,5 +1,5 @@
 "use client"
-import { useCartItems } from '@/src/stores/useCartItem'
+import { useCartItems } from '@/src/stores/ShopStroes/useCartItem'
 import { ShopItem } from '@/root/types'
 import React from 'react'
 import { MdOutlineAddShoppingCart } from 'react-icons/md'

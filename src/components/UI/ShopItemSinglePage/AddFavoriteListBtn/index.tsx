@@ -1,5 +1,5 @@
 "use client"
-import { useFavoriteList } from '@/src/stores/useFavoriteList'
+import { useFavoriteList } from '@/src/stores/ShopStroes/useFavoriteList'
 import { ShopItem } from '@/root/types'
 import React from 'react'
 import { FaRegHeart } from 'react-icons/fa6'
