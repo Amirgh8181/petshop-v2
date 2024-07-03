@@ -43,7 +43,7 @@ const config: Config = {
           ...require("daisyui/src/theming/themes")["dark"],
           //this line keep old color and we can add new color
           "primary":"#00334C",//petblue for dark
-          "base-100": "#191919",//background
+          "base-100": "#1f1f1f",//background
           "base-200": "#394855",//btn background
         }
       }

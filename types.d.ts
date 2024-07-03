@@ -29,4 +29,16 @@ export interface clinicAndSheltersData {
   __v: number
 }
 
+export interface AuthInputType {
+  key: string,
+  type: string,
+  icon: React.ReactNode,
+  err: string | undefined
+}
+export interface LoginInputType extends AuthInput {
+  registerVal: "email" | "password",
+}
+export interface SignUpInputType extends AuthInput {
+  registerVal: "email" | "password" | "name",
+}
 

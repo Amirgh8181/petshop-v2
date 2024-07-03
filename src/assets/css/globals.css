@@ -50,3 +50,6 @@ details summary::-webkit-details-marker {
     }
   }
   
+  .rotateY{
+    transform: rotateY(180deg)
+  }

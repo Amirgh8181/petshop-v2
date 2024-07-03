@@ -1,0 +1,12 @@
+.authLabel{
+  @apply flex justify-start items-center space-x-1 label label-text
+}
+.authLabelIcon{
+  @apply  text-xl
+}
+
+
+.authErr{
+  @apply text-red-600 ml-2 mt-2 text-xs
+}
+
