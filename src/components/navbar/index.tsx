@@ -2,21 +2,17 @@
 import React, { useState } from 'react'
 import LanguageChanger from '../LanguageChanger'
 import NavItem from './NavItem'
-import Link from 'next/link'
 import HamMenu from './HamMenu'
-import { RiLoginBoxFill } from 'react-icons/ri'
-import { useTranslations } from 'next-intl'
 import SwitchTheme from './SwitchTheme'
 import Logo from '../UI/Logo/Logo'
 import HamMenuBtn from '../UI/HamMenuBtn'
-import ScaleYBox from '../UI/Animation/ScaleAnimation'
 import OpacityContent from '../UI/Animation/OpacityContent'
 import ScaleAnimation from '../UI/Animation/ScaleAnimation'
+import SignInBtn from '../UI/SignInBtn'
 
 const NavBar = () => {
     const MOBILE_THRESHOLD: number = 768
     const [openMenu, setOpenMenu] = useState<boolean>(false)
-    const t = useTranslations("navItem")
     const toggleMenu = (arg: boolean) => {
         setOpenMenu(arg)
     }
@@ -43,10 +39,7 @@ const NavBar = () => {
                     <div className="navbar-end">
                         <SwitchTheme />
                         <LanguageChanger />
-                        <Link href={"Auth/SignIn"} className="btn !px-2 font-bold">
-                            {t("sign in")}
-                            <RiLoginBoxFill size={"20px"} />
-                        </Link>
+                        <SignInBtn />
                     </div>
                 </OpacityContent>
             </ScaleAnimation>

@@ -7,6 +7,7 @@ import NavBar from "@/src/components/Navbar";
 import ThemeProvider from "@/src/context/ThemeContext";
 import Footer from "@/src/components/Footer";
 import icon from "@/public/images/logo/logo.png"
+import { NextAuthProvider } from "@/src/providers/next-auth";
 const inter = Inter({ subsets: ["latin"] });
 
 export async function generateMetadata({ params: { locale } }: { params: { locale: string } }) {
@@ -72,17 +73,19 @@ export default async function RootLayout({
 
   return (
     <html lang={locale} dir={locale === "fa" ? "rtl" : "ltr"} className="scroll-smooth transition-colors duration-500">
-      <NextIntlClientProvider messages={messages} locale={locale}>
-        <body className={`${inter.className} dark:text-white text-black`}>
-          <ThemeProvider>
-            <NavBar />
-            <main className="xl:container min-h-screen mx-auto flex flex-col justify-center items-center">
-              {children}
-            </main>
-            <Footer />
-          </ThemeProvider>
-        </body>
-      </NextIntlClientProvider>
+      <body className={`${inter.className} dark:text-white text-black`}>
+        <NextAuthProvider>
+          <NextIntlClientProvider messages={messages} locale={locale}>
+            <ThemeProvider>
+              <NavBar />
+              <main className="xl:container min-h-screen mx-auto flex flex-col justify-center items-center">
+                {children}
+              </main>
+              <Footer />
+            </ThemeProvider>
+          </NextIntlClientProvider>
+        </NextAuthProvider>
+      </body>
     </html>
   );
 }

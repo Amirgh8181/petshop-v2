@@ -16,7 +16,7 @@ interface loginResponseData{
   
 
 
-const auth: AuthOptions = {
+const authOption: AuthOptions = {
     session: {
       strategy: "jwt"
     },
@@ -81,4 +81,4 @@ const auth: AuthOptions = {
   
   }
 
-export default auth;
+export default authOption;

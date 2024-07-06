@@ -1,4 +1,4 @@
-import { clinicAndSheltersData } from '@/types'
+import { clinicAndSheltersData } from '@/root/types'
 import React from 'react'
 import { FaPhoneAlt } from 'react-icons/fa'
 import { FaLocationDot } from 'react-icons/fa6'

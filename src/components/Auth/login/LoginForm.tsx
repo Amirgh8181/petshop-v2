@@ -2,7 +2,7 @@
 
 import { useState } from 'react'
 import Link from 'next/link'
-import { useRouter } from 'next/navigation';
+import { useRouter, useSearchParams } from 'next/navigation';
 // react hook form
 import { SubmitHandler, useForm } from 'react-hook-form'
 //next auth
@@ -41,6 +41,11 @@ const LoginForm = () => {
     //state
     const [loading, setLoading] = useState(false)
     const router = useRouter()
+    const searchParams = useSearchParams()
+ 
+    const search = searchParams.get('callbackUrl')
+    console.log(search);
+    
     //submit hadler
     const onSubmit: SubmitHandler<LoginDataType> = async (e) => {
         setLoading(true)

@@ -2,7 +2,6 @@
 import { usePathname } from "next/navigation"
 import Link from "next/link"
 import { useTranslations } from "next-intl"
-import OpacityContent from "../UI/Animation/OpacityContent"
 
 const NavItem = () => {
     const pathname = usePathname()

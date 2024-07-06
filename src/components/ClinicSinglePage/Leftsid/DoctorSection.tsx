@@ -1,4 +1,4 @@
-import { clinicAndSheltersData } from '@/types'
+import { clinicAndSheltersData } from '@/root/types'
 import Image from 'next/image'
 import React from 'react'
 import { FaUserDoctor } from 'react-icons/fa6'
