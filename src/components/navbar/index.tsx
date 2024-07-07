@@ -1,6 +1,5 @@
 "use client"
 import React, { useState } from 'react'
-import LanguageChanger from '../LanguageChanger'
 import NavItem from './NavItem'
 import HamMenu from './HamMenu'
 import SwitchTheme from './SwitchTheme'
@@ -8,7 +7,8 @@ import Logo from '../UI/Logo/Logo'
 import HamMenuBtn from '../UI/HamMenuBtn'
 import OpacityContent from '../UI/Animation/OpacityContent'
 import ScaleAnimation from '../UI/Animation/ScaleAnimation'
-import SignInBtn from '../UI/SignInBtn'
+import LanguageChanger from '../LanguageChanger'
+import AuthSection from '../UI/NavBarSections/AuthSection'
 
 const NavBar = () => {
     const MOBILE_THRESHOLD: number = 768
@@ -37,9 +37,9 @@ const NavBar = () => {
                         <NavItem />
                     </div>
                     <div className="navbar-end">
-                        <SwitchTheme />
+                        <AuthSection />
                         <LanguageChanger />
-                        <SignInBtn />
+                        <SwitchTheme />
                     </div>
                 </OpacityContent>
             </ScaleAnimation>

@@ -1,21 +1,28 @@
 "use client"
 import { useFavoriteList } from '@/src/stores/ShopStroes/useFavoriteList'
 import { ShopItem } from '@/root/types'
-import React from 'react'
 import { FaRegHeart } from 'react-icons/fa6'
+import { signIn, useSession } from 'next-auth/react'
 
-const AddFavoriteListBtn = ({itemDetails}:{itemDetails:ShopItem}) => {
+const AddFavoriteListBtn = ({ itemDetails }: { itemDetails: ShopItem }) => {
+    const { data: session } = useSession()
     const { setFavoriteList, FavoriteList } = useFavoriteList()
-    const chekIncludes=FavoriteList.find(q=>q._id===itemDetails._id)
-    
+    const chekIncludes = FavoriteList.find(q => q._id === itemDetails._id)
+
+    const addFavorite = (item: ShopItem) => {
+        if (!session) {
+            signIn()
+        } else {
+            setFavoriteList(item)
+        }
+    }
     return (
         <>
-            <div onClick={() => setFavoriteList(itemDetails)}
-                className='md:w-[calc(50%-5%)] w-[calc(50%-5%)] rounded-full py-2 font-bold md:text-base text-sm bg-petBlue/30
-                         text-petBlue border-2 border-petBlue hover:bg-white hover:text-petBlue transition-all
-                          duration-400 cursor-pointer flex justify-center items-center space-x-2'>
-                <span className={chekIncludes ? 'text-red-500 text-xl' : "text-xl"}><FaRegHeart /></span>
-                <span>{chekIncludes ? "Remove From List" : "Add To List"}</span>
+            <div onClick={() => addFavorite(itemDetails)}
+                className='btn rounded-full w-1/2 font-bold md:text-base text-sm bg-primary
+                          border-2 border-primary dark:text-white'>
+                <span className={`${chekIncludes&& '!text-red-500'} text-xl`}><FaRegHeart /></span>
+                <span>{chekIncludes ? "Remove From List" : "Add To FavoriteList"}</span>
             </div>
         </>
     )

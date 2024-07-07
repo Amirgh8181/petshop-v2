@@ -1,12 +1,7 @@
 .swal{
     @apply text-3xl font-roboto md:p-10 p-4 md:w-auto h-auto w-[60vw]
 }
-.inputStyle{
-    @apply border-2 border-primary rounded-box input input-bordered input-primary
-}
-.authBtn{
-    @apply btn md:text-xl h-12 bg-primary w-full rounded-box
-}
+
 
 .authLink{
     @apply text-blue-600 underline underline-offset-2

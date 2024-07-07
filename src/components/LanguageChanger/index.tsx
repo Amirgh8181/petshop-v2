@@ -16,7 +16,7 @@ const LanguageChanger = () => {
         { optionName: "english", optionKey: "en" },
     ];
     return (
-        <div className="dropdown dropdown-hover dropdown-end">
+        <div className="dropdown dropdown-end">
             <button tabIndex={0} role='button' className="aspect-square btn m-1 px-2">
                 <AiOutlineGlobal className='text-2xl'/>
             </button>

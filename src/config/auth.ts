@@ -65,6 +65,7 @@ const authOption: AuthOptions = {
           token.email = user.email
           token.username = user.username;
           token.token = user.token;
+          token.token = user.id;
         }
         return token;
       },
@@ -73,6 +74,7 @@ const authOption: AuthOptions = {
           session.user.email = token.email;
           session.user.username = token.username;
           session.user.token = token.token;
+          session.user.id = token.id as string;
         }
         return session;
       },

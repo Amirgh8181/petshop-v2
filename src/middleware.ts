@@ -17,8 +17,12 @@ import createMiddleware from 'next-intl/middleware';
     '/([\\w-]+)?/users/(.+)' // Custom pattern for any other dynamic routes you have
 */
 const protectedPages = [
-  '^/cart$',
+  '^/Cart$',
+  '^/FavoriteList$',
+  '^/Question$',
   '/cart/(.+)',
+  '/FavoriteList/(.+)',
+  '/Question/(.+)',
 ];
 
 const intlMiddleware = createMiddleware({
@@ -34,41 +38,26 @@ const authMiddleware = withAuth(
   (req) => intlMiddleware(req),
   {
     callbacks: {
-      authorized: ({ token }) => token != null
+      authorized: ({ token }) => token != null,
     },
     pages: {
       signIn: '/Auth/SignIn'
-    }
+    }, 
   }
 );
 
+
 export default function middleware(req: NextRequest) {
-
   const pathname = req.nextUrl.pathname
-  const searchParams = req.nextUrl.searchParams.get("callbackUrl")
-  const authRoute = pathname.includes("Auth")
-  const correctRedirectToAuth = pathname.startsWith("/Auth")
-
-  if (authRoute && !correctRedirectToAuth) {
-    const cutPath: string[] = pathname.split("/")
-    const authIndex: number = cutPath.indexOf("Auth")
-    const authType: string = cutPath[authIndex + 1]
-    console.log(authType);
-
-    const correctUrl = `Auth/SignIn`
-    console.log(correctUrl);
-    return NextResponse.redirect(correctUrl)
-
-  }
-
 
   const isProtectedPage = protectedPages.some(pattern => new RegExp(pattern).test(pathname));
 
-  if (isProtectedPage) {
+  if (isProtectedPage) {    
     return (authMiddleware as any)(req);
   } else {
     return intlMiddleware(req);
   }
+
 }
 
 export const config = {

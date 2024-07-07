@@ -19,7 +19,7 @@ const ShopItemLeftSide = ({ product }: { product: ShopItem }) => {
                 <div className='w-8  aspect-square rounded-full bg-violet-500'></div>
                 <div className='w-8  aspect-square rounded-full bg-blue-500'></div>
             </div>
-            <div className='flex space-x-6'>
+            <div className='flex flex-col md:flex-row items-center justify-center space-y-3 md:space-y-0 md:space-x-6'>
                 <AddFavoriteListBtn itemDetails={product} />
                 <AddCartBtn itemDetails={product} />
             </div>

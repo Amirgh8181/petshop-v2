@@ -1,19 +1,25 @@
 "use client"
 import { useCartItems } from '@/src/stores/ShopStroes/useCartItem'
 import { ShopItem } from '@/root/types'
-import React from 'react'
 import { MdOutlineAddShoppingCart } from 'react-icons/md'
+import { signIn, useSession } from 'next-auth/react'
 
 const AddCartBtn = ({ itemDetails }: { itemDetails: ShopItem }) => {
     const { setCartItem,CartItem } = useCartItems()
     const chekIncludes=CartItem.find(q=>q._id===itemDetails._id)
-    
+    const { data: session } = useSession()
+    const addCart = (item: ShopItem) => {
+        if (!session) {
+            signIn()
+        } else {
+            setCartItem(item)
+        }
+    }
     return (
         <>
-            <div onClick={() => setCartItem(itemDetails)}
-                className='md:w-[calc(50%-5%)] w-[calc(50%-5%)] rounded-full py-2 font-bold md:text-base text-sm bg-petBlue
-                         text-white border-2 border-petBlue hover:bg-white hover:text-petBlue transition-all
-                          duration-400 cursor-pointer flex justify-center items-center space-x-2'>
+            <div onClick={() => addCart(itemDetails)}
+                className='btn rounded-full w-1/2 font-bold md:text-base text-sm dark:bg-petBlue/20 dark:border-petBlue
+                border-2 bg-darkPetBlue/20 border-darkPetBlue dark:text-white'>
                 <span className='text-xl'><MdOutlineAddShoppingCart /></span>
                 <span>{chekIncludes ? "Remove From Cart" : "Add To Cart"}</span>
             </div>

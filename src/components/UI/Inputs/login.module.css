@@ -10,3 +10,6 @@
   @apply text-red-600 ml-2 mt-2 text-xs
 }
 
+.inputStyle{
+  @apply border-2 border-primary rounded-box input input-bordered input-primary
+}

@@ -1,5 +1,5 @@
 "use client"
-import { useRouter } from 'next/navigation'
+import { notFound, useRouter } from 'next/navigation'
 import React, { useState } from 'react'
 import { CustomRadio } from '../CustomRadio'
 import { useQuestionScore } from '@/src/stores/Question/useQuestionScore'
@@ -68,14 +68,19 @@ const QuestionContainer = ({ questionNumber }: { questionNumber: number }) => {
     const handleQusetionRadio = (questionValue: number) => {
         setDisableFlag(true)
         setQuestionState(questionValue, questionNumber)
+        const slugParameterType = typeof questionNumber === "number"
+        console.log(slugParameterType);
 
-        if (questionNumber <= 20) {
+        if (questionNumber <= 20 && slugParameterType) {
             let nextPage = questionNumber + 1;
             router.push(`/Question/${nextPage}`)
         }
-        if (questionNumber + 1 === 21) {
+        else if (questionNumber + 1 === 21 && slugParameterType) {
             setQuestionScore()
             showAnimal(QuestionScore)
+        }
+        else {
+            notFound()
         }
 
     }
