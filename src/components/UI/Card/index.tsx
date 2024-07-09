@@ -12,7 +12,7 @@ interface CardUiProps {
 const CardUi = ({ product }: CardUiProps) => {
     return (
         <div className="card card-compact dark:bg-primary/60 bg-primary/10 glass w-[90%] shadow-inner 
-        hadow-primary flex flex-col justify-center items-center group">
+        hadow-primary flex flex-col justify-center items-center group mx-auto">
             <figure className='p-3'>
                 <div className='w-full aspect-[16/10] overflow-hidden rounded-btn'>
                     <Image
