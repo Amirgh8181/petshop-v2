@@ -1,20 +1,20 @@
-"use client"
 import { useLocale } from 'next-intl';
-import { useRouter } from 'next/navigation';
 import { AiOutlineGlobal } from 'react-icons/ai';
 
 const LanguageChanger = () => {
-    const router = useRouter();
     const local = useLocale()
-    const changeLanguage = (arg: string) => {
-        document.cookie = `NEXT_LOCALE=${arg}; path=/; max-age=31536000; SameSite=lax`
-        router.refresh()
-    };
+
     const options = [
         { optionName: "select language", optionKey: "sel" },
         { optionName: "فارسی", optionKey: "fa" },
         { optionName: "english", optionKey: "en" },
     ];
+
+    const changeLang = (arg: string) => {
+        console.log(arg);
+        document.cookie = `NEXT_LOCALE=${arg}; path=/; max-age=31536000; SameSite=lax`
+        window.location.reload()
+    };
     return (
         <div className="dropdown dropdown-end">
             <button tabIndex={0} role='button' className="aspect-square btn m-1 px-2">
@@ -26,7 +26,7 @@ const LanguageChanger = () => {
                     <li
                         className={`${index === 0 ? "disabled" : option.optionKey !== local&& "hover:bg-petBlue/40 hover:text-gray-100 cursor-pointer"} ${option.optionKey === local && "bg-petBlue text-white cursor-default"} rounded-btn p-2 prose text-sm`}
                         key={option.optionKey}
-                        onClick={() => changeLanguage(option.optionKey)}
+                        onClick={() => changeLang(option.optionKey)}
                     >
                         {option.optionName}
                     </li>

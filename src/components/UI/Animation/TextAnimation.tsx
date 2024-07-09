@@ -11,7 +11,8 @@ export interface TypingAnimationProps {
     duration?: number
     amountView?: number,
     once?: boolean
-    typeAnimation: "typing" | "lineOpacity"
+    typeAnimation: "typing" | "lineOpacity",
+    childClass?:string
 }
 
 const TextAnimations = ({
@@ -23,7 +24,8 @@ const TextAnimations = ({
     duration,
     amountView,
     once,
-    typeAnimation
+    typeAnimation,
+    childClass
 }: TypingAnimationProps) => {
     const textArray: string[] = Array.isArray(text) ? text : [text]
     const boxRef = useRef(null)
@@ -53,6 +55,7 @@ const TextAnimations = ({
                 animate={isInView ? "animate" : "initial"}
                 transition={{ staggerChildren: staggerTime ?? 0.05, delayChildren: delay ?? 0 }}
                 aria-hidden
+                className={childClass}
             >
 
                 {textArray.map(line =>
