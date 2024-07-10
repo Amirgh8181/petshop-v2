@@ -13,7 +13,7 @@ const ClinicPreview = () => {
         >
             <ScaleAnimation
                 scaleVal
-                delay={1.5}
+                delay={1}
                 childClass='w-[40%] absolute top-0 left-0 z-0'
                 once
             >
@@ -29,8 +29,8 @@ const ClinicPreview = () => {
                     typeAnimation='typing'
                     text={"your animal health"}
                     el='h1'
-                    staggerTime={0.07}
-                    duration={0.07}
+                    staggerTime={0.05}
+                    duration={0.05}
                     once
                 />
                 <TextAnimations
@@ -38,8 +38,8 @@ const ClinicPreview = () => {
                     typeAnimation='typing'
                     text={"is our priority"}
                     el='h3'
-                    staggerTime={0.07}
-                    duration={0.07}
+                    staggerTime={0.05}
+                    duration={0.05}
                     once
                 />
                 <ScaleAnimation
@@ -56,9 +56,9 @@ const ClinicPreview = () => {
             </div>
             <ScaleAnimation
                 scaleVal
-                delay={1.5}
-                childClass='w-[40%] absolute top-0 right-0 z-0'
+                delay={1}
                 once
+                childClass='w-[40%] absolute top-0 right-0 z-0'
             >
                 <StaticImageCopm
                     img={leftImg}

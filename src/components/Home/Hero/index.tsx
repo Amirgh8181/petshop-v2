@@ -6,6 +6,7 @@ import Image from 'next/image'
 import TextAnimations from '@/src/components/UI/Animation/TextAnimation'
 import ScaleAnimation from '@/src/components/UI/Animation/ScaleAnimation'
 import { useLocale } from 'next-intl'
+import StaticImageCopm from '../../UI/StaticImage'
 
 
 const HeroSection = () => {
@@ -14,11 +15,11 @@ const HeroSection = () => {
 
   return (
     <div
-      className='w-full md:h-screen h-[90dvh] flex justify-center items-center relative'
+      className='w-full md:h-screen h-[90dvh] flex justify-center items-center relative overflow-hidden'
     >
       <WaveBg className="w-full md:h-[105%] h-[110%] absolute inset-0 text-primary xl:hidden" />
       <div className=" w-[90%] md:h-[85%] h-[70%] xl:h-[70%] glass rounded-box mt-[6vmax]">
-        <div className='md:w-1/2 w-full md:h-1/2 flex flex-col justify-end md:text-left text-center p-6'>
+        <article className='md:w-1/2 w-full md:h-1/2 flex flex-col justify-end md:text-left text-center p-6'>
           <TextAnimations
             text='Box Office News!'
             boxClass='md:text-5xl text-3xl font-bold md:w-[80%] w-full'
@@ -42,17 +43,17 @@ const HeroSection = () => {
             once
             typeAnimation='lineOpacity'
           />
-        </div>
+        </article>
         <ScaleAnimation
-          duration={0.75}
+          duration={1}
           delay={2}
           once
           scaleVal
           boxClass='hidden md:block'
-          childClass={`absolute ${local === "fa" ? "left-0" : "right-0"} top-0`}>
-          <Image
-            src={heroSide} width={heroSide.width} height={heroSide.height} alt='heroImage'
-            className={`w-full aspect-square object-cover ${local === "fa" && "rotateY"}`} />
+          childClass={`absolute ${local === "fa" ? "left-0" : "right-0"} top-0 flex justify-end`}>
+          <StaticImageCopm
+            img={heroSide}  imgAlt='heroImage'
+            imgClass={`w-[70%] aspect-square object-cover ${local === "fa" && "rotateY"}`} />
         </ScaleAnimation>
         <ScaleAnimation
           duration={0.75}
@@ -61,9 +62,10 @@ const HeroSection = () => {
           scaleVal
           boxClass='h-1/2 absolute bottom-0 right-0 left-0'
           childClass="h-full w-full absolute inset-0 origin-center">
-          <Image
-            src={heroBottom} width={heroBottom.width} height={heroBottom.height} alt='heroImage'
-            className="object-contain w-full md:w-[90%] md:aspect-[16/4] aspect-[16/6] mx-auto absolute bottom-0 left-0 right-0" />
+          <StaticImageCopm
+            img={heroBottom}
+            imgAlt='heroImage'
+            imgClass="object-contain w-full md:w-[90%] md:aspect-[16/4] aspect-[16/6] mx-auto absolute bottom-0 left-0 right-0" />
         </ScaleAnimation>
       </div>
     </div>

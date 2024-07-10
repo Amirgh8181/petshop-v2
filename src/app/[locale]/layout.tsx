@@ -78,7 +78,7 @@ export default async function RootLayout({
           <NextIntlClientProvider messages={messages} locale={locale}>
             <ThemeProvider>
               <NavBar />
-              <main className="xl:container min-h-screen mx-auto flex flex-col justify-center items-center">
+              <main className="xl:container min-h-screen mx-auto flex flex-col justify-center items-center space-y-[5vmax]">
                 {children}
               </main>
               <Footer />

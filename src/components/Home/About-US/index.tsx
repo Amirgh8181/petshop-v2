@@ -5,7 +5,7 @@ import TranslateAnimation from '../../UI/Animation/TranslateAnimation'
 const AboutUs = () => {
 
     return (
-        <div id='aboutUs' className='flex flex-col md:flex-row w-full items-center justify-center h-screen'>
+        <div id='aboutUs' className='flex flex-col md:flex-row w-full items-center justify-center'>
             <TranslateAnimation once duration={1} xVal={40} yVal={40} boxClass=' md:order-1 order-2 md:w-1/2 w-full md:h-full flex md:items-center items-start justify-center mt-4 md:mt-0'>
                 <Image src={'/images/about-us/about-us.png'} alt='about-us' width={500} height={500} priority={true} quality={100}
                     className='md:w-full w-[70%] aspect-square mx-auto my-[2vmax] md:my-0'

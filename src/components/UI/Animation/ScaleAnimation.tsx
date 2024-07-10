@@ -18,6 +18,9 @@ interface scaleAnimationsProps extends animationComponentProps {
     scaleYVal?: boolean
     scaleXVal?: boolean
     scaleVal?: boolean
+    stiffness?: number
+    damping?: number
+    ease?: [number, number, number, number]
 }
 const ScaleAnimation = ({
     boxClass,
@@ -31,7 +34,10 @@ const ScaleAnimation = ({
     scaleVal,
     once,
     amountView,
-    childClass
+    childClass,
+    stiffness,
+    damping,
+    ease
 }: scaleAnimationsProps) => {
     const scaleRef = useRef(null)
     const isInView = useInView(scaleRef, { amount: amountView ?? 0.5, once })
@@ -49,6 +55,10 @@ const ScaleAnimation = ({
                 delay: delay ?? 0,
                 duration: duration ?? 0.75,
                 when: whenAnimate ?? "beforeChildren",
+                ease: ease ?? [.34,.55,.44,.72],
+                type: stiffness ? "tween" : "spring",
+                damping: damping ?? 10,
+                stiffness: stiffness ?? 100,
             }
         },
         exit: {
