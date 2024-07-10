@@ -1,5 +1,3 @@
-"use client"
-import React from 'react'
 import QuestionText from '../../UI/QuestionSection/QuestionText';
 import QuestionImage from '../../UI/QuestionSection/QuestionImage';
 import ScaleAnimation from '../../UI/Animation/ScaleAnimation';
@@ -27,31 +25,3 @@ const QuestionContainer = () => {
 }
 
 export default QuestionContainer;
-
-
-/*
-import { motion } from 'framer-motion'
-import QuestionText from '../UI/QuestionSection/QuestionText'
-import QuestionImage from '../UI/QuestionSection/QuestionImage'
-
-    const heroContainer = {
-        initial: {
-            opacity: 0,
-            y: 20
-        },
-        animate: {
-            opacity: 1,
-            y: 0,
-            transition: {
-                duration: 0.5,
-                when: 'beforeChildren',
-                staggerChildren: 0.3,
-
-            }
-        }
-    }
-
-
-                    <QuestionImage />
-
-*/

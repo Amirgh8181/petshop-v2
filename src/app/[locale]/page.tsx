@@ -5,7 +5,8 @@ import { WaveBg } from '@/src/assets/svgs';
 import HeroSection from '@/src/components/Home/Hero';
 import AboutUs from '@/src/components/Home/About-US';
 import ShopPreview from '@/src/components/Home/ShopPreview';
-import QuestionContainer from '@/src/components/Home/QuestionSection';
+import QuestionContainer from '@/src/components/Home/QuestionPreview';
+import ClinicPreview from '@/src/components/Home/ClinicPreview';
 
 export default function Home() {
   const t = useTranslations('Index');
@@ -15,6 +16,7 @@ export default function Home() {
       <AboutUs />
       <ShopPreview />
       <QuestionContainer />
+      <ClinicPreview />
     </>
   );
 }
