@@ -15,16 +15,15 @@ export const useFavoriteList = create<State>()(
     persist(
         (set) => ({
             FavoriteList: [],
-            
+
             setFavoriteList: (arg) => {
                 const favor = useFavoriteList.getState().FavoriteList
-                
+
                 if (favor.includes(arg)) {
-                    for (let i = 0; i < favor.length; i++) {
-                        if (arg._id === favor[i]._id) {
-                            favor.splice(i, 1)
-                        }
-                    }
+                    let index = favor.findIndex(q => q._id === arg._id)
+                    favor.splice(index, 1)
+
+
                     set({
                         FavoriteList: [...favor]
                     })
@@ -34,7 +33,6 @@ export const useFavoriteList = create<State>()(
                         FavoriteList: [...favor, arg]
                     })
                 }
-                console.log(favor);
             }
         }),
         {
