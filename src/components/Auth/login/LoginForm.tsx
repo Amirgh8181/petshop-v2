@@ -11,8 +11,6 @@ import { LoginSchema } from '@/src/schema/zodSchema/LoginSchema';
 import { LoginDataType } from '@/src/types/AuthInput';
 //component and styles
 import styles from '../authstyle.module.css'
-import InputErr from '@/src/components/UI/Inputs/InputErr';
-import InputLabel from '../../UI/Inputs/InputLabel';
 //icons
 import { MdLockOutline, MdOutlineEmail } from "react-icons/md";
 //sweet alert
@@ -20,9 +18,7 @@ import sweetAl from '@/src/actions/swal';
 //type
 import { AuthInputType } from '@/root/types';
 //action
-import signInAction from '@/src/actions/signInAction';
 import LoadingUi from '../../UI/Loading';
-import AuthInputs from '../../UI/Inputs/SignInInputs';
 import { signIn } from 'next-auth/react';
 import AuthBtn from '../../UI/Button/AuthBtn';
 import SignInInputs from '../../UI/Inputs/SignInInputs';

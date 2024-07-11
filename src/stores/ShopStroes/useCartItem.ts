@@ -69,62 +69,55 @@ export const useCartItems = create<State>()(
             setIncrement: (arg) => {
                 const cart = useCartItems.getState().CartItem
                 let totalPri: number = useCartItems.getState().totalPrice;
-                let argPrice: number
+                //find item index
+                let index = cart.findIndex(q => q._id === arg)
+                //increase item count for buy
+                cart[index].count++;
+                //change to number type
+                const argPrice: number = parseFloat(cart[index].price.slice(1));
+                //calculate total price
+                totalPri += argPrice
 
-                for (let i = 0; i < cart.length; i++) {
-                    if (arg === cart[i]._id) {
-                        cart[i].count++;
-                        argPrice = Number(cart[i].price.replace(/[^0-9\.]+/g, ""));
-                        totalPri += argPrice
-                        set({
-                            CartItem: [...cart],
-                            totalPrice: totalPri
-                        })
-                        return
-                    }
-                }
+                set({
+                    CartItem: [...cart],
+                    totalPrice: parseFloat(totalPri.toFixed(2))
+                })
+
+
             },
             setDecrement: (arg) => {
                 const cart = useCartItems.getState().CartItem
                 let totalPri: number = useCartItems.getState().totalPrice;
-                let argPrice: number;
 
-                for (let i = 0; i < cart.length; i++) {
-                    if (arg === cart[i]._id) {
-                        argPrice = Number(cart[i].price.replace(/[^0-9\.]+/g, ""));
-                        if (cart[i].count === 1) {
-                            totalPri -= argPrice
-                            cart.splice(i, 1)
-                        } else {
-                            totalPri -= argPrice
-                            cart[i].count--;
-                        }
+                let index = cart.findIndex(q => q._id === arg)
 
-                        set({
-                            CartItem: [...cart],
-                            totalPrice: totalPri
-                        })
-                        return
-                    }
+                const argPrice: number = parseFloat(cart[index].price.slice(1));
+
+                if (cart[index].count === 1) {
+                    totalPri -= argPrice
+                    cart.splice(index, 1)
+                } else {
+                    totalPri -= argPrice
+                    cart[index].count--;
                 }
+
+                set({
+                    CartItem: [...cart],
+                    totalPrice: parseFloat(totalPri.toFixed(2))
+                })
+
             },
             setDeleteItem: (arg) => {
                 const cart = useCartItems.getState().CartItem
                 let totalPri: number = useCartItems.getState().totalPrice;
-                let argPrice: number;
-
-                for (let i = 0; i < cart.length; i++) {
-                    if (arg === cart[i]._id) {
-                        argPrice = Number(cart[i].price.replace(/[^0-9\.]+/g, ""));
-                        totalPri -= cart[i].count * argPrice
-                        cart.splice(i, 1)
-                        set({
-                            CartItem: [...cart],
-                            totalPrice: totalPri,
-                        })
-                        return
-                    }
-                }
+                let index = cart.findIndex(q => q._id === arg)
+                const argPrice: number = parseFloat(cart[index].price.slice(1));
+                totalPri -= cart[index].count * argPrice
+                cart.splice(index, 1)
+                set({
+                    CartItem: [...cart],
+                    totalPrice: parseFloat(totalPri.toFixed(2)),
+                })
             }
         }),
         {

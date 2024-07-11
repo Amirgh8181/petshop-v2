@@ -22,7 +22,7 @@ const AddFavoriteListBtn = ({ itemDetails }: { itemDetails: ShopItem }) => {
                 className='btn rounded-full w-1/2 font-bold md:text-base text-sm bg-primary
                           border-2 border-primary dark:text-white'>
                 <span className={`${chekIncludes&& '!text-red-500'} text-xl`}><FaRegHeart /></span>
-                <span>{chekIncludes ? "Remove From List" : "Add To FavoriteList"}</span>
+                <span className={`${chekIncludes&& '!text-red-500'}`}>{chekIncludes ? "Remove From List" : "Add To FavoriteList"}</span>
             </div>
         </>
     )

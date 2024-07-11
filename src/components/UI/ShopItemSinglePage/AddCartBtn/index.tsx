@@ -20,8 +20,8 @@ const AddCartBtn = ({ itemDetails }: { itemDetails: ShopItem }) => {
             <div onClick={() => addCart(itemDetails)}
                 className='btn rounded-full w-1/2 font-bold md:text-base text-sm dark:bg-petBlue/20 dark:border-petBlue
                 border-2 bg-darkPetBlue/20 border-darkPetBlue dark:text-white'>
-                <span className='text-xl'><MdOutlineAddShoppingCart /></span>
-                <span>{chekIncludes ? "Remove From Cart" : "Add To Cart"}</span>
+                <span className={`${chekIncludes&& '!text-red-500'} text-xl`}><MdOutlineAddShoppingCart /></span>
+                <span className={`${chekIncludes&& '!text-red-500'}`}>{chekIncludes ? "Remove From Cart" : "Add To Cart"}</span>
             </div>
         </>
     )
