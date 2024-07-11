@@ -4,15 +4,17 @@ import Link from 'next/link'
 import React from 'react'
 
 interface CardUiProps {
-    product: ShopItem
+    product: ShopItem,
+    btnTxt?: string
 }
 
 
 
-const CardUi = ({ product }: CardUiProps) => {
+const CardUi = ({ product, btnTxt }: CardUiProps) => {
     return (
         <div className="card card-compact dark:bg-primary/60 bg-primary/10 glass w-[90%] shadow-inner 
-        hadow-primary flex flex-col justify-center items-center group mx-auto">
+        hadow-primary flex flex-col justify-center items-center group mx-auto relative">
+
             <figure className='p-3'>
                 <div className='w-full aspect-[16/10] overflow-hidden rounded-btn'>
                     <Image
@@ -27,7 +29,7 @@ const CardUi = ({ product }: CardUiProps) => {
                 <h2 className="card-title text-sm md:text-lg text-center">{product.name}</h2>
                 <p className='text-xs md:text-sm'>{product.price}</p>
                 <div className="card-actions w-full">
-                    <Link href={`/Shop/${product._id}`} className="btn btn-primary w-[80%] mx-auto">Buy Now</Link>
+                    <Link href={`/Shop/${product._id}`} className="btn btn-primary w-[80%] mx-auto">{btnTxt ?? "Buy Now"}</Link>
                 </div>
             </div>
         </div>

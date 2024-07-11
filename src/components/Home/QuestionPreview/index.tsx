@@ -5,7 +5,7 @@ import TranslateAnimation from '../../UI/Animation/TranslateAnimation';
 const QuestionContainer = () => {
 
     return (
-        <ScaleAnimation  once amountView={0.2} scaleVal boxClass='w-full h-screen grid place-items-center overflow-hidden'
+        <div className='w-full h-screen grid place-items-center overflow-hidden'
         >
             <div className='w-[90%] h-auto p-8 flex flex-col md:flex-row items-center justify-center bg-primary space-y-4 md:space-y-0 rounded-3xl mx-auto overflow-hidden'>
 
@@ -25,7 +25,7 @@ const QuestionContainer = () => {
                     <QuestionImage />
                 </ScaleAnimation>
             </div>
-        </ScaleAnimation>
+        </div>
     )
 }
 
