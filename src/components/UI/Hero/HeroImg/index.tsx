@@ -1,24 +1,29 @@
-import Image from 'next/image'
+import Image, { StaticImageData } from 'next/image'
 import ScaleAnimation from '../../Animation/ScaleAnimation'
+import StaticImageCopm from '../../StaticImage'
 
 
-interface HeroImage {
-    mainImage: string,
+interface HeroImageProps {
+    mainImage: StaticImageData,
 }
-const HeroImage = ({ mainImage }: HeroImage) => {
+const HeroImage = ({ mainImage }: HeroImageProps) => {
 
     return (
-        <ScaleAnimation once delay={1} scaleVal boxClass='w-full h-full md:order-2 order-1 flex justify-center items-center'>
-                <Image
-                    src={mainImage}
-                    alt='hero-pic'
-                    width={500}
-                    height={500}
-                    priority={true}
-                    quality={100}
-                    className={`w-[90%] aspect-square mx-auto`}
+        <div className='w-full h-full grid place-content-center'>
+            <ScaleAnimation
+                once
+                duration={1}
+                scaleVal
+                boxClass='w-full customRadus'>
+                <StaticImageCopm
+                    img={mainImage}
+                    imgAlt='hero-pic'
+                    imgClass={`w-[70%] aspect-square mx-auto mask mask-squircle md:mt-[3vmax]`
+
+                    }
                 />
-        </ScaleAnimation>
+            </ScaleAnimation>
+        </div>
     )
 }
 

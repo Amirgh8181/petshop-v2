@@ -1,20 +1,24 @@
-import { ClinicsAndSheltersHero } from '@/src/components/UI/ClinicsAndSheltersHero'
 import ClinicAndShelterCard from '@/src/components/UI/clinicAndShelterCard'
 import getShelters from '@/src/lib/getShelters'
-import React from 'react'
+import { Hero } from '@/ui/Hero'
+import mainImg from "@/public/images/Shelters/hero-pic.jpg"
+import bgImage from "@/public/images/Shelters/hero-bg.jpg"
 
 const Shelters = async () => {
     const req = await getShelters()
 
     return (
-        <div>
-            <div>
-                <ClinicsAndSheltersHero img={'/images/Shelters/hero-pic.png'} />
-            </div>
+        <>
+            <Hero
+                img={mainImg}
+                bgImage={bgImage}
+                title='culpa qui officia deserunt '
+                desc='Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+                      pariatur Excepteur sint.'/>
             <div className='w-full min-h-screen mt-6'>
                 <ClinicAndShelterCard href='/Shelters/' data={req} />
             </div>
-        </div>
+        </>
     )
 }
 

@@ -1,20 +1,25 @@
-import { ClinicsAndSheltersHero } from '@/src/components/UI/ClinicsAndSheltersHero'
+import { Hero } from '@/ui/Hero'
 import ClinicAndShelterCard from '@/src/components/UI/clinicAndShelterCard'
 import getClinics from '@/src/lib/getClinics';
-import React from 'react'
+import mainImg from "@/public/images/Clinics/hero-pic.jpg"
+import bgImage from "@/public/images/Clinics/hero bg.jpg"
 
 const Clinics = async () => {
     const req = await getClinics()
 
     return (
-        <div>
-            <div>
-                <ClinicsAndSheltersHero img={'/images/Clinics/hero-pic.png'} />
-            </div>
+        <>
+            <Hero
+                img={mainImg}
+                bgImage={bgImage}
+                title='culpa qui officia deserunt '
+                desc='Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+                      pariatur Excepteur sint.'
+                    />
             <div className='w-full min-h-screen mt-6'>
                 <ClinicAndShelterCard href='/Clinics/' data={req} />
             </div>
-        </div>
+        </>
     )
 }
 

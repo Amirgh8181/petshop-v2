@@ -53,3 +53,7 @@ details summary::-webkit-details-marker {
   .rotateY{
     transform: rotateY(180deg)
   }
+
+  .customRadus{
+    border-radius: 74% 26% 82% 18% / 43% 80% 20% 57% ;
+  }

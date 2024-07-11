@@ -7,11 +7,13 @@ interface HeroText {
     description: string
 }
 const HeroText = ({ titleh1, titleh2, description }: HeroText) => {
-   
-    return (
-        <OpacityContent once duration={2} delay={1.25} 
-        boxClass='w-full md:h-screen h-[50vh]  flex justify-center items-center md:order-1 order-2'>
 
+    return (
+        <OpacityContent
+            once
+            duration={1}
+            boxClass='w-full md:h-screen h-[50vh]  flex justify-center items-center md:order-1 order-2'
+        >
             <div className='w-full flex flex-col items-center justify-center md:text-left text-center
          text-white p-4 md:p-8 mt-4 space-y-4'>
                 {titleh1 && <h1 className='w-full md:w-[80%] md:text-4xl text-xl font-bold'>{titleh1}</h1>}

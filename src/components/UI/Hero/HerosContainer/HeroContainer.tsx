@@ -1,13 +1,19 @@
+import { StaticImageData } from "next/image"
 import ScaleAnimation from "../../Animation/ScaleAnimation"
+import StaticImageCopm from "../../StaticImage"
 
-const HeroContainer = ({ children }: { children: React.ReactNode }) => {
+const HeroContainer = ({ children, img }: { children: React.ReactNode, img: StaticImageData }) => {
 
     return (
-        <ScaleAnimation once scaleXVal boxClass="w-full h-screen origin-left">
-            <div className="flex flex-col md:flex-row w-full h-screen bg-gradient-to-tr from-primary via-darkPetBlue/60 dark:via-petBlue to-primary">
+        <div className="w-full h-screen relative">
+            <div className="w-full h-full absolute inset-0 z-0">
+                <StaticImageCopm img={img} imgAlt="hero-bg" imgClass="w-full h-full absolute inset-0" />
+            </div>
+            <div className="flex flex-col md:flex-row w-full h-full bg-gradient-to-r 
+            from-petBlue/80 to-darkPetBlue/80 relative z-10 overflow-hidden">
                 {children}
             </div>
-        </ScaleAnimation>
+        </div>
     )
 }
 

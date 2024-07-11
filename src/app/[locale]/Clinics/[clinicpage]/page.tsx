@@ -14,7 +14,7 @@ const ClinicPage = async ({ params }: { params: { clinicpage: string } }) => {
                     <RelationWay clinicData={req} />
                 </div>
                 <div className='flex flex-col items-center md:w-[55%] w-full bg-white rounded-[3rem] p-4'>
-                    <ClinicSinglePageRightSide clinicData={req} />
+                    <ClinicSinglePageRightSide />
                 </div>
             </div>
         </div>
