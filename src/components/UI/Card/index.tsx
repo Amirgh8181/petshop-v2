@@ -13,7 +13,7 @@ interface CardUiProps {
 const CardUi = ({ product, btnTxt }: CardUiProps) => {
     return (
         <div className="card card-compact dark:bg-primary/60 bg-primary/10 glass w-[90%] shadow-inner 
-        hadow-primary flex flex-col justify-center items-center group mx-auto relative">
+        shadow-primary group mx-auto">
 
             <figure className='p-3'>
                 <div className='w-full aspect-[16/10] overflow-hidden rounded-btn'>
@@ -27,7 +27,7 @@ const CardUi = ({ product, btnTxt }: CardUiProps) => {
             </figure>
             <div className="card-body items-center w-full">
                 <h2 className="card-title text-sm md:text-lg text-center">{product.name}</h2>
-                <p className='text-xs md:text-sm'>{product.price}</p>
+                <p className='text-xs md:text-sm textStrok'>{product.price}</p>
                 <div className="card-actions w-full">
                     <Link href={`/Shop/${product._id}`} className="btn btn-primary w-[80%] mx-auto">{btnTxt ?? "Buy Now"}</Link>
                 </div>

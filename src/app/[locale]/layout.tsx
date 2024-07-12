@@ -1,5 +1,4 @@
 import type { Metadata, Viewport } from "next";
-import { Inter } from "next/font/google";
 import "@/src/assets/css/globals.css";
 import { getMessages, getTranslations } from "next-intl/server";
 import { NextIntlClientProvider } from "next-intl";
@@ -8,7 +7,6 @@ import ThemeProvider from "@/src/context/ThemeContext";
 import Footer from "@/src/components/Footer";
 import icon from "@/public/images/logo/logo.png"
 import { NextAuthProvider } from "@/src/providers/next-auth";
-const inter = Inter({ subsets: ["latin"] });
 
 export async function generateMetadata({ params: { locale } }: { params: { locale: string } }) {
   const t = await getTranslations({ locale, namespace: 'metadata' });
@@ -73,7 +71,7 @@ export default async function RootLayout({
 
   return (
     <html lang={locale} dir={locale === "fa" ? "rtl" : "ltr"} className="scroll-smooth transition-colors duration-500">
-      <body className={`${inter.className} dark:text-white text-black`}>
+      <body className={`dark:text-white text-black`}>
         <NextAuthProvider>
           <NextIntlClientProvider messages={messages} locale={locale}>
             <ThemeProvider>

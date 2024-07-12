@@ -21,7 +21,7 @@ const Category = () => {
 
     return (
         <div className='w-full flex flex-col items-center justify-center space-y-6'>
-            <h6>Shop by collection</h6>
+            <h3>Shop by collection</h3>
             <ScaleAnimation once scaleVal childClass='flex ' boxClass='w-full flex justify-center mx-auto md:space-x-4 text-center'>
                 {categDetails.map(item =>
                     <Link href={"/Shop/category"} key={item.type}

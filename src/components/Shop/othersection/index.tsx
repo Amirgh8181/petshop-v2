@@ -1,18 +1,31 @@
-"use client"
+import Image from 'next/image'
+import Link from 'next/link'
 import React from 'react'
-import UiCart from './UiCart'
-import MembershipOffer from './MembershipOffer'
-//import { useSession } from 'next-auth/react'
+import StaticImageCopm from '../../UI/StaticImage'
+import img from "@/public/images/Shop/uicart.jpg"
 
-const OtherSection = () => {
-    //const { data: session } = useSession()
-    
-    return (
-        <div className='w-full flex flex-col items-center space-y-10'>
-            <div><UiCart /></div>
-            {/*!session?.user && <div className='w-full'><MembershipOffer /></div>*/}
+const Collection = () => {
+  return (
+    <div className='md:w-[60%] w-[90%] md:aspect-[16/6]  flex md:flex-row flex-col items-center justify-between
+     rounded-[3.5rem] bg-primary overflow-hidden mx-auto'
+    >
+      <div className='md:w-1/2 w-full'>
+        <StaticImageCopm img={img} imgAlt='ui cart img' imgClass='w-full h-full object-contain' />
+      </div>
+      <div className='flex flex-col items-center text-center md:text-left md:justify-center md:items-start
+        md:w-1/2 max-h-full h-full space-y-4 p-4 text-white'>
+        <h3 className='md:text-2xl text-xl'>Made for all lifs’s advantures.</h3>
+        <p className='md:text-sm text-xs w-[90%]'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.</p>
+        <div className='w-full flex justify-center'>
+          <Link
+            className='w-[60%] lg:w-[40%] aspect-[9/2] btn'
+            href='/Shop/category/All'>
+            Collection
+          </Link>
         </div>
-    )
+      </div>
+    </div>
+  )
 }
 
-export default OtherSection
+export default Collection

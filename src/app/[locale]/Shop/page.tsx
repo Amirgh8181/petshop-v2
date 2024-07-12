@@ -1,10 +1,10 @@
 import ProductPreview from '@/src/components/Shop/ShopItem'
 import Category from '@/src/components/Shop/ShowCategory'
-import OtherSection from '@/src/components/Shop/othersection'
 import { Hero } from '@/ui/Hero'
 import getShopItems from '@/src/lib/getShopItems'
 import mainImg from "@/public/images/Shop/hero.jpg"
 import bgImage from "@/public/images/Shop/heroBg.jpg"
+import Collection from '@/src/components/Shop/othersection'
 
 const Shop = async () => {
   let loading = true;
@@ -26,7 +26,7 @@ const Shop = async () => {
           : <ProductPreview products={products} />
       }
 
-      <OtherSection />
+      <Collection />
     </main>
   )
 }

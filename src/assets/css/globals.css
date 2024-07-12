@@ -2,19 +2,42 @@
 @tailwind components;
 @tailwind utilities;
 
-html{
-  scroll-snap-type: y mandatory;;
-}
-
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-*{
+* {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+}
+
+:root {
+  /* Minimum and maximum font sizes for headings */
+  --min-h1: 2rem;
+  --max-h1: 4rem;
+  --min-h2: 1.75rem;
+  --max-h2: 3.5rem;
+  --min-h3: 1.5rem;
+  --max-h3: 3rem;
+  --min-h4: 1.25rem;
+  --max-h4: 2.5rem;
+  --min-h5: 1rem;
+  --max-h5: 2rem;
+  --min-h6: 0.875rem;
+  --max-h6: 1.75rem;
+
+  /* Line heights for headings */
+  --line-height-h1: 1.2;
+  --line-height-h2: 1.3;
+  --line-height-h3: 1.4;
+  --line-height-h4: 1.5;
+  --line-height-h5: 1.6;
+  --line-height-h6: 1.7;
+
+  /* Font weights for headings */
+  --font-weight-h1: 700;
+  --font-weight-h2: 600;
+  --font-weight-h3: 500;
+  --font-weight-h4: 500;
+  --font-weight-h5: 400;
+  --font-weight-h6: 300;
 }
 
 @layer utilities {
@@ -27,33 +50,65 @@ details > summary {
 }
 
 details summary::-webkit-details-marker {
-  display:none;
+  display: none;
 }
 
-.btn{
-  @apply p-0 transition-colors duration-500
+.btn {
+  @apply p-0 transition-colors duration-500;
 }
-.hideScrollbar::-webkit-scrollbar{
-    display: none;
+.hideScrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.hideScrollbar {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+@layer components {
+  .heroSection {
+    @apply md:w-1/2 md:h-full w-full h-1/2;
   }
-  
-  /* Hide scrollbar for IE, Edge and Firefox */
-  .hideScrollbar {
-    -ms-overflow-style: none;  /* IE and Edge */
-    scrollbar-width: none;  /* Firefox */
-  }
+}
+
+.rotateY {
+  transform: rotateY(180deg);
+}
 
 
-  @layer components{
-    .heroSection{
-      @apply md:w-1/2 md:h-full w-full h-1/2
-    }
-  }
-  
-  .rotateY{
-    transform: rotateY(180deg)
-  }
+h1 {
+  font-size: clamp(var(--min-h1), 2vw + 1rem, var(--max-h1));
+  line-height: var(--line-height-h1);
+  font-weight: var(--font-weight-h1);
+}
 
-  .customRadus{
-    border-radius: 74% 26% 82% 18% / 43% 80% 20% 57% ;
-  }
+h2 {
+  font-size: clamp(var(--min-h2), 1.75vw + 1rem, var(--max-h2));
+  line-height: var(--line-height-h2);
+  font-weight: var(--font-weight-h2);
+}
+
+h3 {
+  font-size: clamp(var(--min-h3), 1.5vw + 1rem, var(--max-h3));
+  line-height: var(--line-height-h3);
+  font-weight: var(--font-weight-h3);
+}
+
+h4 {
+  font-size: clamp(var(--min-h4), 1.25vw + 1rem, var(--max-h4));
+  line-height: var(--line-height-h4);
+  font-weight: var(--font-weight-h4);
+}
+
+h5 {
+  font-size: clamp(var(--min-h5), 1vw + 1rem, var(--max-h5));
+  line-height: var(--line-height-h5);
+  font-weight: var(--font-weight-h5);
+}
+
+h6 {
+  font-size: clamp(var(--min-h6), 0.75vw + 1rem, var(--max-h6));
+  line-height: var(--line-height-h6);
+  font-weight: var(--font-weight-h6);
+}
