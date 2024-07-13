@@ -19,7 +19,7 @@ const AddFavoriteListBtn = ({ itemDetails }: { itemDetails: ShopItem }) => {
     return (
         <>
             <div onClick={() => addFavorite(itemDetails)}
-                className='btn rounded-full w-1/2 font-bold md:text-base text-sm bg-primary
+                className='btn rounded-full md:w-1/2 w-[80%] font-bold md:text-base text-sm bg-primary
                           border-2 border-primary dark:text-white'>
                 <span className={`${chekIncludes&& '!text-red-500'} text-xl`}><FaRegHeart /></span>
                 <span className={`${chekIncludes&& '!text-red-500'}`}>{chekIncludes ? "Remove From List" : "Add To FavoriteList"}</span>
