@@ -4,10 +4,14 @@ import { persist } from "zustand/middleware";
 
 // Define the interface of the Cart state
 interface State {
-    QuestionScore:number,
-    QuestionState: { [key: number]: { value: number } }
-    setQuestionState: (questionValue: number, questionNumber: number) => void;
-    setQuestionScore: () => void;
+    QuestionScore: number,
+    QuestionState: { [key: number]: { value: number } },
+    QuestionNumber: number,
+
+    setQuestionState: (questionValue: number) => void;
+    setQuestionFinalScore: () => void;
+    setStartQuestion: () => void
+    setRefreshQuestion: () => void
 }
 
 interface initialData {
@@ -46,23 +50,42 @@ export const useQuestionScore = create<State>()(
         (set) => ({
             QuestionScore: 0,
             QuestionState: INITIAL_STATE.QuestionScore,
-
-            setQuestionState: (questionValue, questionNumber) => {
-                const questionStateClone = useQuestionScore.getState().QuestionState;
-                questionStateClone[questionNumber].value=questionValue
-
-                 set({
-                    QuestionState: {...questionStateClone}
-                 })
+            QuestionNumber: 0,
+            setRefreshQuestion() {
+                set({
+                    QuestionNumber: 0
+                })
             },
-            setQuestionScore:()=>{
+            setStartQuestion() {
+                let stateNumber = useQuestionScore.getState().QuestionNumber
+                set({
+                    QuestionNumber: stateNumber + 1
+                })
+            },
+            setQuestionState: (questionValue) => {
                 const questionStateClone = useQuestionScore.getState().QuestionState;
-                let counter:number=0
-                for (const i in questionStateClone){
-                    counter+=questionStateClone[i].value
+                let stateNumber = useQuestionScore.getState().QuestionNumber
+                questionStateClone[stateNumber].value = questionValue
+
+                console.log(questionStateClone);
+                console.log(stateNumber);
+                console.log(questionStateClone);
+
+                set({
+                    QuestionState: { ...questionStateClone },
+                    QuestionNumber: stateNumber + 1
+                })
+            },
+
+
+            setQuestionFinalScore: () => {
+                const questionStateClone = useQuestionScore.getState().QuestionState;
+                let counter: number = 0
+                for (const i in questionStateClone) {
+                    counter += questionStateClone[i].value
                 }
                 set({
-                    QuestionScore:counter
+                    QuestionScore: counter
                 })
             }
         }),

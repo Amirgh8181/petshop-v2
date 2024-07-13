@@ -30,7 +30,7 @@ interface LoginInputType extends AuthInputType {
 
 
 
-const LoginForm = ({ type }: { type: string }) => {
+const LoginForm = () => {
     //hook form initialize 
     const {
         register,

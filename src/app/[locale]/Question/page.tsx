@@ -1,16 +1,21 @@
-import QuestionHoc from '@/src/components/QuestionPage/QuestionHoc'
-import Link from 'next/link'
-import React from 'react'
+import QuestionHoc from '@/src/components/UI/Hoc/QuestionHoc'
+import QuestionContainer from '@/src/components/QuestionPage/QuestionContainer'
+
+import mainImage from "@/public/images/Question/main.png"
+import leftImage from "@/public/images/Question/secondary.png"
+import rightImage from "@/public/images/Question/secondary2.png"
 
 const Question = () => {
   return (
-      <QuestionHoc step={0}>
-        <Link
-          content='go to start question'
-          className='w-[80%] aspect-[11/1] btn'
-          href='/Question/1'
-        >go to start question</Link>
-      </QuestionHoc>
+    <QuestionHoc
+      mainImage={mainImage}
+      leftImage={leftImage}
+      rightImage={rightImage}
+      text="Pet Club"
+      text1={["All the Lorem Ipsum", "generators on the Internet tend", "to repeat"]}   >
+
+      <QuestionContainer />
+    </QuestionHoc>
   )
 }
 

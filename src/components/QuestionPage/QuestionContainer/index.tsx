@@ -1,44 +1,73 @@
 "use client"
-import { notFound, useRouter } from 'next/navigation'
-import React, { useState } from 'react'
+import { notFound } from 'next/navigation'
+import React, { useEffect, useState } from 'react'
 import { CustomRadio } from '../CustomRadio'
 import { useQuestionScore } from '@/src/stores/Question/useQuestionScore'
-import Link from 'next/link'
+import StartQuestion from '../StartQuestion'
+import EndQuestion from '../EndQuestion'
+import { questionData } from '../data'
 
 
-interface questionData {
-    [key: number]: { 5: string, 10: string, 15: string, 20: string }
+
+
+const QuestionContainer = () => {
+
+    const { QuestionScore, QuestionNumber, setQuestionState, setQuestionFinalScore, setStartQuestion, setRefreshQuestion } = useQuestionScore()
+    const [animal, setAnimal] = useState<string>("")
+
+    const handleQusetionRadio = (questionValue: number) => {
+        setQuestionState(questionValue)
+
+        if (QuestionNumber + 1 === 21) {
+            console.log("end");
+
+            setQuestionFinalScore()
+        }
+        else {
+            notFound()
+        }
+
+    }
+
+    return (
+        <div className='w-full flex flex-col items-center space-y-4'>
+
+            {QuestionNumber === 0
+                ?
+                <StartQuestion startQuestion={setStartQuestion} />
+                :
+                QuestionNumber <= 20 && QuestionNumber >= 1
+                    ?
+                    <div className='w-[80%] space-y-4'>
+                        <CustomRadio Score={5} title={questionData[QuestionNumber][5]} number={1} handleQuestion={handleQusetionRadio} />
+                        <CustomRadio Score={10} title={questionData[QuestionNumber][10]} number={2} handleQuestion={handleQusetionRadio} />
+                        <CustomRadio Score={15} title={questionData[QuestionNumber][15]} number={3} handleQuestion={handleQusetionRadio} />
+                        <CustomRadio Score={20} title={questionData[QuestionNumber][20]} number={4} handleQuestion={handleQusetionRadio} />
+                    </div>
+                    :
+                    QuestionNumber === 21 &&
+                    <EndQuestion QuestionScore={QuestionScore} animal={animal} refreshQuest={setRefreshQuestion} />
+            }
+
+            <progress className="progress progress-primary max-w-md"
+                value={
+                    QuestionNumber < 21 && QuestionNumber > 0
+                        ? `${QuestionNumber * 5 - 5}`
+                        : QuestionNumber === 21 ? "100"
+                            : "0"
+                }
+                max="100"
+            />
+
+        </div>
+    )
 }
 
-const QuestionContainer = ({ questionNumber }: { questionNumber: number }) => {
-    const questionData: questionData = {
-        1: { 5: "lorem5", 10: "lorem10", 15: "lorem15", 20: "lorem20" },
-        2: { 5: "lorem5", 10: "lorem10", 15: "lorem15", 20: "lorem20" },
-        3: { 5: "lorem5", 10: "lorem10", 15: "lorem15", 20: "lorem20" },
-        4: { 5: "lorem5", 10: "lorem10", 15: "lorem15", 20: "lorem20" },
-        5: { 5: "lorem5", 10: "lorem10", 15: "lorem15", 20: "lorem20" },
-        6: { 5: "lorem5", 10: "lorem10", 15: "lorem15", 20: "lorem20" },
-        7: { 5: "lorem5", 10: "lorem10", 15: "lorem15", 20: "lorem20" },
-        8: { 5: "lorem5", 10: "lorem10", 15: "lorem15", 20: "lorem20" },
-        9: { 5: "lorem5", 10: "lorem10", 15: "lorem15", 20: "lorem20" },
-        10: { 5: "lorem5", 10: "lorem10", 15: "lorem15", 20: "lorem20" },
-        11: { 5: "lorem5", 10: "lorem10", 15: "lorem15", 20: "lorem20" },
-        12: { 5: "lorem5", 10: "lorem10", 15: "lorem15", 20: "lorem20" },
-        13: { 5: "lorem5", 10: "lorem10", 15: "lorem15", 20: "lorem20" },
-        14: { 5: "lorem5", 10: "lorem10", 15: "lorem15", 20: "lorem20" },
-        15: { 5: "lorem5", 10: "lorem10", 15: "lorem15", 20: "lorem20" },
-        16: { 5: "lorem5", 10: "lorem10", 15: "lorem15", 20: "lorem20" },
-        17: { 5: "lorem5", 10: "lorem10", 15: "lorem15", 20: "lorem20" },
-        18: { 5: "lorem5", 10: "lorem10", 15: "lorem15", 20: "lorem20" },
-        19: { 5: "lorem5", 10: "lorem10", 15: "lorem15", 20: "lorem20" },
-        20: { 5: "lorem5", 10: "lorem10", 15: "lorem15", 20: "lorem20" },
-    }
-    const router = useRouter()
-    const { QuestionScore, setQuestionState, setQuestionScore } = useQuestionScore()
-    const [disableFlag, setDisableFlag] = useState<boolean>(false)
-    let animal: string = ""
+export default QuestionContainer
 
-    const showAnimal = (arg: number) => {
+
+{/*
+        const showAnimal = (arg: number) => {
         if (arg = 100) {
             animal = 'cat'
             console.log('height');
@@ -63,55 +92,4 @@ const QuestionContainer = ({ questionNumber }: { questionNumber: number }) => {
         console.log(animal);
 
     }
-
-
-    const handleQusetionRadio = (questionValue: number) => {
-        setDisableFlag(true)
-        setQuestionState(questionValue, questionNumber)
-        const slugParameterType = typeof questionNumber === "number"
-        console.log(slugParameterType);
-
-        if (questionNumber <= 20 && slugParameterType) {
-            let nextPage = questionNumber + 1;
-            router.push(`/Question/${nextPage}`)
-        }
-        else if (questionNumber + 1 === 21 && slugParameterType) {
-            setQuestionScore()
-            showAnimal(QuestionScore)
-        }
-        else {
-            notFound()
-        }
-
-    }
-
-
-
-    return (
-        <div className='w-full flex flex-col items-center space-y-4'>
-
-            {questionNumber <= 20 ?
-                <div className='w-[80%] space-y-4'>
-                    <CustomRadio Score={5} title={questionData[questionNumber][5]} number={1} disable={disableFlag} handleQuestion={handleQusetionRadio} />
-                    <CustomRadio Score={10} title={questionData[questionNumber][10]} number={2} disable={disableFlag} handleQuestion={handleQusetionRadio} />
-                    <CustomRadio Score={15} title={questionData[questionNumber][15]} number={3} disable={disableFlag} handleQuestion={handleQusetionRadio} />
-                    <CustomRadio Score={20} title={questionData[questionNumber][20]} number={4} disable={disableFlag} handleQuestion={handleQusetionRadio} />
-                </div>
-                :
-                <div className='w-full flex flex-col items-center space-y-4'>
-                    <div className='text-lg font-bold'>your score:</div>
-                    <div className='text-lg font-bold'>{QuestionScore}</div>
-                    <div className='text-lg font-bold'>your best animal:{animal}</div>
-
-
-                    <Link
-                        className='w-[80%] aspect-[11/1] btn'
-                        href='/'
-                    >go to Home</Link>
-                </div>
-            }
-        </div>
-    )
-}
-
-export default QuestionContainer
+    */}
