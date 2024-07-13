@@ -112,3 +112,7 @@ h6 {
   line-height: var(--line-height-h6);
   font-weight: var(--font-weight-h6);
 }
+
+.customGlass{
+  @apply bg-white dark:bg-black glass
+}

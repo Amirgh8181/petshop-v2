@@ -1,45 +1,31 @@
-import React from 'react'
+import { TabsProps } from '@/src/components/UI/Tabs'
+import { clinicAndSheltersData, } from '@/root/types'
+import Image from 'next/image'
+import Tabs from '@/src/components/UI/Tabs'
 
-const ClinicSinglePageRightSide = () => {
-  return (
-    <div>Right</div>
-  )
+const ClinicSinglePageRightSide = ({ clinicData }: { clinicData: clinicAndSheltersData }) => {
+
+    const tabData: TabsProps[] = [
+        { head: "About", content: clinicData?.shortDescription },
+        { head: "Reviews", content: clinicData?.shortDescription }
+    ]
+    return (
+        <>
+            <div className='w-full p-4 flex flex-col space-y-6 items-center'>
+
+                <Image src={clinicData.attachmentFile} alt='adasd' width={500} height={300}
+                    className='w-[90%] aspect-[9/4] rounded-box border-2 border-primary object-cover'
+                />
+
+                <div className=' md:text-xl text-base font-bold'>
+                    {clinicData.name}
+                </div>
+            </div>
+            <div className='w-full'>
+                <Tabs renderData={tabData} />
+            </div>
+        </>
+    )
 }
 
 export default ClinicSinglePageRightSide
-
-
-
-// "use client"
-// import TabsContainer from '@/src/components/UI/Tabs'
-// import { useClinicsItems } from '@/src/stores/Clinics/useClinicsItems'
-// import { clinicAndSheltersData, tabsDetailstype } from '@/root/types'
-// import Image from 'next/image'
-// import React from 'react'
-
-// const ClinicSinglePageRightSide = ({ clinicData }: { clinicData: clinicAndSheltersData }) => {
-    
-//     const tabData: tabsDetailstype[] = [
-//         { key: "About", title: "About", description: clinicData?.shortDescription },
-//         { key: "Reviews", title: "Reviews", description: clinicData?.shortDescription }
-//     ]
-//     return (
-//         <div>
-//             <div className='w-full p-4 flex flex-col space-y-6 items-center'>
-//                 <div className='w-full flex justify-center'>
-//                     <Image src={clinicData.attachmentFile} alt='adasd' width={500} height={300}
-//                         className='max-w-[90%] aspect-[9/4] rounded-[3rem] border-2 border-petBlue'
-//                     />
-//                 </div>
-//                 <div className=' md:text-xl text-base font-bold'>
-//                     {clinicData.name}
-//                 </div>
-//             </div>
-//             <div className='w-full'>
-//                 <TabsContainer tabsDetails={tabData} />
-//             </div>
-//         </div>
-//     )
-// }
-
-// export default ClinicSinglePageRightSide

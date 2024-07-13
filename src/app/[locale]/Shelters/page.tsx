@@ -16,7 +16,7 @@ const Shelters = async () => {
                 desc='Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
                       pariatur Excepteur sint.'/>
             <div className='w-full min-h-screen mt-6'>
-                <ClinicAndShelterCard href='/Shelters/' data={req} />
+                <ClinicAndShelterCard href='/Shelters/' data={req} headerText='shelters'/>
             </div>
         </>
     )

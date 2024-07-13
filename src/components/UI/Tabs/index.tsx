@@ -12,8 +12,18 @@ const Tabs = ({ renderData }: { renderData: TabsProps[] }) => {
         <div role="tablist" className="tabs tabs-lifted">
             {renderData.map((tab, index) =>
                 <>
-                    <input type="radio" name="my_tabs_2" role="tab" className="tab" aria-label={tab.head} defaultChecked={index === 0 && true} />
-                    <div role="tabpanel" className="tab-content bg-base-100 border-base-300 rounded-box p-6">
+                    <input
+                        type="radio"
+                        name="my_tabs_2"
+                        role="tab"
+                        className="tab [--tab-bg:#2EAECC] [--tab-border-color:#2EAECC] dark:[--tab-bg:#00334C] dark:[--tab-border-color:#00334C]"
+                        aria-label={tab.head}
+                        defaultChecked={index === 0 && true}
+                    />
+                    <div
+                        role="tabpanel"
+                        className="tab-content border-primary rounded-box p-6"
+                    >
                         {tab.content}
                     </div>
                 </>

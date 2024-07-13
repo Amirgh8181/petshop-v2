@@ -15,9 +15,9 @@ const Clinics = async () => {
                 title='culpa qui officia deserunt '
                 desc='Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
                       pariatur Excepteur sint.'
-                    />
+            />
             <div className='w-full min-h-screen mt-6'>
-                <ClinicAndShelterCard href='/Clinics/' data={req} />
+                <ClinicAndShelterCard href='/Clinics/' data={req} headerText='clinics' />
             </div>
         </>
     )

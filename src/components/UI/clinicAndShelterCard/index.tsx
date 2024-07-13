@@ -5,16 +5,30 @@ import { FaPhoneAlt } from "react-icons/fa";
 import { FaLocationDot } from "react-icons/fa6";
 import CenterItems from './CenterItems'
 import Link from 'next/link';
+import TranslateAnimation from '../Animation/TranslateAnimation';
+import TextAnimations from '../Animation/TextAnimation';
 
 
 
-const ClinicAndShelterCard = ({ href, data }: { href: string, data: clinicAndSheltersData[] }) => {
+const ClinicAndShelterCard = ({ href, data,headerText }: { href: string, data: clinicAndSheltersData[],headerText:string }) => {
 
   return (
-    <div className='w-full min-h-screen flex flex-col items-center gap-4 py-[2vmax]'>
+    <div className='w-full min-h-screen flex flex-col items-center gap-4 pb-[2vmax]'>
+      <TextAnimations
+        boxClass='capitalize w-[90%] text-start'
+        text={headerText}
+        typeAnimation='typing'
+        el='h1'
+        once
+      />
       {data.map(item =>
-        <div key={item._id}
-          className='min-w-[90%] md:h-[40vh] bg-gray-200 dark:bg-gray-900 rounded-[2.5rem] shadow-xl flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0 md:py-8 py-4 md:px-4'>
+        <TranslateAnimation
+          once
+          yVal={40}
+          key={item._id}
+          boxClass='w-[90%] md:h-[40vh]'
+          childClass='w-full h-full bg-gray-200 dark:bg-gray-900 rounded-[2.5rem] shadow-xl flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0 md:py-8 py-4 md:px-4'
+        >
           <div className='md:w-[30%] w-[90%] md:h-full flex items-center justify-center'>
             <Image src={item.attachmentFile} alt='clinic item img' width={300} height={300}
               className='max-w-[80%] rounded-[2.5rem]' />
@@ -35,14 +49,14 @@ const ClinicAndShelterCard = ({ href, data }: { href: string, data: clinicAndShe
               <div>Sat <span className='text-petBlue'>Sun Mon Tu</span> Wed Thu <span className='text-petBlue'>Fri</span> </div>
             </div>
             <div>
-              <Link href={`${href}${item._id}`} className='w-full px-4 aspect-[10/3] dark:bg-darkPetBlue bg-petBlue btn rounded-box'>
-              Book an Appointment
+              <Link href={`${href}${item._id}`} className='w-full !p-4 dark:bg-darkPetBlue bg-petBlue btn rounded-box'>
+                Book an Appointment
               </Link>
 
             </div>
           </div>
 
-        </div>
+        </TranslateAnimation>
       )}
     </div >
   )
