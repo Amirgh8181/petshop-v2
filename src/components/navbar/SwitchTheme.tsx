@@ -1,4 +1,3 @@
-import { MoonSvg, SunSvg } from '@/src/assets/svgs'
 import { ThemeContext } from '@/src/context/ThemeContext'
 import React, { useContext } from 'react'
 import { CiSun } from 'react-icons/ci'
