@@ -68,7 +68,6 @@ export default async function RootLayout({
 
   const messages = await getMessages();
 
-
   return (
     <html lang={locale} dir={locale === "fa" ? "rtl" : "ltr"} className="scroll-smooth transition-colors duration-500">
       <body className={`dark:text-white text-black`}>

@@ -6,7 +6,7 @@ import TranslateAnimation from "@/src/components/UI/Animation/TranslateAnimation
 import ScaleAnimation from "@/src/components/UI/Animation/ScaleAnimation";
 export default function NotFoundPage() {
   return (
-    <main className='w-full h-screen relative inset-0 customGlass grid place-content-center' >
+    <main className='w-full h-screen relative inset-0 customGlass grid place-content-center overflow-hidden' >
       <div className="text-center z-10 space-y-4">
         <div className="textClip bg-[url('/images/NotFound/textBg.jpg')] bg-contain flex animate-bounce">
           <span className="text-9xl md:text-[15rem]">4</span>
