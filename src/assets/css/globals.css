@@ -76,7 +76,6 @@ details summary::-webkit-details-marker {
   transform: rotateY(180deg);
 }
 
-
 h1 {
   font-size: clamp(var(--min-h1), 2vw + 1rem, var(--max-h1));
   line-height: var(--line-height-h1);
@@ -113,6 +112,19 @@ h6 {
   font-weight: var(--font-weight-h6);
 }
 
-.customGlass{
-  @apply bg-white dark:bg-black glass
+.customGlass {
+  @apply bg-white dark:bg-black glass;
+}
+
+.textClip {
+  position: relative;
+  display: inline-block;
+  font-size: 5em;
+  font-weight: bold;
+  line-height: 1;
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  background-size: cover;
+  background-position: center;
 }
