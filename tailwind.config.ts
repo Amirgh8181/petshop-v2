@@ -18,10 +18,10 @@ const config: Config = {
     extend: {
       colors: {
         petBlue: "#2EAECC",
-        darkPetBlue:"#00334C",
+        darkPetBlue: "#00334C",
       },
       fontFamily: {
-        roboto: ['var(--font-roboto)'],
+        iranYekan: ['var(--font-iranYekan)', 'roboto', 'sans-serif'],
       },
     },
   },
@@ -33,16 +33,16 @@ const config: Config = {
   daisyui: {
     themes: [
       {
-        light:{
+        light: {
           ...require("daisyui/src/theming/themes")["light"],
-          "primary":"#2EAECC",//petblue
+          "primary": "#2EAECC",//petblue
           "base-100": "#F1FBFF",//background
           "base-200": "#E6F4F1",//btn background
         },
         dark: {
           ...require("daisyui/src/theming/themes")["dark"],
           //this line keep old color and we can add new color
-          "primary":"#00334C",//petblue for dark
+          "primary": "#00334C",//petblue for dark
           "base-100": "#2f2f2f",//background
           "base-200": "#394855",//btn background
         }

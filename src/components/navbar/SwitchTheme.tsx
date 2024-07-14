@@ -1,6 +1,8 @@
 import { MoonSvg, SunSvg } from '@/src/assets/svgs'
 import { ThemeContext } from '@/src/context/ThemeContext'
 import React, { useContext } from 'react'
+import { CiSun } from 'react-icons/ci'
+import { FaMoon } from 'react-icons/fa'
 
 const SwitchTheme = () => {
     const themeContext = useContext(ThemeContext)
@@ -10,15 +12,13 @@ const SwitchTheme = () => {
     }
     return (
         <div className='btn w-[vmax] aspect-square' >
-            <label className="swap swap-rotate grid place-items-center p-2">
+            <label className="swap swap-rotate grid place-items-center">
                 {/* this hidden checkbox controls the state */}
                 <input type="checkbox" onClick={() => changeMode()} className='flex justify-center items-center'/>
                 {/* moon icon */}
-                <MoonSvg className="swap-off w-full fill-current"/>
-
+                <FaMoon className="swap-off fill-current text-2xl text-darkPetBlue"/>
                 {/* sun icon */}
-                <SunSvg className="swap-on w-full fill-current"/>
-
+                <CiSun  className="swap-on fill-current text-2xl text-yellow-500"/>
             </label>
         </div>
     )

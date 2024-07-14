@@ -1,11 +1,10 @@
-import type { Metadata, Viewport } from "next";
+import type { Viewport } from "next";
 import "@/src/assets/css/globals.css";
 import { getMessages, getTranslations } from "next-intl/server";
 import { NextIntlClientProvider } from "next-intl";
 import NavBar from "@/src/components/Navbar";
 import ThemeProvider from "@/src/context/ThemeContext";
 import Footer from "@/src/components/Footer";
-import icon from "@/public/images/logo/logo.png"
 import { NextAuthProvider } from "@/src/providers/next-auth";
 
 export async function generateMetadata({ params: { locale } }: { params: { locale: string } }) {
@@ -56,7 +55,6 @@ export const viewport: Viewport = {
   userScalable: false,
 
 }
-
 export default async function RootLayout({
   children,
   params: { locale }
@@ -70,7 +68,7 @@ export default async function RootLayout({
 
   return (
     <html lang={locale} dir={locale === "fa" ? "rtl" : "ltr"} className="scroll-smooth transition-colors duration-500">
-      <body className={`dark:text-white text-black`}>
+      <body className='dark:text-white text-black'>
         <NextAuthProvider>
           <NextIntlClientProvider messages={messages} locale={locale}>
             <ThemeProvider>
