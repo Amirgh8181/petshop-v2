@@ -9,7 +9,7 @@ interface HeroImageProps {
 const HeroImage = ({ mainImage }: HeroImageProps) => {
 
     return (
-        <div className='w-full h-full grid place-content-center'>
+        <div className='w-full h-full grid place-content-center '>
             <ScaleAnimation
                 once
                 duration={1}
@@ -18,7 +18,7 @@ const HeroImage = ({ mainImage }: HeroImageProps) => {
                 <StaticImageCopm
                     img={mainImage}
                     imgAlt='hero-pic'
-                    imgClass={`w-[70%] aspect-square mx-auto mask mask-squircle md:mt-[3vmax]`
+                    imgClass={`w-[70%] aspect-square mx-auto mask mask-squircle md:mt-[3vmax] object-bottom`
 
                     }
                 />

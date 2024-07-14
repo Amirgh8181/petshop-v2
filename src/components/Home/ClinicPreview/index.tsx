@@ -8,7 +8,7 @@ import StaticImageCopm from '../../UI/StaticImage'
 
 const ClinicPreview = () => {
     return (
-        <div className="w-full md:h-screen h-[50dvh] overflow-hidden grid md:place-content-center 
+        <div className="w-full md:h-screen h-[50dvh] overflow-hidden grid md:place-content-center customGlass
          text-center relative"
         >
             <ScaleAnimation

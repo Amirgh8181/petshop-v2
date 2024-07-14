@@ -4,7 +4,7 @@ import TranslateAnimation from "../../UI/Animation/TranslateAnimation"
 import Link from "next/link"
 const ShelterPreview = () => {
     return (
-        <div className="w-full grid grid-cols-1 md:grid-cols-2 place-content-center overflow-hidden ">
+        <div className="w-full grid grid-cols-1 md:grid-cols-2 overflow-hidden">
             <TranslateAnimation xVal={200} duration={1.5} boxClass="w-full mask mask-parallelogram">
                 <StaticImageCopm
                     img={b}

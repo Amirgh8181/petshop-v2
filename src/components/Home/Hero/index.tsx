@@ -65,7 +65,7 @@ const HeroSection = () => {
           <StaticImageCopm
             img={heroBottom}
             imgAlt='heroImage'
-            imgClass="object-contain w-full md:w-[90%] md:aspect-[16/4] aspect-[16/6] mx-auto absolute bottom-0 left-0 right-0" />
+            imgClass="object-bottom w-full md:w-[80%] aspect-[16/8] mx-auto absolute bottom-0 left-0 right-0" />
         </ScaleAnimation>
       </div>
     </div>
