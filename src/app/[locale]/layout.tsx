@@ -1,6 +1,6 @@
 import type { Viewport } from "next";
 import "@/src/assets/css/globals.css";
-import { getMessages, getTranslations } from "next-intl/server";
+import { getLocale, getMessages, getTranslations } from "next-intl/server";
 import { NextIntlClientProvider } from "next-intl";
 import NavBar from "@/src/components/Navbar";
 import ThemeProvider from "@/src/context/ThemeContext";
@@ -57,20 +57,20 @@ export const viewport: Viewport = {
 }
 export default async function RootLayout({
   children,
-  params: { locale }
-
 }: {
-  params: { locale: string },
   children: React.ReactNode
 }) {
 
   const messages = await getMessages();
-
+  const local = await getLocale();
+  console.log(local);
+  
   return (
-    <html lang={locale} dir={locale === "fa" ? "rtl" : "ltr"} className="scroll-smooth transition-colors duration-500">
+    <html lang={local} dir={local === "fa" ? "rtl" : "ltr"} className="scroll-smooth transition-colors duration-500">
       <body className='dark:text-white text-black'>
+        
         <NextAuthProvider>
-          <NextIntlClientProvider messages={messages} locale={locale}>
+          <NextIntlClientProvider messages={messages} locale={local}>
             <ThemeProvider>
               <NavBar />
               <main className="xl:container min-h-screen mx-auto flex flex-col justify-center items-center space-y-[5vmax]">

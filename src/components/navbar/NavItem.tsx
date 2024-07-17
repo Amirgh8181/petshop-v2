@@ -5,6 +5,8 @@ import { useTranslations } from "next-intl"
 
 const NavItem = () => {
     const pathname = usePathname()
+    console.log(pathname);
+    
     const t = useTranslations("navItem")
     // navItem for render
     const navItem = [

@@ -18,17 +18,21 @@ const LanguageChanger = () => {
     return (
         <div className="dropdown dropdown-end">
             <button tabIndex={0} role='button' className="aspect-square btn m-1 px-2">
-                <AiOutlineGlobal className='text-2xl'/>
+                <AiOutlineGlobal className='text-2xl' />
             </button>
             <ul className="dropdown-content menu shadow bg-base-100 rounded-btn text-center space-y-1 md:w-[10vmax] w-[15vmax]">
 
                 {options.map((option, index) => (
                     <li
-                        className={`${index === 0 ? "disabled" : option.optionKey !== local&& "hover:bg-petBlue/40 hover:text-gray-100 cursor-pointer"} ${option.optionKey === local && "bg-petBlue text-white cursor-default"} rounded-btn p-2 prose text-sm`}
                         key={option.optionKey}
-                        onClick={() => changeLang(option.optionKey)}
                     >
-                        {option.optionName}
+                        <button
+                            onClick={() => changeLang(option.optionKey)}
+                            className={`${index === 0 ? "disabled" : option.optionKey !== local && "hover:bg-petBlue/40 hover:text-gray-100 cursor-pointer"} ${option.optionKey === local && "bg-petBlue text-white cursor-default"} rounded-btn p-2 text-sm text-nowrap`}
+
+                        >
+                            {option.optionName}
+                        </button>
                     </li>
                 ))}
             </ul>

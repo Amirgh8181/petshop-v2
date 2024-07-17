@@ -1,5 +1,5 @@
 .swal{
-    @apply text-3xl font-roboto md:p-10 p-4 md:w-auto h-auto w-[60vw]
+    @apply text-3xl md:p-10 p-4 md:w-auto h-auto w-[60vw]
 }
 
 
