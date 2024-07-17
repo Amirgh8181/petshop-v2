@@ -1,7 +1,4 @@
 {
-  "Index":{
-
-  },
   "metadata": {
     "title":"PetClub",
     "description":"petClub is a site to maintain and improve the quality of life of your pets and animal",
@@ -23,6 +20,15 @@
     "Clinics":"Clinics",
     "Shelters":"Shelters",
     "sign in":"SignIn"
+  },
+  "Index":{
+    "Hero":{
+      "title":"PetClub",
+      "description1":"Pet Club is a",
+      "description2":"site to increase the quality",
+      "description3":"of life and satisfaction",
+      "description4":"of your pets"
+    }
   }
 
 }

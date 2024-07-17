@@ -4,7 +4,7 @@ import { useRef } from "react"
 
 export interface TypingAnimationProps {
     text: string | string[]
-    boxClass: string
+    boxClass?: string
     staggerTime?: number
     delay?: number
     el?: keyof JSX.IntrinsicElements
@@ -12,7 +12,7 @@ export interface TypingAnimationProps {
     amountView?: number,
     once?: boolean
     typeAnimation: "typing" | "lineOpacity",
-    childClass?:string
+    childClass?: string
 }
 
 const TextAnimations = ({
@@ -44,7 +44,13 @@ const TextAnimations = ({
         },
 
     }
-
+    const renderTypingAnimation = (line: string) => (
+        line.split("").map((char, charIndex) => (
+            <motion.span className="inline" variants={typingVariant} key={`char-${charIndex}`}>
+                {char}
+            </motion.span>
+        ))
+    )
 
     return (
         <Wrapper className={boxClass}>
@@ -58,28 +64,16 @@ const TextAnimations = ({
                 className={childClass}
             >
 
-                {textArray.map(line =>
-
-                    <span className="inline-block">
-                        {typeAnimation === "typing" ?
-
-                            line.split(" ").map(word =>
-                                <span className="inline-block">
-                                    {word.split("").map(char =>
-                                        <motion.span className="inline-block" variants={typingVariant}>{char}</motion.span>
-                                    )}
-                                    <span>&nbsp;</span>
-                                </span>
-                            )
-
-                            :
+                {textArray.map((line, lineIndex) => (
+                    <span className="block md:text-start text-center" key={`line-${lineIndex}`}>
+                        {typeAnimation === "typing" ? renderTypingAnimation(line) : (
                             <motion.span className="inline-block" variants={typingVariant}>
                                 {line}
+                                &nbsp;
                             </motion.span>
-                        }
-
+                        )}
                     </span>
-                )}
+                ))}
 
             </motion.span>
         </Wrapper>
