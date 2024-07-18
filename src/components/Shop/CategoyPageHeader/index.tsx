@@ -1,27 +1,18 @@
 import heroimg from '@/public/images/Shop/category/categoy-hero.webp'
 import { Hero } from '@/ui/Hero';
+import { useTranslations } from 'next-intl';
 const CategoyPageHeader = () => {
-
-
-
-
+    const t = useTranslations("ShopPage.category.Hero")
     return (
         <>
             <Hero
                 img={heroimg}
                 bgImage={heroimg}
-                title='Duis aute irure dolor in '
-                desc='consectetur adipiscing elit, sed do eiusmod tempor incididunt ut'
+                title={t("title")}
+                desc={t("description")}
             />
         </>
 
     )
 }
-
 export default CategoyPageHeader
-
-
-/*
-                            <div className='md:text-4xl text-2xl font-bold'> </div>
-                            <div className='text-sm'> </div>
-*/
