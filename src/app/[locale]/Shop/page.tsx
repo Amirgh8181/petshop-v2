@@ -5,27 +5,21 @@ import getShopItems from '@/src/lib/getShopItems'
 import mainImg from "@/public/images/Shop/hero.jpg"
 import bgImage from "@/public/images/Shop/heroBg.jpg"
 import Collection from '@/src/components/Shop/othersection'
+import { getTranslations } from 'next-intl/server'
 
 const Shop = async () => {
-  let loading = true;
   const products = await getShopItems()
-  loading = false
-
+  const t=await getTranslations("ShopPage.Hero")
   return (
     <main className='space-y-[5vmax] mb-7'>
       <Hero
         img={mainImg}
         bgImage={bgImage}
-        title='Food that is healthy for your kitty'
-        title2='Enjoy 15% of money'
-        desc='Food that is healthy for your kitty' />
+        title={t("title1")}
+        title2={t("title2")}
+        desc={t("title3")} />
       <Category />
-      {
-        loading
-          ? <div className='h-screen w-full bg-black'></div>
-          : <ProductPreview products={products} />
-      }
-
+      <ProductPreview products={products} />
       <Collection />
     </main>
   )

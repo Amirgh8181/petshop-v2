@@ -11,10 +11,10 @@ const HeroText = ({ titleh1, titleh2, description }: HeroText) => {
     return (
         <OpacityContent
             once
-            duration={1}
+            duration={2}
             boxClass='w-full md:h-screen h-[50vh]  flex justify-center items-center md:order-1 order-2'
         >
-            <div className='w-full flex flex-col items-center justify-center md:text-left text-center
+            <div className='w-full flex flex-col items-center justify-center md:text-start text-center
          text-white p-4 md:p-8 mt-4 space-y-4'>
                 {titleh1 && <h1 className='w-full md:w-[80%] md:text-4xl text-xl font-bold'>{titleh1}</h1>}
                 {titleh2 && <h2 className='w-full md:w-[80%] md:text-2xl text-lg'>{titleh2}</h2>}
