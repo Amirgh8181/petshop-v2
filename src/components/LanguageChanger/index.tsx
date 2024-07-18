@@ -5,7 +5,7 @@ const LanguageChanger = () => {
     const local = useLocale()
 
     const options = [
-        { optionName: "select language", optionKey: "sel" },
+        { optionName: "select language", optionKey: "en" },
         { optionName: "فارسی", optionKey: "fa" },
         { optionName: "english", optionKey: "en" },
     ];
@@ -28,7 +28,10 @@ const LanguageChanger = () => {
                     >
                         <button
                             onClick={() => changeLang(option.optionKey)}
-                            className={`${index === 0 ? "disabled" : option.optionKey !== local && "hover:bg-petBlue/40 hover:text-gray-100 cursor-pointer"} ${option.optionKey === local && "bg-petBlue text-white cursor-default"} rounded-btn p-2 text-sm text-nowrap`}
+                            className={
+                                `${index === 0 ? "!disabled" : option.optionKey !== local ? "hover:bg-petBlue/40 hover:text-gray-100 cursor-pointer"
+                                    : option.optionKey === local && "bg-petBlue text-white cursor-default disabled"} 
+                                rounded-btn p-2 text-sm text-nowrap`}
 
                         >
                             {option.optionName}

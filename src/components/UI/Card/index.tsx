@@ -1,4 +1,5 @@
 import { ShopItem } from '@/root/types'
+import { useTranslations } from 'next-intl'
 import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
@@ -11,6 +12,7 @@ interface CardUiProps {
 
 
 const CardUi = ({ product, btnTxt }: CardUiProps) => {
+    const t =useTranslations("Index.Shop")
     return (
         <div className="card card-compact dark:bg-primary/60 bg-primary/10 glass w-[90%] shadow-inner 
         shadow-primary group mx-auto">
@@ -29,7 +31,7 @@ const CardUi = ({ product, btnTxt }: CardUiProps) => {
                 <h2 className="card-title text-sm md:text-lg text-center">{product.name}</h2>
                 <p className='text-xs md:text-sm textStrok'>{product.price}</p>
                 <div className="card-actions w-full">
-                    <Link href={`/Shop/${product._id}`} className="btn btn-primary w-[80%] mx-auto">{btnTxt ?? "Buy Now"}</Link>
+                    <Link href={`/Shop/${product._id}`} className="btn btn-primary w-[80%] mx-auto">{btnTxt ?? t("card")}</Link>
                 </div>
             </div>
         </div>

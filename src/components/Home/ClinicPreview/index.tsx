@@ -5,11 +5,12 @@ import Link from 'next/link'
 import TextAnimations from '../../UI/Animation/TextAnimation'
 import ScaleAnimation from '../../UI/Animation/ScaleAnimation'
 import StaticImageCopm from '../../UI/StaticImage'
+import { useTranslations } from 'next-intl'
 
 const ClinicPreview = () => {
+    const t = useTranslations("Index.clinic")
     return (
-        <div className="w-full md:h-screen h-[50dvh] overflow-hidden grid md:place-content-center customGlass
-         text-center relative"
+        <div className="w-full md:h-screen h-[50dvh] overflow-hidden grid md:place-content-center relative customGlass"
         >
             <ScaleAnimation
                 scaleVal
@@ -23,20 +24,23 @@ const ClinicPreview = () => {
                     imgClass='w-full aspect-square object-contain'
                 />
             </ScaleAnimation>
-            <div className='absolute inset-0 z-10 space-y-2 flex flex-col justify-end md:justify-center'>
+            <div className='relative inset-0 z-10 space-y-4 text-center text-white
+                            bg-gradient-to-r from-petBlue to-darkPetBlue 
+                            p-4 grid place-content-center rounded-box'
+            >
                 <TextAnimations
-                    boxClass='text-4xl md:text-8xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-violet-400 to-violet-900'
+                    boxClass='text-4xl md:text-8xl font-bold'
                     typeAnimation='typing'
-                    text={"your animal health"}
+                    text={t("title")}
                     el='h1'
                     staggerTime={0.05}
                     duration={0.05}
                     once
                 />
                 <TextAnimations
-                    boxClass='text-3xl md:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-violet-400 to-violet-900'
+                    boxClass='text-3xl md:text-5xl font-bold mx-auto'
                     typeAnimation='typing'
-                    text={"is our priority"}
+                    text={t("title2")}
                     el='h3'
                     staggerTime={0.05}
                     duration={0.05}
@@ -50,7 +54,7 @@ const ClinicPreview = () => {
                     <Link
                         href={"/Clinics"}
                         className='btn bg-primary capitalize !px-2 my-4'>
-                        go and visit clinic
+                        {t("btnContent")}
                     </Link>
                 </ScaleAnimation>
             </div>
