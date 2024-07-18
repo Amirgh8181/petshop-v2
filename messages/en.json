@@ -152,6 +152,17 @@
       "fax": "fax :"
     }
   },
+  "Cart": {
+    "cart": "cart",
+    "item": "{count, plural, =0 {no item yet} =1 {item} other {items}}",
+    "discount": "Any Discount Code?",
+    "discountInp": "type here",
+    "delivery": "Delivery Date",
+    "total": "Total Price",
+    "confirm": "confirm payment",
+    "found": "no item found",
+    "goShop": "go to shop"
+  },
   "loremContent": {
     "lorem": "lorem ipsum",
     "half lorem": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Egestas purus viverra accumsan in nisl nisi. Arcu cursus vitae congue mauris rhoncus aenean vel elit scelerisque.",

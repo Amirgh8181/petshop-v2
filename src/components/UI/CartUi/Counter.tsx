@@ -12,7 +12,7 @@ const CartCounter = ({ id, count }: { id: string, count: number }) => {
                         duration-400 rounded-md cursor-pointer'>
                 <CiSquareMinus />
             </div>
-            <div className='md:text-2xl text-base '>{count}</div>
+            <div className='md:text-2xl text-base mx-2'>{count}</div>
             <div onClick={() => setIncrement(id)}
                 className='md:text-3xl text-lg hover:bg-primary hover:text-white transition-all 
                         duration-400 rounded-md cursor-pointer'>
