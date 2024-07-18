@@ -2,12 +2,13 @@ import { TabsProps } from '@/src/components/UI/Tabs'
 import { clinicAndSheltersData, } from '@/root/types'
 import Image from 'next/image'
 import Tabs from '@/src/components/UI/Tabs'
+import { useTranslations } from 'next-intl'
 
 const ClinicSinglePageRightSide = ({ clinicData }: { clinicData: clinicAndSheltersData }) => {
-
+    const t =useTranslations("Clinic.singlePage")
     const tabData: TabsProps[] = [
-        { head: "About", content: clinicData?.shortDescription },
-        { head: "Reviews", content: clinicData?.shortDescription }
+        { head: t("about"), content: clinicData?.shortDescription },
+        { head: t("reviews"), content: clinicData?.shortDescription }
     ]
     return (
         <>

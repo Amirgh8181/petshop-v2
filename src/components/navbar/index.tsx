@@ -6,7 +6,6 @@ import SwitchTheme from './SwitchTheme'
 import Logo from '../UI/Logo/Logo'
 import HamMenuBtn from '../UI/HamMenuBtn'
 import OpacityContent from '../UI/Animation/OpacityContent'
-import ScaleAnimation from '../UI/Animation/ScaleAnimation'
 import LanguageChanger from '../LanguageChanger'
 import AuthSection from '../UI/NavBarSections/AuthSection'
 
@@ -24,7 +23,7 @@ const NavBar = () => {
     }
     return (
         <>
-            <ScaleAnimation duration={0.5} scaleYVal boxClass='fixed top-0 bg-primary/50 origin-top backdrop-blur-2xl z-40 w-full'>
+            <nav className='fixed top-0 bg-primary/50 origin-top backdrop-blur-2xl z-40 w-full' dir='ltr'>
 
 
                 <OpacityContent delay={0.5} boxClass="navbar xl:w-[70%] bg-transparent mx-auto" duration={1}>
@@ -42,7 +41,7 @@ const NavBar = () => {
                         <SwitchTheme />
                     </div>
                 </OpacityContent>
-            </ScaleAnimation>
+            </nav>
             <HamMenu openMenu={openMenu} />
         </>
     )
