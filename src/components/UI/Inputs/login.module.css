@@ -2,7 +2,7 @@
   @apply flex justify-start items-center space-x-1 label label-text
 }
 .authLabelIcon{
-  @apply  text-xl
+  @apply  text-xl mx-2
 }
 
 

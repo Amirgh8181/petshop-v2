@@ -15,7 +15,6 @@ import { SignUpDataType } from '@/src/types/AuthInput';
 import { signIn } from 'next-auth/react';
 
 //component and styles
-import styles from '../authstyle.module.css'
 import LoadingUi from '../../UI/Loading';
 import AuthBtn from '../../UI/Button/AuthBtn';
 import SignUpInputs from '../../UI/Inputs/SignUpInput';
@@ -29,7 +28,9 @@ import { AuthInputType } from '@/root/types';
 //action
 import { signUpUser } from '@/src/actions/SignUp/signUp';
 //sweet alert
-import sweetAl from '@/src/actions/swal';
+
+import { useTranslations } from 'next-intl';
+import sweetAl from '@/ui/Swal/swal';
 
 
 interface SignUpInputType extends AuthInputType {
@@ -50,21 +51,21 @@ const SignUpForm = () => {
     const [isLoading, setIsLoading] = useState(false)
     const router = useRouter()
     const searchParams = useSearchParams().get('callbackUrl') ?? "/"
-
+    const t = useTranslations("Auth.SignUp")
     //submit hadler
     const onSubmit: SubmitHandler<SignUpDataType> = async (e) => {
         setIsLoading(true)
-        const req = await signUpUser(e as SignUpDataType)        
+        const req = await signUpUser(e as SignUpDataType)
         if (req) {
             const loginReq = await signIn('credentials', {
                 email: e.email,
                 password: e.password,
                 redirect: false,
-            })        
+            })
             if (loginReq?.ok) {
                 sweetAl({
                     icon: "success",
-                    title: 'successfull signUp and login',
+                    title: t("successSwal"),
                     timer: 1000,
                 });
                 setTimeout(() => {
@@ -73,17 +74,17 @@ const SignUpForm = () => {
             } else {
                 sweetAl({
                     icon: "warning",
-                    title: 'unsuccessfull SignIn',
+                    title: t("unsuccessSwal"),
                     timer: 2000,
                 });
                 setTimeout(() => {
                     router.push(`/Auth/SignIn?callbackUrl=${searchParams}`)
                 }, 3000);
             }
-        }else{
+        } else {
             sweetAl({
                 icon: "warning",
-                title: 'unsuccessfull SignUp',
+                title: t("unsuccessSignUpSwal"),
                 timer: 2000,
             });
             setTimeout(() => {
@@ -112,8 +113,8 @@ const SignUpForm = () => {
 
             <div className="divider divider-primary" />
             <div className='mt-4'>
-                <span>you have existing account? </span>
-                <Link href={`/Auth/SignIn?callbackUrl=${searchParams}`} className={styles.authLink}>login</Link>
+                <span>{t("question")}</span>
+                <Link href={`/Auth/SignIn?callbackUrl=${searchParams}`} className="text-blue-600 link mx-2">{t("authType")}</Link>
             </div>
         </div>
 

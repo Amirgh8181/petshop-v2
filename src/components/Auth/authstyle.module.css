@@ -1,8 +1,0 @@
-.swal{
-    @apply text-3xl md:p-10 p-4 md:w-auto h-auto w-[60vw]
-}
-
-
-.authLink{
-    @apply text-blue-600 underline underline-offset-2
-}

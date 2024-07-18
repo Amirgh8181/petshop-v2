@@ -169,7 +169,39 @@
     "cardBtn": "مشاهده بیشتر",
     "noItem": "آیتمی برای نمایش وجود ندارد",
     "goShop": "برو به فروشگاه"
-
+  },
+  "Auth": {
+    "hoc": {
+      "title": "باشگاه حیوانات خانگی",
+      "description1": "لورم ایپسوم متن ساختگی",
+      "description2": "با تولید سادگی نامفهوم از",
+      "description3": "از صنعت چاپ",
+      "login": "عضویت",
+      "signUp": "ثبت نام",
+      "or":"یا",
+      "google":"با گوگل",
+      "email":"با ایمیل"
+    },
+    "SignIn": {
+      "successSwal": "عضویت با موفقیت انجام شد",
+      "unsuccessSwal": "عضویت انجام نشد",
+      "question": "آیا حساب ندارید؟",
+      "authType": "ثبت نام"
+    },
+    "SignUp": {
+      "successSwal": "ثبت نام و عضویت با موفقیت انجام شد",
+      "unsuccessSwal": "عضویت انجام نشد",
+      "unsuccessSignUpSwal": "ثبت نام انجام نشد",
+      "question": "آیا حساب دارید؟",
+      "authType": "عضویت"
+    },
+    "inputs": {
+      "UserName": "نام کاربری",
+      "Email": "ایمیل",
+      "Password": "کلمه عبور"
+    },
+    "submit":"ارسال",
+    "pending":"انتظار"
   },
   "loremContent": {
     "lorem": "لورم ایپسوم",

@@ -9,12 +9,10 @@ import { SubmitHandler, useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod';
 import { LoginSchema } from '@/src/schema/zodSchema/LoginSchema';
 import { LoginDataType } from '@/src/types/AuthInput';
-//component and styles
-import styles from '../authstyle.module.css'
 //icons
 import { MdLockOutline, MdOutlineEmail } from "react-icons/md";
 //sweet alert
-import sweetAl from '@/src/actions/swal';
+import sweetAl from '@/ui/Swal/swal';
 //type
 import { AuthInputType } from '@/root/types';
 //action
@@ -22,6 +20,7 @@ import LoadingUi from '../../UI/Loading';
 import { signIn } from 'next-auth/react';
 import AuthBtn from '../../UI/Button/AuthBtn';
 import SignInInputs from '../../UI/Inputs/SignInInputs';
+import { useTranslations } from 'next-intl';
 
 
 interface LoginInputType extends AuthInputType {
@@ -44,6 +43,7 @@ const LoginForm = () => {
     const [isLoading, setIsLoading] = useState(false)
     const router = useRouter()
     const searchParams = useSearchParams().get('callbackUrl') ?? "/"
+    const t = useTranslations("Auth.SignIn")
 
 
     //submit hadler
@@ -64,7 +64,7 @@ const LoginForm = () => {
         if (req?.ok) {
             sweetAl({
                 icon: "success",
-                title: 'successfull login',
+                title: t("successSwal"),
                 timer: 2000,
             })
             setTimeout(() => {
@@ -75,7 +75,7 @@ const LoginForm = () => {
         else {
             sweetAl({
                 icon: "warning",
-                title: 'unsuccessfull login',
+                title: t("unsuccessSwal"),
                 timer: 2000,
             });
             setTimeout(() => {
@@ -103,8 +103,8 @@ const LoginForm = () => {
 
             <div className="divider divider-primary" />
             <div className='mt-4'>
-                <span>you dont have existing account? </span>
-                <Link href={`/Auth/SignUp?callbackUrl=${searchParams}`} className={styles.authLink}>SignUp</Link>
+                <span>{t("question")}</span>
+                <Link href={`/Auth/SignUp?callbackUrl=${searchParams}`} className="text-blue-600 link mx-2">{t("authType")}</Link>
             </div>
 
 

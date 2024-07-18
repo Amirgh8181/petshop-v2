@@ -1,7 +1,7 @@
 import { StaticImageData } from 'next/image'
-import { useLocale } from 'next-intl'
 import { GoogleSvg } from '@/src/assets/svgs'
 import HocUi from '../HocUi'
+import { useTranslations } from 'next-intl'
 
 interface AuthHocProps {
     children: React.ReactNode
@@ -17,8 +17,8 @@ const AuthHoc = ({
     children, mainImage, leftImage, rightImage, text, text1, authType
 }: AuthHocProps
 ) => {
-    const local = useLocale()
 
+    const t = useTranslations("Auth.hoc")
     return (
         <div className='flex md:flex-row flex-col w-[95vw] min-h-screen space-y-[6vmax] md:space-y-0 py-[7vmax]'>
             {/* left side of auth page */}
@@ -27,11 +27,11 @@ const AuthHoc = ({
                 <div className='md:space-y-8 w-[90%]'>
                     <div className='w-full h-16 btn shadow-inner shadow-primary/30 rounded-full bg-base-200'>
                         <GoogleSvg />
-                        <div className='md:text-xl text-sm'>{`${authType}`} with google</div>
+                        <div className='md:text-xl text-sm'>{`${authType}`} {t("google")}</div>
                     </div>
 
                     <div className="divider text-xs divider-primary" >
-                        Or {`${authType}`} with Email
+                        {t("or")} {`${authType}`} {t("email")}
                     </div>
 
                     <div>

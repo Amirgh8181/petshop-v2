@@ -163,13 +163,46 @@
     "found": "no item found",
     "goShop": "go to shop"
   },
-  "FavoriteList":{
-    "title":"my favorites",
-    "tooltip":"remove",
-    "cardBtn":"Show More",
-    "noItem":"no anything to show you",
+  "FavoriteList": {
+    "title": "my favorites",
+    "tooltip": "remove",
+    "cardBtn": "Show More",
+    "noItem": "no anything to show you",
     "goShop": "go to shop"
-
+  },
+  "Auth": {
+    "hoc": {
+      "title": "Pet Club",
+      "description1": "All the Lorem Ipsum",
+      "description2": "generators on the Internet tend",
+      "description3": "to repeat",
+      "login": "Login",
+      "signUp": "SignUp",
+      "or":"or",
+      "google":"with google",
+      "email":"with Email"
+    },
+    "SignIn": {
+      "successSwal": "successfull login",
+      "unsuccessSwal": "unsuccessfull login",
+      "question": "you dont have existing account?",
+      "authType": "SignUp"
+    },
+    "SignUp": {
+      "successSwal": "successfull signUp and login",
+      "unsuccessSwal": "unsuccessfull SignIn",
+      "unsuccessSignUpSwal": "unsuccessfull SignUp",
+      "question": "you have existing account?",
+      "authType": "login"
+    },
+    "inputs": {
+      "UserName": "UserName",
+      "Email": "Email",
+      "Password": "Password"
+    },
+    "submit": "Submit",
+    "pending": "Pending"
+    
   },
   "loremContent": {
     "lorem": "lorem ipsum",

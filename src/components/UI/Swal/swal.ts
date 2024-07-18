@@ -1,5 +1,5 @@
 import swal from 'sweetalert';
-import styles from "@/src/components/Auth/authstyle.module.css"
+import styles from "./swal.module.css"
 const sweetAl = (props:object) => {
     return swal({
         ...props ,
