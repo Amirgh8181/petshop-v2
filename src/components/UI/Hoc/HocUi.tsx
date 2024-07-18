@@ -19,7 +19,7 @@ const HocUi = ({ text, text1, rightImage, mainImage, leftImage }: HocUiProps) =>
     return (
         <div className='order-1 md:order-2 md:sticky md:top-[7vmax] md:self-start md:w-1/2 w-full md:h-auto grid place-items-center py-[10vmax] md:py-0'>
             <div className='relative md:h-[80vh] h-[70vh] w-[80%] bg-primary rounded-badge p-4 mx-auto'>
-                <div className='flex flex-col justify-center md:px-6 px-3 h-1/2 space-y-3'>
+                <div className='md:p-6 p-3 h-1/2 space-y-3'>
                     <TextAnimations
                         once
                         text={text}
@@ -31,7 +31,7 @@ const HocUi = ({ text, text1, rightImage, mainImage, leftImage }: HocUiProps) =>
                         duration={0.5}
                         typeAnimation='lineOpacity'
                         text={text1}
-                        boxClass='w-3/4 text-sm md:text-lg text-pretty leading-4' />
+                        boxClass='w-3/4 text-base md:text-lg mx-auto md:mx-0' />
                 </div>
 
                 <div className='h-[110%] w-[105%] absolute inset-0'>

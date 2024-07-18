@@ -1,6 +1,6 @@
 import { StaticImageData } from 'next/image'
-import { useLocale } from 'next-intl'
 import HocUi from '../HocUi'
+import { useTranslations } from 'next-intl'
 
 interface AuthHoc {
     children: React.ReactNode
@@ -16,8 +16,7 @@ const QuestionHoc = ({
     children, mainImage, leftImage, rightImage, text, text1
 }: AuthHoc
 ) => {
-    const local = useLocale()
-
+        const t=useTranslations("loremContent")
     return (
         <div className='flex md:flex-row flex-col w-[95%] min-h-screen space-y-[6vmax] md:space-y-0 py-[7vmax]'>
             {/* left side of auth page */}
@@ -26,9 +25,8 @@ const QuestionHoc = ({
 
             {/* right side of auth page */}
             <div className='w-full md:w-[60%] grid place-content-center space-y-6 mt-12 '>
-                <div className='w-[90%] text-center text-lg font-bold'>
-                    The passage is attributed to an unknown typesetter in the 15th century whoMalorum for
-                    use in a type specimen book?
+                <div className='w-[90%] text-center text-lg font-bold mx-auto'>
+                    {t("half lorem")}
                 </div>
                 <div className='w-full flex items-center justify-center '>
                     {children}

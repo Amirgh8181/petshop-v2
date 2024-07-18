@@ -6,6 +6,7 @@ import { useQuestionScore } from '@/src/stores/Question/useQuestionScore'
 import StartQuestion from '../StartQuestion'
 import EndQuestion from '../EndQuestion'
 import { questionData } from '../data'
+import { useTranslations } from 'next-intl'
 
 
 
@@ -14,6 +15,7 @@ const QuestionContainer = () => {
 
     const { QuestionScore, QuestionNumber, setQuestionState, setQuestionFinalScore, setStartQuestion, setRefreshQuestion } = useQuestionScore()
     const [animal, setAnimal] = useState<string>("")
+    const t = useTranslations("PersonalityTest.question")
 
     const handleQusetionRadio = (questionValue: number) => {
         setQuestionState(questionValue)
@@ -39,17 +41,17 @@ const QuestionContainer = () => {
                 QuestionNumber <= 20 && QuestionNumber >= 1
                     ?
                     <div className='w-[80%] space-y-4'>
-                        <CustomRadio Score={5} title={questionData[QuestionNumber][5]} number={1} handleQuestion={handleQusetionRadio} />
-                        <CustomRadio Score={10} title={questionData[QuestionNumber][10]} number={2} handleQuestion={handleQusetionRadio} />
-                        <CustomRadio Score={15} title={questionData[QuestionNumber][15]} number={3} handleQuestion={handleQusetionRadio} />
-                        <CustomRadio Score={20} title={questionData[QuestionNumber][20]} number={4} handleQuestion={handleQusetionRadio} />
+                        <CustomRadio Score={5} title={t(questionData[QuestionNumber][5])} number={1} handleQuestion={handleQusetionRadio} />
+                        <CustomRadio Score={10} title={t(questionData[QuestionNumber][10])} number={2} handleQuestion={handleQusetionRadio} />
+                        <CustomRadio Score={15} title={t(questionData[QuestionNumber][15])} number={3} handleQuestion={handleQusetionRadio} />
+                        <CustomRadio Score={20} title={t(questionData[QuestionNumber][20])} number={4} handleQuestion={handleQusetionRadio} />
                     </div>
                     :
                     QuestionNumber === 21 &&
-                    <EndQuestion QuestionScore={QuestionScore} animal={animal} refreshQuest={setRefreshQuestion} />
+                    <EndQuestion QuestionScore={QuestionScore} refreshQuest={setRefreshQuestion} />
             }
 
-            <progress className="progress progress-primary max-w-md"
+            <progress className="progress progress-primary w-[70%]"
                 value={
                     QuestionNumber < 21 && QuestionNumber > 0
                         ? `${QuestionNumber * 5 - 5}`

@@ -94,6 +94,30 @@
       }
     }
   },
+  "PersonalityTest": {
+    "start": "go to start question",
+    "end": {
+      "score": "your score:",
+      "animal": "your best animal:",
+      "home": "go to Home"
+    },
+    "question": {
+      "lorem5": "lorem1",
+      "lorem10": "lorem2",
+      "lorem15": "lorem3",
+      "lorem20": "lorem4"
+    },
+    "hoc": {
+      "title": "pet club",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit"
+    },
+    "animal": {
+      "cat": "cat",
+      "dog": "dog",
+      "hamster": "hamster",
+      "parrot": "parrot"
+    }
+  },
   "loremContent": {
     "lorem": "lorem ipsum",
     "half lorem": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Egestas purus viverra accumsan in nisl nisi. Arcu cursus vitae congue mauris rhoncus aenean vel elit scelerisque.",
