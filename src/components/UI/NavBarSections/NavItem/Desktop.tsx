@@ -8,7 +8,7 @@ const DesktopNavItem = () => {
     return (
         <ul className="hidden md:flex flex-row justify-center items-center">
             {navItemData.map(item =>
-                <NavItemRender name={t(item.name)} href={item.href} />
+                <NavItemRender name={t(item.name)} href={item.href} key={item.href}/>
             )}
         </ul>
 

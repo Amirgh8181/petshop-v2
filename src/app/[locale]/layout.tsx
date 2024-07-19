@@ -15,6 +15,7 @@ export async function generateMetadata({ params: { locale } }: { params: { local
       default: t("title"),
     },
     description: t("description"),
+    manifest:"/manifest.json",
     category: t("category"),
     authors: [{ name: t("author") }],
     creator: t("author"),

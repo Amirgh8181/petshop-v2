@@ -10,7 +10,7 @@ const MobileNavItem = ({ toggle }: { toggle: (arg: boolean) => void }) => {
         <ul className="md:hidden flex flex-col justify-center items-center space-y-6">
             {navItemData.map((item, index) =>
 
-                <TranslateAnimation delay={index * 0.3} once yVal={20}>
+                <TranslateAnimation delay={index * 0.3} once yVal={20} key={item.href}>
                     <span onClick={() => toggle(false)}>
                         <NavItemRender name={t(item.name)} href={item.href} />
                     </span>

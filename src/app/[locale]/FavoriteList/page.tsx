@@ -39,7 +39,7 @@ const FavoriteList = () => {
             >
               {
                 items.map(item =>
-                  <div className='w-full h-full relative'>
+                  <div className='w-full h-full relative' key={item._id}>
                     <div
                       className='group absolute text-3xl top-2 md:right-[2vmax] right-[4vmax] z-10 cursor-pointer tooltip'
                       data-tip={t("tooltip")}

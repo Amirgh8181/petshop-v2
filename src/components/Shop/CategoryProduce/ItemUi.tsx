@@ -10,7 +10,7 @@ const CategoryItemUi = ({ data }: { data: ShopItem[] | undefined }) => {
                     {
                         data?.map(item =>
 
-                            <CardUi product={item} />
+                            <CardUi product={item} key={item._id}/>
                         )
 
                     }

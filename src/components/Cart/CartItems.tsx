@@ -32,6 +32,7 @@ const CartItems = () => {
                             amountView={0.6}
                             yVal={20}
                             once
+                            key={item._id}
                         >
                             <Image src={item.attachmentFile} alt='cart item image' width={300} height={300}
                                 className='w-[20%] aspect-square bg-primary rounded-box object-contain' />

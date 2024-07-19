@@ -10,7 +10,7 @@ const SwiperItem = ({ data }: { data: ShopItem[] }) => {
     return (
         <Slider >
             {data.map(item =>
-                <SwiperSlide>
+                <SwiperSlide key={item._id}>
                     <CardUi product={item} />
                 </SwiperSlide>
             )}

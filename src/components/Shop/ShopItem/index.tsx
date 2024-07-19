@@ -12,7 +12,7 @@ const ProductPreview = ({ products }: { products: ShopItem[] }) => {
             <h3>{t("head")}</h3>
             <div className='grid md:grid-cols-4 grid-cols-2 w-[90%] md:gap-6 gap-4'>
                 {products.slice(0, 12).map(item =>
-                    <ScaleAnimation scaleVal once>
+                    <ScaleAnimation scaleVal once key={item._id}>
                         <CardUi product={item} />
                     </ScaleAnimation>
                 )}
