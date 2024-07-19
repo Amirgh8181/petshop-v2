@@ -13,8 +13,8 @@ const Profile = ({ isAuth }: { isAuth: authSectionProps }) => {
             {isAuth &&
                 <div className="dropdown dropdown-end">
                     <div tabIndex={0} role="button" className="avatar placeholder">
-                        <div className="btn rounded-full">
-                            <span className="md:text-3xl text-xl">{isAuth.user.username.split("")[0]}</span>
+                        <div className="navbarBtn !p-4">
+                            <span className="text-3xl">{isAuth.user.username.split("")[0]}</span>
                         </div>
                     </div>
 

@@ -10,14 +10,14 @@ const SwitchTheme = () => {
         themeContext?.changeTheme(setTheme)
     }
     return (
-        <div className='btn w-[vmax] aspect-square' >
+        <div className='navbarBtn' >
             <label className="swap swap-rotate grid place-items-center">
                 {/* this hidden checkbox controls the state */}
                 <input type="checkbox" onClick={() => changeMode()} className='flex justify-center items-center'/>
                 {/* moon icon */}
-                <FaMoon className="swap-off fill-current text-2xl text-darkPetBlue"/>
+                <FaMoon className="dark:hidden block swap-off fill-current text-2xl text-darkPetBlue"/>
                 {/* sun icon */}
-                <CiSun  className="swap-on fill-current text-2xl text-yellow-500"/>
+                <CiSun  className="dark:block hidden swap-on fill-current text-2xl text-yellow-500"/>
             </label>
         </div>
     )

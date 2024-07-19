@@ -40,14 +40,13 @@ const TranslateAnimation = ({
             transition: {
                 duration: duration ?? 0.75,
                 delay: delay ?? 0,
-                ease: ease ?? [.34,.55,.44,.72],
+                ease: ease ?? [.34, .55, .44, .72],
                 type: stiffness ? "tween" : "spring",
                 damping: damping ?? 10,
                 stiffness: stiffness ?? 100,
 
             }
         },
-
     }
 
 
@@ -57,6 +56,7 @@ const TranslateAnimation = ({
             ref={boxRef}
             initial="initial"
             animate={isInView ? "animate" : "initial"}
+            exit="exit"
             transition={{ delayChildren: delay ?? 0 }}
             className={boxClass}
         >

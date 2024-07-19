@@ -1,16 +1,16 @@
 import { AnimatePresence } from "framer-motion";
-import NavItem from "./NavItem";
-import ScaleAnimation from "../UI/Animation/ScaleAnimation";
+import ScaleAnimation from "../../Animation/ScaleAnimation";
+import MobileNavItem from "../NavItem/Mobile";
 
 
-const HamMenu = ({ openMenu }: { openMenu: boolean }) => {
+const HamMenu = ({ openMenu, toggle }: { openMenu: boolean, toggle: (arg:boolean) => void }) => {
 
     return (
         <AnimatePresence>
             {
                 openMenu &&
                 <ScaleAnimation scaleYVal boxClass='w-full h-screen flex items-center justify-center fixed bg-primary z-30 inset-0 origin-top'>
-                    <NavItem />
+                    <MobileNavItem toggle={toggle}/>
                 </ScaleAnimation>
             }
         </AnimatePresence>

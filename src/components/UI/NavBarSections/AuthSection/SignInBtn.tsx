@@ -9,9 +9,9 @@ const SignInBtn = ({isAuth}:{isAuth:authSectionProps}) => {
     return (
         <>{
             isAuth !== undefined && !isAuth &&
-            <button onClick={() => signIn()} className="btn !px-2 font-bold">
-                {t("sign in")}
-                <RiLoginBoxFill size={"20px"} />
+            <button onClick={() => signIn()} className="navbarBtn flex justify-center items-center font-bold">
+                <span className='md:flex hidden mx-1'>{t("sign in")}</span>
+                <RiLoginBoxFill className='text-2xl' />
             </button>
         }
         </>

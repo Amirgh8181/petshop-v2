@@ -17,11 +17,10 @@ const LanguageChanger = () => {
     };
     return (
         <div className="dropdown dropdown-end">
-            <button tabIndex={0} role='button' className="aspect-square btn m-1 px-2">
+            <button tabIndex={0} role='button' className="navbarBtn">
                 <AiOutlineGlobal className='text-2xl' />
             </button>
-            <ul className="dropdown-content menu shadow bg-base-100 rounded-btn text-center space-y-1 md:w-[10vmax] w-[15vmax]">
-
+            <ul className="dropdown-content menu shadow bg-base-300 rounded-btn text-center space-y-1 mt-2">
                 {options.map((option, index) => (
                     <li
                         key={option.optionKey}
