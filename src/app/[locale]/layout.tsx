@@ -5,7 +5,8 @@ import { NextIntlClientProvider } from "next-intl";
 import ThemeProvider from "@/src/context/ThemeContext";
 import Footer from "@/src/components/Footer";
 import { NextAuthProvider } from "@/src/providers/next-auth";
-import NavBar from "@/src/components/Navbar";
+import NavBar from "@/src/components/Header/Nav";
+
 
 export async function generateMetadata({ params: { locale } }: { params: { locale: string } }) {
   const t = await getTranslations({ locale, namespace: 'metadata' });
@@ -15,7 +16,7 @@ export async function generateMetadata({ params: { locale } }: { params: { local
       default: t("title"),
     },
     description: t("description"),
-    manifest:"/manifest.json",
+    manifest: "/manifest.json",
     category: t("category"),
     authors: [{ name: t("author") }],
     creator: t("author"),
@@ -65,11 +66,11 @@ export default async function RootLayout({
   const messages = await getMessages();
   const local = await getLocale();
   console.log(local);
-  
+
   return (
     <html lang={local} dir={local === "fa" ? "rtl" : "ltr"} className="scroll-smooth transition-colors duration-500">
       <body className='dark:text-white text-black'>
-        
+
         <NextAuthProvider>
           <NextIntlClientProvider messages={messages} locale={local}>
             <ThemeProvider>
