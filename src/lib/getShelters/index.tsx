@@ -1,7 +1,8 @@
 import axios from 'axios'
 
 const getShelters = async () => {
-    const req = await axios.get("http://localhost:5000/api/shelters",
+    const url = process.env.BACKEND_SOURCE_URL as string
+    const req = await axios.get(`${url}/api/shelters`,
         {
             headers: {
                 "Content-Type": "application/json"

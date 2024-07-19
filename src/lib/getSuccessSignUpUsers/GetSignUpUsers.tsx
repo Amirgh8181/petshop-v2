@@ -1,7 +1,8 @@
 
 const getSignUpUsers = async () => {
+    const url = process.env.BACKEND_SOURCE_URL as string
     try {
-        const req = await fetch("http://localhost:5000/api/users")
+        const req = await fetch(`${url}/api/users`)
             .then(res => res.json()); 
             console.log(req);
                        

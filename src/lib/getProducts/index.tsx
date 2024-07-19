@@ -1,9 +1,13 @@
 import axios from 'axios'
-import React from 'react'
 
 const getProducts =async () => {
+    const url = process.env.BACKEND_SOURCE_URL as string
     try {
-        const req = await axios.get('http://localhost:5000/api/products')
+        console.log(`${url}/api/products`);
+        
+        const req = await axios.get(`${url}/api/products`)
+        console.log(req);
+        
         return req.data
     } catch (e) {
         throw new Error("please first run api and reload page")

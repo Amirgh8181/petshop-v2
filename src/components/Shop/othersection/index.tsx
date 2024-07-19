@@ -22,7 +22,7 @@ const Collection = () => {
         <div className='w-full flex justify-center'>
           <Link
             className='w-[60%] lg:w-[40%] aspect-[9/2] btn'
-            href='/Shop/category/All'>
+            href='/Shop/category'>
             {t("btn")}
           </Link>
         </div>
