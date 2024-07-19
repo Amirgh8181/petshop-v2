@@ -178,9 +178,9 @@
       "description3": "to repeat",
       "login": "Login",
       "signUp": "SignUp",
-      "or":"or",
-      "google":"with google",
-      "email":"with Email"
+      "or": "or",
+      "google": "with google",
+      "email": "with Email"
     },
     "SignIn": {
       "successSwal": "successfull login",
@@ -202,20 +202,25 @@
     },
     "submit": "Submit",
     "pending": "Pending"
-    
   },
-  "Footer":{
-    "phone":"phone",
-    "twitter":"twitter",
-    "instagram":"instagram",
-    "whatsapp":"whatsapp",
-    "Support":"Support",
-    "About":"About"
+  "Footer": {
+    "phone": "phone",
+    "twitter": "twitter",
+    "instagram": "instagram",
+    "whatsapp": "whatsapp",
+    "Support": "Support",
+    "About": "About"
   },
-  "Profile":{
-    "favorite":"Favorite List",
-    "cart":"Shopping Cart",
-    "logout":"Log Out"
+  "Profile": {
+    "favorite": "Favorite List",
+    "cart": "Shopping Cart",
+    "logout": "Log Out"
+  },
+  "FileConvention": {
+    "notfound":"page not found",
+    "home": "go to home page",
+    "retry": "retry",
+    "wait": "please wait ..."
   },
   "loremContent": {
     "lorem": "lorem ipsum",

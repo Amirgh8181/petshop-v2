@@ -9,11 +9,11 @@ import Link from "next/link";
 export default function Error({ error }: {
   error: Error & { digest?: string }
 }) {
-  const t = useTranslations('Error');
+  const t = useTranslations('FileConvention');
 
   return (
     <div className='w-full h-screen flex justify-center items-center overflow-hidden'>
-      <div className="relative z-10 customGlass rounded-box opacity-70 hover:opacity-100 transition-all duration-300 
+      <div className="relative z-10 customGlass rounded-box opacity-80 hover:opacity-100 transition-all duration-300 
       p-6 space-y-4 max-w-[70%]">
 
         <TranslateAnimation xVal={40}>
@@ -28,12 +28,12 @@ export default function Error({ error }: {
             {error.message}
           </h6>
         </TranslateAnimation>
-        <div className="flex justify-center space-x-4">
+        <div className="flex justify-center">
           <TranslateAnimation yVal={20} delay={1}>
-            <button className="btn bg-primary capitalize !px-2" onClick={() => window.location.reload()}>retry</button>
+            <button className="btn bg-primary capitalize !px-2 mx-2" onClick={() => window.location.reload()}>{t("retry")}</button>
           </TranslateAnimation>
           <TranslateAnimation yVal={20} delay={1}>
-            <Link href={"/"} className="btn bg-primary capitalize !px-2">go to home page</Link>
+            <Link href={"/"} className="btn bg-primary capitalize !px-2">{t("home")}</Link>
           </TranslateAnimation>
         </div>
       </div>

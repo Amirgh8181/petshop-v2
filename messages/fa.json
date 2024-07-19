@@ -178,9 +178,9 @@
       "description3": "از صنعت چاپ",
       "login": "عضویت",
       "signUp": "ثبت نام",
-      "or":"یا",
-      "google":"با گوگل",
-      "email":"با ایمیل"
+      "or": "یا",
+      "google": "با گوگل",
+      "email": "با ایمیل"
     },
     "SignIn": {
       "successSwal": "عضویت با موفقیت انجام شد",
@@ -200,21 +200,27 @@
       "Email": "ایمیل",
       "Password": "کلمه عبور"
     },
-    "submit":"ارسال",
-    "pending":"انتظار"
+    "submit": "ارسال",
+    "pending": "انتظار"
   },
-  "Footer":{
-    "phone":"تلفن",
-    "twitter":"توییتر",
-    "instagram":"اینستاگرام",
-    "whatsapp":"واتساپ",
-    "Support":"حمایت ",
-    "About":"در باره"
+  "Footer": {
+    "phone": "تلفن",
+    "twitter": "توییتر",
+    "instagram": "اینستاگرام",
+    "whatsapp": "واتساپ",
+    "Support": "حمایت ",
+    "About": "در باره"
   },
-  "Profile":{
-    "favorite":"لیست مورد علاقه ها",
-    "cart":"سبد خرید",
-    "logout":"خروج"
+  "Profile": {
+    "favorite": "لیست مورد علاقه ها",
+    "cart": "سبد خرید",
+    "logout": "خروج"
+  },
+  "FileConvention": {
+    "notfound":"صفحه مورد نظر پیدا نشد",
+    "home":"بازگشت به خانه",
+    "retry":"تلاش مجدد",
+    "wait":"لطفا منتظر بمانید ..."
   },
   "loremContent": {
     "lorem": "لورم ایپسوم",

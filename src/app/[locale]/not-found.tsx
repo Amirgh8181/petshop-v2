@@ -4,7 +4,11 @@ import Link from "next/link";
 import TextAnimations from "@/src/components/UI/Animation/TextAnimation";
 import TranslateAnimation from "@/src/components/UI/Animation/TranslateAnimation";
 import ScaleAnimation from "@/src/components/UI/Animation/ScaleAnimation";
+import { useTranslations } from "next-intl";
+
 export default function NotFoundPage() {
+  const t=useTranslations("FileConvention")
+ 
   return (
     <main className='w-full h-screen relative inset-0 customGlass grid place-content-center overflow-hidden' >
       <div className="text-center z-10 space-y-4">
@@ -13,9 +17,9 @@ export default function NotFoundPage() {
           <span className="text-9xl md:text-[15rem]">0</span>
           <span className="text-9xl md:text-[15rem]">4</span>
         </div>
-        <TextAnimations text={"page not found"} typeAnimation="typing" el="h1" boxClass="capitalize" />
+        <TextAnimations text={t("notfound")} typeAnimation="typing" el="h1" boxClass="capitalize grid place-content-center" />
         <TranslateAnimation yVal={20} delay={1}>
-          <Link href={"/"} className="btn bg-primary capitalize !px-2">go to home page</Link>
+          <Link href={"/"} className="btn bg-primary capitalize !px-2">{t("home")}</Link>
         </TranslateAnimation>
       </div>
 
