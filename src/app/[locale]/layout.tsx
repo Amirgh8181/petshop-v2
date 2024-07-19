@@ -2,10 +2,10 @@ import type { Viewport } from "next";
 import "@/src/assets/css/globals.css";
 import { getLocale, getMessages, getTranslations } from "next-intl/server";
 import { NextIntlClientProvider } from "next-intl";
-import NavBar from "@/src/components/Navbar";
 import ThemeProvider from "@/src/context/ThemeContext";
 import Footer from "@/src/components/Footer";
 import { NextAuthProvider } from "@/src/providers/next-auth";
+import NavBar from "@/src/components/Navbar";
 
 export async function generateMetadata({ params: { locale } }: { params: { locale: string } }) {
   const t = await getTranslations({ locale, namespace: 'metadata' });

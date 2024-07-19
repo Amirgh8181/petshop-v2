@@ -1,13 +1,13 @@
 "use client"
 import React, { useState } from 'react'
-import HamMenu from '@/ui/NavBarSections/HamMenu/HamMenu'
-import SwitchTheme from '@/ui/NavBarSections/SwitchTheme/SwitchTheme'
-import Logo from '@/ui/Logo/Logo'
-import HamMenuBtn from '@/ui/HamMenuBtn'
-import OpacityContent from '@/ui/Animation/OpacityContent'
-import LanguageChanger from '@/ui/NavBarSections/LanguageChanger'
-import AuthSection from '@/ui/NavBarSections/AuthSection'
-import DesktopNavItem from '@/ui/NavBarSections/NavItem/Desktop'
+import HamMenu from '../UI/NavBarSections/HamMenu/HamMenu'
+import SwitchTheme from '../UI/NavBarSections/SwitchTheme/SwitchTheme'
+import Logo from '../UI/Logo/Logo'
+import HamMenuBtn from '../UI/HamMenuBtn'
+import OpacityContent from '../UI/Animation/OpacityContent'
+import LanguageChanger from '../UI/NavBarSections/LanguageChanger'
+import AuthSection from '../UI/NavBarSections/AuthSection'
+import DesktopNavItem from '../UI/NavBarSections/NavItem/Desktop'
 
 const NavBar = () => {
     const MOBILE_THRESHOLD: number = 768
