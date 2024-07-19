@@ -204,6 +204,19 @@
     "pending": "Pending"
     
   },
+  "Footer":{
+    "phone":"phone",
+    "twitter":"twitter",
+    "instagram":"instagram",
+    "whatsapp":"whatsapp",
+    "Support":"Support",
+    "About":"About"
+  },
+  "Profile":{
+    "favorite":"Favorite List",
+    "cart":"Shopping Cart",
+    "logout":"Log Out"
+  },
   "loremContent": {
     "lorem": "lorem ipsum",
     "half lorem": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Egestas purus viverra accumsan in nisl nisi. Arcu cursus vitae congue mauris rhoncus aenean vel elit scelerisque.",
