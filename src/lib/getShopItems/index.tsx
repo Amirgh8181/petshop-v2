@@ -4,7 +4,6 @@ import axios from "axios";
 const getShopItems = async () => {
     const url = process.env.BACKEND_SOURCE_URL as string
     try {
-
         const req = await axios.get(`${url}/api/products`,
             {
                 headers: {
@@ -15,7 +14,7 @@ const getShopItems = async () => {
         return req.data
     }
     catch (e) {
-        console.log(e)
+        throw new Error("cant recive products")
     }
 };
 

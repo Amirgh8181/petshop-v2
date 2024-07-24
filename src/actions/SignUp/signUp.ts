@@ -1,20 +1,20 @@
 "use server"
-
 import { SignUpDataType } from "@/src/types/AuthInput";
 import axios from "axios";
-
-const url = process.env.CLIENT_SOURCE_URL as string
+const url = process.env.BACKEND_SOURCE_URL as string
+console.log(url);
 
 export async function signUpUser(userDetails: SignUpDataType) {
-        console.log(userDetails);
-        
-        const {data} = await axios.post(`${url}/api/auth/signUp`, userDetails, {
-            headers: {
-                "Content-Type":"application/json"
-            }
-          }
-        )
-        console.log(data); 
-        return data;
+  try {
+    const { data } = await axios.post(`${url}/api/users`, userDetails, {
+      headers: {
+        "Content-Type": "application/json"
+      }
+    }
+    )
+    return data;
+  } catch (e) {
+    throw new Error("cant signUp")
+  }
 
 }

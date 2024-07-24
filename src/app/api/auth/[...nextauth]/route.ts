@@ -1,17 +1,14 @@
-import axios from "axios"
+import { SignIn } from "@/src/actions/SignIn/SignIn"
 import NextAuth from "next-auth"
 import CredentialsProvider from "next-auth/providers/credentials"
 
-const url = process.env.CLIENT_SOURCE_URL as string
-
-interface loginResponseData{
-  status:string, 
-  token:string, 
-  username:string, 
-  id:string, 
-  email:string, 
+interface loginResponseData {
+  status: string,
+  token: string,
+  username: string,
+  id: string,
+  email: string,
 }
-
 
 const handler = NextAuth({
   session: {
@@ -25,17 +22,14 @@ const handler = NextAuth({
         password: {}
       },
       // request to api and check valid user auth data
-      async authorize(credentials, req) {
+      async authorize(credentials) {
         const credentialDetail = { email: credentials?.email as string, password: credentials?.password as string }
         //console.log(credentialDetail);
 
-        const request = await axios.post(`${url}/api/auth/login`, credentialDetail, {
-          headers: { "Content-Type": "application/json" },
-        })
+        const request = await SignIn(credentialDetail)
+
         // if user data is valid return response and save response in user in callback jwt
         if (request.data) {
-          console.log(request.data);
-          
           const response: loginResponseData = {
             status: request.data?.status,
             token: request.data?.token,

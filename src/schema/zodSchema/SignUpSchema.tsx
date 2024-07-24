@@ -15,7 +15,9 @@ export const SignUpSchema = z.object({
         .min(1, { message: 'Name Required' })
         .refine(async (e) => {
 
-            const req: dataProps[] = await getSignUpUsers()            
+            const req: dataProps[] = await getSignUpUsers()
+            console.log(req);
+
             let isExistName: boolean = true;
             req?.map(item => {
                 if (item.name === e) {
@@ -28,10 +30,10 @@ export const SignUpSchema = z.object({
 
     email: z
         .string()
-        .regex(emailRegex,"invalid email format")
+        .regex(emailRegex, "invalid email format")
         .min(1, { message: "Email Required" })
         .refine(async (e) => {
-            const req: dataProps[] = await getSignUpUsers()            
+            const req: dataProps[] = await getSignUpUsers()
             let isExistEmail: boolean = true;
             req?.map(item => {
                 if (item.email === e) {

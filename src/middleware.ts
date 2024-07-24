@@ -19,10 +19,8 @@ import createMiddleware from 'next-intl/middleware';
 const protectedPages = [
   '^/Cart$',
   '^/FavoriteList$',
-  '^/Question$',
   '/cart/(.+)',
   '/FavoriteList/(.+)',
-  '/Question/(.+)',
 ];
 
 const intlMiddleware = createMiddleware({
