@@ -20,7 +20,7 @@ const FavoriteList = () => {
   useEffect(() => {
     setItems(FavoriteList)
     setLoading(false)
-  })
+  },[FavoriteList])
 
   return (
     <>

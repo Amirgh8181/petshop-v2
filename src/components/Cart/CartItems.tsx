@@ -19,7 +19,7 @@ const CartItems = () => {
     useEffect(() => {
         setItems(CartItem)
         setLoading(false)
-    })
+    },[CartItem])
     return (
         <>
             {loading ? <LoadingUi isLoading />
