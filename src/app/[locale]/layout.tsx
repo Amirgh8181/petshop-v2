@@ -65,12 +65,10 @@ export default async function RootLayout({
 
   const messages = await getMessages();
   const local = await getLocale();
-  console.log(local);
 
   return (
     <html lang={local} dir={local === "fa" ? "rtl" : "ltr"} className="scroll-smooth transition-colors duration-500">
       <body className='dark:text-white text-black'>
-
         <NextAuthProvider>
           <NextIntlClientProvider messages={messages} locale={local}>
             <ThemeProvider>

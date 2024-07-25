@@ -5,15 +5,17 @@ const LanguageChanger = () => {
     const local = useLocale()
 
     const options = [
-        { optionName: "select language", optionKey: "en" },
+        { optionName: "select language", optionKey: "foo" },
         { optionName: "فارسی", optionKey: "fa" },
         { optionName: "english", optionKey: "en" },
     ];
 
     const changeLang = (arg: string) => {
         console.log(arg);
-        document.cookie = `NEXT_LOCALE=${arg}; path=/; max-age=31536000; SameSite=lax`
-        window.location.reload()
+        if (arg !== "foo" && arg !== local) {
+            document.cookie = `NEXT_LOCALE=${arg}; path=/; max-age=31536000; SameSite=lax`
+            window.location.reload()
+        }
     };
     return (
         <div className="dropdown dropdown-end">
@@ -28,8 +30,8 @@ const LanguageChanger = () => {
                         <button
                             onClick={() => changeLang(option.optionKey)}
                             className={
-                                `${index === 0 ? "!disabled" : option.optionKey !== local ? "hover:bg-petBlue/40 hover:text-gray-100 cursor-pointer"
-                                    : option.optionKey === local && "bg-petBlue text-white cursor-default disabled"} 
+                                `${index === 0 ? "btn-disabled" : option.optionKey !== local ? "hover:bg-petBlue/40 hover:text-gray-100 cursor-pointer"
+                                    : option.optionKey === local && "bg-petBlue/70 hover:bg-petBlue transition-colors duration-300 text-white cursor-default disabled"} 
                                 rounded-btn p-2 text-sm text-nowrap`}
 
                         >

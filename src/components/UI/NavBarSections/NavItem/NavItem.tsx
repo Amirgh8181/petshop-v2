@@ -1,9 +1,7 @@
 "use client"
 import { usePathname } from "next/navigation"
 import Link from "next/link"
-import { useTranslations } from "next-intl"
 import { NavItemProp } from "./data"
-import { useEffect, useState } from "react"
 
 const NavItemRender = ({ name, href }:  NavItemProp ) => {
     const pathname = usePathname()
