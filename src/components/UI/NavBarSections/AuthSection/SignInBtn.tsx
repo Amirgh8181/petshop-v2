@@ -1,3 +1,4 @@
+"use client"
 import { signIn } from 'next-auth/react'
 import { useTranslations } from 'next-intl'
 import { RiLoginBoxFill } from 'react-icons/ri'

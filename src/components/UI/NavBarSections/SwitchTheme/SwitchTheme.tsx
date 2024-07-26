@@ -1,3 +1,4 @@
+"use client"
 import { ThemeContext } from '@/src/context/ThemeContext'
 import React, { useContext } from 'react'
 import { CiSun } from 'react-icons/ci'

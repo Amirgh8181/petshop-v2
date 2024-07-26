@@ -1,3 +1,4 @@
+"use client"
 import { useLocale } from 'next-intl';
 import { AiOutlineGlobal } from 'react-icons/ai';
 
@@ -11,7 +12,6 @@ const LanguageChanger = () => {
     ];
 
     const changeLang = (arg: string) => {
-        console.log(arg);
         if (arg !== "foo" && arg !== local) {
             document.cookie = `NEXT_LOCALE=${arg}; path=/; max-age=31536000; SameSite=lax`
             window.location.reload()

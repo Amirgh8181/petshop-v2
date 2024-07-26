@@ -1,20 +1,12 @@
-"use client"
-import { useEffect, useState } from 'react'
-import { Session } from 'next-auth'
-import { useSession } from 'next-auth/react'
+import { getServerSession, Session } from 'next-auth'
 import Profile from './Profile'
 import SignInBtn from './SignInBtn'
+import { authOption } from '@/src/config/auth'
 
 export type authSectionProps = Session | null | undefined
 
-const AuthSection = () => {
-    const [isAuth, setIsAuth] = useState<authSectionProps>(undefined)
-    const { data: session } = useSession()
-
-    useEffect(() => {
-        setIsAuth(session)
-    }, [session])
-
+const AuthSection = async () => {
+    const isAuth = await getServerSession(authOption)
     return (
         <>
             <Profile isAuth={isAuth} />

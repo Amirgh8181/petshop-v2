@@ -1,3 +1,4 @@
+"use client"
 import { BiLogIn } from 'react-icons/bi'
 import { MdOutlineShoppingCart } from 'react-icons/md'
 import Link from 'next/link'
