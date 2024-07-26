@@ -32,9 +32,10 @@ const QuestionImage = () => {
                         amountView={0.8}
                         once
                         delay={index * 0.2}
+                        key={index}
                     >
                         <StaticImageCopm img={item.img} imgAlt='question'
-                            key={index} imgClass='w-[80%] aspect-square' />
+                            imgClass='w-[80%] aspect-square' />
                     </ScaleAnimation>
 
                 )}
@@ -46,9 +47,10 @@ const QuestionImage = () => {
                         amountView={0.8}
                         once
                         delay={index * 0.3}
+                        key={index}
                     >
                         <Image src={item.img} width={175} height={175} alt='question'
-                            key={index} className='w-[80%] aspect-square' />
+                            className='w-[80%] aspect-square' />
                     </ScaleAnimation>
                 )}
             </div>
