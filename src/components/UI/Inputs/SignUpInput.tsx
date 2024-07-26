@@ -1,3 +1,4 @@
+"use client"
 import { AuthInputType } from '@/root/types'
 import React from 'react'
 import InputLabel from './InputLabel'

@@ -1,3 +1,4 @@
+"use client"
 import React from 'react'
 import Styles from './login.module.css'
 import { useTranslations } from 'next-intl'
