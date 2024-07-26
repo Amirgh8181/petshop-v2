@@ -1,5 +1,5 @@
 "use client"
-import React, { useState } from 'react'
+import { useState } from 'react'
 import { ShopItem } from '@/root/types'
 import CategoryItemsType from './ItemsType'
 import CategoryItemUi from './ItemUi'

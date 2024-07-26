@@ -1,10 +1,8 @@
-import React from 'react'
-
+"use client"
 export interface TabsProps {
     head: string,
     content: string
 }
-
 const Tabs = ({ renderData }: { renderData: TabsProps[] }) => {
 
     return (

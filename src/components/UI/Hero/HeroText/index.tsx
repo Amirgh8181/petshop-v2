@@ -27,8 +27,3 @@ const HeroText = ({ titleh1, titleh2, description }: HeroText) => {
 }
 
 export default HeroText
-
-
-/*
-
-*/

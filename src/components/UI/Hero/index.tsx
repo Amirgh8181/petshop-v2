@@ -1,5 +1,3 @@
-import React from 'react'
-
 import { StaticImageData } from 'next/image'
 import HeroContainer from './HerosContainer/HeroContainer'
 import HeroText from './HeroText'
@@ -31,9 +29,3 @@ export const Hero = ({ bgImage, img, title, title2, desc }: HeroProps) => {
         </HeroContainer>
     )
 }
-
-{/*
-    
-                    titleh2='culpa qui officia deserunt '
-                description='Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-                            pariatur Excepteur sint.'*/}

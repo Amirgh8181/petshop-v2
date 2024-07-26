@@ -1,5 +1,4 @@
 import { StaticImageData } from "next/image"
-import ScaleAnimation from "../../Animation/ScaleAnimation"
 import StaticImageCopm from "../../StaticImage"
 
 const HeroContainer = ({ children, img }: { children: React.ReactNode, img: StaticImageData }) => {

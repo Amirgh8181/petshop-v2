@@ -1,5 +1,4 @@
 import { useTranslations } from 'next-intl'
-import React from 'react'
 
 const CategoryItemsType = ({ type, changeType }: { type: string, changeType: (type: string) => void }) => {
     const categ = ["All", "Beds", "Furnitures", "Treats", "Food", "Health", "Toys"]

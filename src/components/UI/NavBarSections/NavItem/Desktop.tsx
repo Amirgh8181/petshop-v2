@@ -1,4 +1,3 @@
-import React from 'react'
 import { navItemData } from './data'
 import NavItemRender from './NavItem'
 import { useTranslations } from 'next-intl'

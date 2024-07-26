@@ -1,3 +1,4 @@
+"use client"
 import { useTranslations } from 'next-intl'
 import Link from 'next/link'
 import React from 'react'
@@ -5,6 +6,7 @@ import React from 'react'
 const EndQuestion = ({ QuestionScore, refreshQuest }: { QuestionScore: number, refreshQuest: () => void }) => {
     const t = useTranslations("PersonalityTest.end")
     const animalNameT = useTranslations("PersonalityTest.animal")
+
     const showAnimal = (arg: number) => {
         let animal: string = ""
         if (arg === 100) {
@@ -14,7 +16,7 @@ const EndQuestion = ({ QuestionScore, refreshQuest }: { QuestionScore: number, r
             animal = animalNameT('dog')
         }
         else if (arg <= 300 && arg > 200) {
-            animal = animalNameT('hamster')
+            animal = animalNameT('duck')
         }
 
         else if (arg <= 400 && arg > 300) {

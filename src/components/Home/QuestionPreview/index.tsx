@@ -10,22 +10,13 @@ const QuestionContainer = () => {
             <div className='w-[90%] h-auto p-8 flex flex-col md:flex-row items-center justify-center bg-primary space-y-4 md:space-y-0 rounded-3xl mx-auto overflow-hidden'>
 
 
-                <TranslateAnimation
-                    xVal={30}
-                    amountView={0.8}
-                    once
-                    boxClass='md:w-1/2 w-full md:h-full h-1/4 flex items-center justify-center'
-                >
+
+                <div className='md:w-1/2 w-full md:h-full h-3/4 flex items-center justify-center'>
                     <QuestionText />
-                </TranslateAnimation>
-                <ScaleAnimation
-                    scaleVal
-                    amountView={0.8}
-                    once
-                    boxClass='md:w-1/2 w-full md:h-full h-3/4 flex items-center justify-center'
-                >
+                </div>
+                <div className='md:w-1/2 w-full md:h-full h-3/4 flex items-center justify-center'>
                     <QuestionImage />
-                </ScaleAnimation>
+                </div>
             </div>
         </div>
     )

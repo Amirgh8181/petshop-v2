@@ -1,4 +1,4 @@
-import Image, { StaticImageData } from 'next/image'
+import { StaticImageData } from 'next/image'
 import ScaleAnimation from '../../Animation/ScaleAnimation'
 import StaticImageCopm from '../../StaticImage'
 

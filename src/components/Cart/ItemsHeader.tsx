@@ -1,7 +1,6 @@
 "use client"
 import { useCartItems } from '@/src/stores/ShopStroes/useCartItem'
 import { useTranslations } from 'next-intl'
-import React from 'react'
 
 const ItemsHeader = () => {
     const { CartItem } = useCartItems()

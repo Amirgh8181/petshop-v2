@@ -1,5 +1,4 @@
-import React from 'react'
-
+"use client"
 const CenterItems = ({ icon, text }: { icon: React.JSX.Element, text: string }) => {
     return (
         <div className='flex space-x-2 w-full justify-center md:justify-start'>

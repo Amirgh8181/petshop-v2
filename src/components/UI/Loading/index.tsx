@@ -1,5 +1,5 @@
+"use client"
 import { useTranslations } from 'next-intl';
-import React from 'react'
 
 const LoadingUi = ({ isLoading }: { isLoading: boolean }) => {
     const t = useTranslations('FileConvention');

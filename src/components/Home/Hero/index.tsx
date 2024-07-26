@@ -1,4 +1,3 @@
-import React from 'react'
 import heroSide from "@/public/images/hero/heroSideImg.png"
 import heroBottom from "@/public/images/hero/heroBottomImg.png"
 import { WaveBg } from '@/src/assets/svgs'

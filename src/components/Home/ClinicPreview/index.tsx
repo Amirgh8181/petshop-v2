@@ -1,4 +1,3 @@
-import React from 'react'
 import rightImg from "@/public/images/Clinics/preview/rightPreviewImg.png"
 import leftImg from "@/public/images/Clinics/preview/leftPreviewImg.png"
 import Link from 'next/link'

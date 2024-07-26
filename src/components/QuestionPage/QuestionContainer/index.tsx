@@ -1,6 +1,6 @@
 "use client"
 import { notFound } from 'next/navigation'
-import React, { useEffect, useState } from 'react'
+import { useState } from 'react'
 import { CustomRadio } from '../CustomRadio'
 import { useQuestionScore } from '@/src/stores/Question/useQuestionScore'
 import StartQuestion from '../StartQuestion'
@@ -8,21 +8,15 @@ import EndQuestion from '../EndQuestion'
 import { questionData } from '../data'
 import { useTranslations } from 'next-intl'
 
-
-
-
 const QuestionContainer = () => {
 
     const { QuestionScore, QuestionNumber, setQuestionState, setQuestionFinalScore, setStartQuestion, setRefreshQuestion } = useQuestionScore()
-    const [animal, setAnimal] = useState<string>("")
     const t = useTranslations("PersonalityTest.question")
 
     const handleQusetionRadio = (questionValue: number) => {
         setQuestionState(questionValue)
 
         if (QuestionNumber + 1 === 21) {
-            console.log("end");
-
             setQuestionFinalScore()
         }
         else {
@@ -66,32 +60,3 @@ const QuestionContainer = () => {
 }
 
 export default QuestionContainer
-
-
-{/*
-        const showAnimal = (arg: number) => {
-        if (arg = 100) {
-            animal = 'cat'
-            console.log('height');
-
-        }
-        else if (arg <= 200 && arg > 100) {
-            animal = 'dog'
-            console.log('height');
-
-        }
-        else if (arg <= 300 && arg > 200) {
-            animal = 'hamster'
-            console.log('height');
-
-        }
-
-        else if (arg <= 400 && arg > 300) {
-            animal = 'parrot'
-            console.log('height');
-
-        }
-        console.log(animal);
-
-    }
-    */}

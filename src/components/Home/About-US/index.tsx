@@ -1,4 +1,3 @@
-import React from 'react'
 import TranslateAnimation from '../../UI/Animation/TranslateAnimation'
 import image from "@/public/images/about-us/about-us.jpg"
 import StaticImageCopm from '../../UI/StaticImage'
