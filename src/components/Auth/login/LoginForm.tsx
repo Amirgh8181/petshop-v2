@@ -7,7 +7,6 @@ import { useRouter, useSearchParams } from 'next/navigation';
 import { SubmitHandler, useForm } from 'react-hook-form'
 // zod
 import { zodResolver } from '@hookform/resolvers/zod';
-import { LoginSchema } from '@/src/schema/zodSchema/LoginSchema';
 import { LoginDataType } from '@/src/types/AuthInput';
 //icons
 import { MdLockOutline, MdOutlineEmail } from "react-icons/md";
@@ -21,6 +20,7 @@ import { signIn } from 'next-auth/react';
 import AuthBtn from '../../UI/Button/AuthBtn';
 import SignInInputs from '../../UI/Inputs/SignInInputs';
 import { useTranslations } from 'next-intl';
+import { LoginSchema } from '@/src/schema/zodSchema/LoginSchema';
 
 
 interface LoginInputType extends AuthInputType {

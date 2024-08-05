@@ -1,11 +1,11 @@
 import ProductPreview from '@/src/components/Shop/ShopItem'
 import Category from '@/src/components/Shop/ShowCategory'
 import { Hero } from '@/ui/Hero'
-import getShopItems from '@/src/lib/getShopItems'
 import mainImg from "@/public/images/Shop/hero.jpg"
 import bgImage from "@/public/images/Shop/heroBg.jpg"
 import Collection from '@/src/components/Shop/othersection'
 import { getTranslations } from 'next-intl/server'
+import getShopItems from '@/src/lib/getShopItems'
 
 const Shop = async () => {
   const products = await getShopItems()

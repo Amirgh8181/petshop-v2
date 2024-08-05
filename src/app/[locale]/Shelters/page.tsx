@@ -1,9 +1,9 @@
 import ClinicAndShelterCard from '@/src/components/UI/clinicAndShelterCard'
-import getShelters from '@/src/lib/getShelters'
 import { Hero } from '@/ui/Hero'
 import mainImg from "@/public/images/Shelters/hero-pic.jpg"
 import bgImage from "@/public/images/Shelters/hero-bg.jpg"
 import { getTranslations } from 'next-intl/server'
+import getShelters from '@/src/lib/getShelters'
 
 const Shelters = async () => {
     const req = await getShelters()

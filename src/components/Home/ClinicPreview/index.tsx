@@ -13,7 +13,7 @@ const ClinicPreview = () => {
         >
             <ScaleAnimation
                 scaleVal
-                delay={1}
+                delay={0.75}
                 childClass='w-[40%] absolute top-0 left-0 z-0'
                 once
             >
@@ -32,8 +32,8 @@ const ClinicPreview = () => {
                     typeAnimation='typing'
                     text={t("title")}
                     el='h1'
-                    staggerTime={0.05}
-                    duration={0.05}
+                    staggerTime={0.03}
+                    duration={0.03}
                     once
                 />
                 <TextAnimations
@@ -41,13 +41,13 @@ const ClinicPreview = () => {
                     typeAnimation='typing'
                     text={t("title2")}
                     el='h3'
-                    staggerTime={0.05}
-                    duration={0.05}
+                    staggerTime={0.03}
+                    duration={0.03}
                     once
                 />
                 <ScaleAnimation
                     scaleVal
-                    delay={1}
+                    delay={0.75}
                     once
                 >
                     <Link
@@ -59,7 +59,7 @@ const ClinicPreview = () => {
             </div>
             <ScaleAnimation
                 scaleVal
-                delay={1}
+                delay={0.75}
                 once
                 childClass='w-[40%] absolute top-0 right-0 z-0'
             >
@@ -68,9 +68,6 @@ const ClinicPreview = () => {
                     imgAlt='ClinicPreview'
                     imgClass='w-full aspect-square object-contain scale-95' />
             </ScaleAnimation>
-
-
-
         </div>
     )
 }
