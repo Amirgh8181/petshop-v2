@@ -18,7 +18,7 @@ const HeroImage = ({ mainImage }: HeroImageProps) => {
                 <StaticImageCopm
                     img={mainImage}
                     imgAlt='hero-pic'
-                    imgClass={`w-[70%] aspect-square mx-auto mask mask-squircle md:mt-[3vmax] object-bottom`
+                    imgClass={`w-[70%] aspect-square mx-auto mask mask-squircle md:mt-[3vmax] object-bottom object-contain`
 
                     }
                 />

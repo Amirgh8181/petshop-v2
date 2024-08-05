@@ -4,9 +4,10 @@ import mainImg from "@/public/images/Shelters/hero-pic.jpg"
 import bgImage from "@/public/images/Shelters/hero-bg.jpg"
 import { getTranslations } from 'next-intl/server'
 import getShelters from '@/src/lib/getShelters'
+import { clinicAndSheltersData } from '@/root/types'
 
 const Shelters = async () => {
-    const req = await getShelters()
+    const req:clinicAndSheltersData[] = await getShelters()
     const t = await getTranslations("Shelter")
 
     return (

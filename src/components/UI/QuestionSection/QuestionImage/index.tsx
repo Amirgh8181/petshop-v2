@@ -10,51 +10,32 @@ import ScaleAnimation from '../../Animation/ScaleAnimation'
 const QuestionImage = () => {
 
 
-    const imgCol1 = [
+    const img = [
+        { img: img1 },
         { img: img2 },
+        { img: img3 },
         { img: img4 },
 
     ];
-    const imgCol2 = [
-        { img: img1 },
-        { img: img3 },
-    ]
+
 
 
     return (
         <div
-            className='min-w-[70%] h-full flex gap-4'
+            className='w-full h-full grid grid-cols-2 gap-8'
         >
-            <div className='w-1/2 h-full flex flex-col justify-center items-center gap-4 mt-10'>
-                {imgCol1.map((item, index) =>
+                {img.map((item, index) =>
                     <ScaleAnimation
                         scaleVal
                         amountView={0.8}
                         once
-                        delay={index * 0.2}
+                        delay={index * 0.1}
+                        key={index}
                     >
-                        <StaticImageCopm img={item.img} imgAlt='question'
-                            key={index} imgClass='w-[80%] aspect-square' />
+                        <StaticImageCopm img={item.img} imgAlt='question' imgClass='md:w-[80%] aspect-square mx-auto' />
                     </ScaleAnimation>
 
                 )}
-            </div>
-            <div className='w-1/2 h-full flex flex-col justify-center items-center gap-4 mb-10'>
-                {imgCol2.map((item, index) =>
-                    <ScaleAnimation
-                        scaleVal
-                        amountView={0.8}
-                        once
-                        delay={index * 0.3}
-                    >
-                        <Image src={item.img} width={175} height={175} alt='question'
-                            key={index} className='w-[80%] aspect-square' />
-                    </ScaleAnimation>
-                )}
-            </div>
-
-
-
         </div>
     )
 }

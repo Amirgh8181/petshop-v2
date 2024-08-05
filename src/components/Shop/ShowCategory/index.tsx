@@ -9,7 +9,7 @@ interface categType {
     type: string,
 }
 
-const Category = () => {
+const CategoryPreview = () => {
     const t = useTranslations("ShopPage.category")
 
     const categDetails: categType[] = [
@@ -22,7 +22,7 @@ const Category = () => {
     ]
 
     return (
-        <div className='w-full flex flex-col items-center justify-center space-y-6'>
+        <div className='w-full flex flex-col items-center justify-center space-y-6 overflow-hidden'>
             <h3>{t("head")}</h3>
             <ScaleAnimation once scaleVal childClass='flex ' boxClass='w-full flex justify-center mx-auto md:space-x-4 text-center'>
                 {categDetails.map(item =>
@@ -39,4 +39,4 @@ const Category = () => {
     )
 }
 
-export default Category
+export default CategoryPreview
