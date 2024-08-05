@@ -130,6 +130,6 @@ h6 {
   background-position: center;
 }
 .navbarBtn {
-  @apply p-2 bg-base-200/90 hover:bg-base-300 transition-all duration-300 cursor-pointer rounded-btn mx-1;
+  @apply md:p-3 p-1 bg-base-200/90 hover:bg-base-300 transition-all duration-300 cursor-pointer rounded-btn mx-1;
 }
 

@@ -32,7 +32,7 @@ const QuestionImage = () => {
                         delay={index * 0.1}
                         key={index}
                     >
-                        <StaticImageCopm img={item.img} imgAlt='question' imgClass='md:w-[80%] aspect-square mx-auto' />
+                        <StaticImageCopm img={item.img} imgAlt='question' imgClass='sm:w-[70%] md:w-[80%] aspect-square mx-auto' />
                     </ScaleAnimation>
 
                 )}

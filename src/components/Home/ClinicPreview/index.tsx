@@ -9,12 +9,12 @@ import { useTranslations } from 'next-intl'
 const ClinicPreview = () => {
     const t = useTranslations("Index.clinic")
     return (
-        <div className="w-full md:h-screen h-[50dvh] overflow-hidden grid md:place-content-center relative customGlass"
+        <div className="w-full md:h-screen h-[60dvh] overflow-hidden grid md:place-content-center relative customGlass mt-[8dvh]"
         >
             <ScaleAnimation
                 scaleVal
                 delay={0.75}
-                childClass='w-[40%] absolute top-0 left-0 z-0'
+                childClass='w-[40%] absolute bottom-0 md:top-0 left-0 z-0'
                 once
             >
                 <StaticImageCopm
@@ -23,12 +23,12 @@ const ClinicPreview = () => {
                     imgClass='w-full aspect-square object-contain'
                 />
             </ScaleAnimation>
-            <div className='relative inset-0 z-10 space-y-4 text-center text-white
-                            bg-gradient-to-r from-petBlue to-darkPetBlue 
+            <div className='relative z-10 space-y-2 md:space-y-4 text-center md:text-white
+                            md:bg-gradient-to-r from-petBlue to-darkPetBlue 
                             p-4 grid place-content-center rounded-box'
             >
                 <TextAnimations
-                    boxClass='text-4xl md:text-8xl font-bold'
+                    boxClass='text-3xl sm:text-4xl md:text-8xl font-bold'
                     typeAnimation='typing'
                     text={t("title")}
                     el='h1'
@@ -37,7 +37,7 @@ const ClinicPreview = () => {
                     once
                 />
                 <TextAnimations
-                    boxClass='text-3xl md:text-5xl font-bold mx-auto'
+                    boxClass='text-xl sm:text-3xl md:text-5xl font-bold mx-auto'
                     typeAnimation='typing'
                     text={t("title2")}
                     el='h3'
@@ -52,7 +52,7 @@ const ClinicPreview = () => {
                 >
                     <Link
                         href={"/Clinics"}
-                        className='btn bg-primary capitalize !px-2 my-4'>
+                        className='btn bg-primary capitalize !px-2 my-4 text-xs sm:text-base xl:text-xl'>
                         {t("btnContent")}
                     </Link>
                 </ScaleAnimation>
@@ -61,7 +61,7 @@ const ClinicPreview = () => {
                 scaleVal
                 delay={0.75}
                 once
-                childClass='w-[40%] absolute top-0 right-0 z-0'
+                childClass='w-[40%] absolute bottom-0 md:top-0 right-0 z-0'
             >
                 <StaticImageCopm
                     img={leftImg}

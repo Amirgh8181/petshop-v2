@@ -6,7 +6,7 @@ const AboutUs = () => {
     const t = useTranslations("Index.About")
     const loremT = useTranslations("loremContent")
     return (
-        <div id='aboutUs' className='flex flex-col md:flex-row w-full items-center justify-center overflow-hidden'>
+        <section id='aboutUs' className='flex flex-col md:flex-row w-full items-center justify-center overflow-hidden'>
             <TranslateAnimation once duration={1} xVal={40} yVal={40} boxClass=' md:order-1 order-2 md:w-1/2 w-full md:h-full flex md:items-center items-start justify-center mt-4 md:mt-0'>
 
                 <StaticImageCopm img={image} imgAlt='about-us'
@@ -19,7 +19,7 @@ const AboutUs = () => {
                 <p className='md:text-xl text-base mb-2 md:w-[80%]'>{loremT("half lorem")}</p>
                 <p className='md:text-sm text-xs'>{loremT("cut1")}</p>
             </TranslateAnimation>
-        </div>
+        </section>
     )
 }
 
