@@ -1,6 +1,6 @@
 import ProductPreview from '@/src/components/Shop/ShopItem'
 import { Hero } from '@/ui/Hero'
-import mainImg from "@/public/images/Shop/hero.jpg"
+import mainImg from "@/public/images/Shop/hero.png"
 import bgImage from "@/public/images/Shop/heroBg.jpg"
 import Collection from '@/src/components/Shop/othersection'
 import { getTranslations } from 'next-intl/server'
