@@ -10,7 +10,7 @@ interface HeroImageProps {
 const HeroImage = ({ mainImage }: HeroImageProps) => {
 
     return (
-        <div className='w-full h-full grid place-content-center'>
+        <div className='w-full grid place-content-center'>
             <TranslateAnimation
                 once
                 duration={1}
@@ -20,8 +20,8 @@ const HeroImage = ({ mainImage }: HeroImageProps) => {
                 <StaticImageCopm
                     img={mainImage}
                     imgAlt='hero-pic'
-                    imgClass={`md:w-full w-[90%] sm:aspect-[square] aspect-[16/10] rounded-btn mx-auto 
-                        object-contain scale-150 drop-shadow-xl`}
+                    imgClass={`w-full sm:aspect-[square] aspect-[16/10] rounded-btn mx-auto 
+                        object-contain sm:scale-125 drop-shadow-2xl`}
                 />
             </TranslateAnimation>
         </div>

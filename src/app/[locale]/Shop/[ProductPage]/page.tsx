@@ -6,7 +6,7 @@ import getSingleShopItem from '@/src/lib/getSingleShopItem';
 const ProductPage = async ({ params }: { params: { ProductPage: string } }) => {
     const req: ShopItem = await getSingleShopItem(params.ProductPage)
     return (
-        <div className='w-full'>
+        <div className='w-full grid place-content-center'>
             <OneLevelBackBtn />
             <ShopItemSinglePageContainer product={req} />
         </div>
