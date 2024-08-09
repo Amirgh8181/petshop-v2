@@ -1,4 +1,4 @@
-import b from "@/public/images/Shelters/Preview/shelterPreview.jpg"
+import mainImg from "@/public/images/Shelters/Preview/shelterPreview.jpg"
 import StaticImageCopm from '../../UI/StaticImage'
 import TranslateAnimation from "../../UI/Animation/TranslateAnimation"
 import Link from "next/link"
@@ -10,7 +10,7 @@ const ShelterPreview = () => {
         <div className="w-full grid grid-cols-1 md:grid-cols-2 overflow-hidden">
             <TranslateAnimation xVal={200} duration={1.5} boxClass="w-full mask mask-parallelogram">
                 <StaticImageCopm
-                    img={b}
+                    img={mainImg}
                     imgAlt='dasd'
                     imgClass='w-full aspect-square' />
             </TranslateAnimation>

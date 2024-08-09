@@ -2,12 +2,15 @@ import ClinicSinglePageRightSide from '@/src/components/ClinicSinglePage/RightSi
 import DoctorSection from '@/src/components/ClinicSinglePage/Leftsid/DoctorSection';
 import RelationWay from '@/src/components/ClinicSinglePage/Leftsid/RelationWay';
 import getClinicItemPage from '@/src/lib/getClinicItemPage';
+import { clinicAndSheltersData } from '@/root/types';
+import OneLevelBackBtn from '@/src/components/UI/Button/OneLevelBack';
 
 const ClinicPage = async ({ params }: { params: { clinicpage: string } }) => {
 
-    const req = await getClinicItemPage(params.clinicpage)
+    const req: clinicAndSheltersData = await getClinicItemPage(params.clinicpage)
     return (
-        <div className='w-full min-h-screen flex justify-center items-center md:py-[5vmax] py-[7dvh]'>
+        <div className='w-full min-h-screen flex justify-center items-center md:py-[5vmax] py-[7dvh] relative'>
+            <OneLevelBackBtn />
             <div className='w-[90%] flex flex-col md:flex-row md:justify-between items-center md:items-start mt-6 '>
                 <div className='md:w-[40%] w-full order-2 md:order-1 flex flex-col items-center space-y-4'>
                     <DoctorSection clinicData={req} />

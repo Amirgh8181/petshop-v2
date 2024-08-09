@@ -8,7 +8,7 @@ const PreviewSectionsHeader = ({ previewSectionName, previewLink }: { previewSec
         <div className='flex items-center justify-between md:px-20 px-4'>
             <h2>{previewSectionName}</h2>
             <Link href={previewLink} aria-label='redirect to other section'
-                className='btn text-xl hover:text-primary cursor-pointer font-semibold !px-2'>
+                className='btn text-base md:text-xl hover:text-primary cursor-pointer font-semibold !px-2'>
                 {t("more")}
             </Link>
         </div>

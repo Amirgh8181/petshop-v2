@@ -8,11 +8,11 @@ const Collection = () => {
   const loremT = useTranslations("loremContent")
   const t = useTranslations("ShopPage.uiSection")
   return (
-    <div className='md:w-[60%] w-[90%] md:aspect-[16/6]  flex md:flex-row flex-col items-center justify-between
+    <div className='md:w-[60%] w-[90%] md:aspect-[16/6]  flex sm:flex-row flex-col items-center justify-between
      rounded-[3.5rem] bg-primary overflow-hidden mx-auto'
     >
       <div className='md:w-1/2 w-full'>
-        <StaticImageCopm img={img} imgAlt='ui cart img' imgClass='w-full h-full object-contain' />
+        <StaticImageCopm img={img} imgAlt='ui cart img' imgClass='w-full md:h-full  object-contain' />
       </div>
       <div className='flex flex-col items-center text-center md:text-start md:justify-center md:items-start
         md:w-1/2 max-h-full h-full space-y-4 p-4 text-white'>

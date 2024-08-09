@@ -23,6 +23,11 @@ const config: Config = {
       fontFamily: {
         iranYekan: ['var(--font-iranYekan)', 'roboto', 'sans-serif'],
       },
+      fontSize:{
+        "2xs":"0.625rem",
+        "3xs":"0.5rem",
+        "4xs":"0.375rem"
+      }
     },
   },
   darkMode: "class",

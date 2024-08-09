@@ -10,27 +10,26 @@ import ScaleAnimation from '../../Animation/ScaleAnimation'
 const QuestionImage = () => {
 
 
-    const imgCol1 = [
+    const img = [
+        { img: img1 },
         { img: img2 },
+        { img: img3 },
         { img: img4 },
 
     ];
-    const imgCol2 = [
-        { img: img1 },
-        { img: img3 },
-    ]
+
 
 
     return (
         <div
-            className='min-w-[70%] h-full flex gap-4'
+            className='w-full h-full grid grid-cols-2 gap-8'
         >
-            <div className='w-1/2 h-full flex flex-col justify-center items-center gap-4 mt-10'>
-                {imgCol1.map((item, index) =>
+                {img.map((item, index) =>
                     <ScaleAnimation
                         scaleVal
                         amountView={0.8}
                         once
+<<<<<<< HEAD
                         delay={index * 0.2}
                         key={index}
                     >
@@ -57,6 +56,15 @@ const QuestionImage = () => {
 
 
 
+=======
+                        delay={index * 0.1}
+                        key={index}
+                    >
+                        <StaticImageCopm img={item.img} imgAlt='question' imgClass='sm:w-[70%] md:w-[80%] aspect-square mx-auto' />
+                    </ScaleAnimation>
+
+                )}
+>>>>>>> vercel
         </div>
     )
 }

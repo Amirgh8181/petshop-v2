@@ -1,9 +1,7 @@
 import QuestionText from '../../UI/QuestionSection/QuestionText';
 import QuestionImage from '../../UI/QuestionSection/QuestionImage';
-import ScaleAnimation from '../../UI/Animation/ScaleAnimation';
-import TranslateAnimation from '../../UI/Animation/TranslateAnimation';
-const QuestionContainer = () => {
 
+const QuestionPreview = () => {
     return (
         <div className='w-full grid place-items-center overflow-hidden'
         >
@@ -22,4 +20,4 @@ const QuestionContainer = () => {
     )
 }
 
-export default QuestionContainer;
+export default QuestionPreview;

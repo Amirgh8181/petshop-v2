@@ -8,7 +8,6 @@ import { SubmitHandler, useForm } from 'react-hook-form'
 
 // zod
 import { zodResolver } from '@hookform/resolvers/zod';
-import { SignUpSchema } from '@/src/schema/zodSchema/SignUpSchema';
 import { SignUpDataType } from '@/src/types/AuthInput';
 
 //next-auth
@@ -31,6 +30,7 @@ import { signUpUser } from '@/src/actions/SignUp/signUp';
 
 import { useTranslations } from 'next-intl';
 import sweetAl from '@/ui/Swal/swal';
+import { SignUpSchema } from '@/src/schema/zodSchema/SignUpSchema';
 
 
 interface SignUpInputType extends AuthInputType {

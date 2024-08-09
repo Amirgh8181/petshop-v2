@@ -1,6 +1,7 @@
 import { StaticImageData } from 'next/image'
 import ScaleAnimation from '../../Animation/ScaleAnimation'
 import StaticImageCopm from '../../StaticImage'
+import TranslateAnimation from '../../Animation/TranslateAnimation'
 
 
 interface HeroImageProps {
@@ -9,20 +10,20 @@ interface HeroImageProps {
 const HeroImage = ({ mainImage }: HeroImageProps) => {
 
     return (
-        <div className='w-full h-full grid place-content-center '>
-            <ScaleAnimation
+        <div className='w-full grid place-content-center'>
+            <TranslateAnimation
                 once
                 duration={1}
-                scaleVal
-                boxClass='w-full customRadus'>
+                yVal={40}
+                >
+            
                 <StaticImageCopm
                     img={mainImage}
                     imgAlt='hero-pic'
-                    imgClass={`w-[70%] aspect-square mx-auto mask mask-squircle md:mt-[3vmax] object-bottom`
-
-                    }
+                    imgClass={`w-full sm:aspect-[square] aspect-[16/10] rounded-btn mx-auto 
+                        object-contain sm:scale-125 drop-shadow-2xl`}
                 />
-            </ScaleAnimation>
+            </TranslateAnimation>
         </div>
     )
 }
