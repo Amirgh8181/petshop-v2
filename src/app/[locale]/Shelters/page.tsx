@@ -1,6 +1,5 @@
 import ClinicAndShelterCard from '@/src/components/UI/clinicAndShelterCard'
 import { Hero } from '@/ui/Hero'
-import mainImg from "@/public/images/Shelters/hero-pic.png"
 import bgImage from "@/public/images/Shelters/hero-bg.jpg"
 import { getTranslations } from 'next-intl/server'
 import getShelters from '@/src/lib/getShelters'
@@ -13,7 +12,6 @@ const Shelters = async () => {
     return (
         <>
             <Hero
-                img={mainImg}
                 bgImage={bgImage}
                 title={t("Hero.title")}
                 desc={t("Hero.description")}

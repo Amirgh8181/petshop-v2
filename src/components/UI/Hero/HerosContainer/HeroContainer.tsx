@@ -5,11 +5,11 @@ const HeroContainer = ({ children, img }: { children: React.ReactNode, img: Stat
 
     return (
         <div className="w-full h-screen relative">
-            <div className="w-full h-full absolute inset-0 z-0">
-                <StaticImageCopm img={img} imgAlt="hero-bg" imgClass="w-full h-full absolute inset-0" />
+            <div className="h-full">
+                <StaticImageCopm img={img} imgAlt="hero-bg" imgClass="h-full " />
             </div>
-            <div className=" w-full h-screen grid sm:grid-cols-2 gird-cols-1 place-content-center
-            bg-gradient-to-r from-petBlue/80 to-darkPetBlue/80 relative z-10 overflow-hidden">
+            <div className="w-full h-screen absolute inset-0 z-10
+            bg-gradient-to-r from-petBlue/70 to-petBlue/90 dark:from-darkPetBlue/70 dark:to-darkPetBlue/90">
                 {children}
             </div>
         </div>

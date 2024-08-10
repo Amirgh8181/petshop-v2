@@ -13,6 +13,7 @@ export interface TypingAnimationProps {
     once?: boolean
     typeAnimation: "typing" | "lineOpacity",
     childClass?: string
+    textClass?: string
 }
 
 const TextAnimations = ({
@@ -25,7 +26,8 @@ const TextAnimations = ({
     amountView,
     once,
     typeAnimation,
-    childClass
+    childClass,
+    textClass
 }: TypingAnimationProps) => {
     const textArray: string[] = Array.isArray(text) ? text : [text]
     const boxRef = useRef(null)
@@ -65,9 +67,9 @@ const TextAnimations = ({
             >
 
                 {textArray.map((line, lineIndex) => (
-                    <span className="block md:text-start text-center" key={`line-${lineIndex}`}>
+                    <span className={`block ${textClass ?? 'md:text-start text-center'}`} key={`line-${lineIndex}`}>
                         {typeAnimation === "typing" ? renderTypingAnimation(line) : (
-                            <motion.span className="inline-block" variants={typingVariant}>
+                            <motion.span className="block" variants={typingVariant}>
                                 {line}
                                 &nbsp;
                             </motion.span>

@@ -1,6 +1,5 @@
 import ProductPreview from '@/src/components/Shop/ShopItem'
 import { Hero } from '@/ui/Hero'
-import mainImg from "@/public/images/Shop/hero.png"
 import bgImage from "@/public/images/Shop/heroBg.jpg"
 import Collection from '@/src/components/Shop/othersection'
 import { getTranslations } from 'next-intl/server'
@@ -14,7 +13,6 @@ const Shop = async () => {
   return (
     <main className='space-y-[5vmax] xl:space-y-[2vmax] mb-7'>
       <Hero
-        img={mainImg}
         bgImage={bgImage}
         title={t("title1")}
         title2={t("title2")}
