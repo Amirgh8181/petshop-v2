@@ -15,7 +15,7 @@ import { signIn } from 'next-auth/react';
 
 //component and styles
 import LoadingUi from '../../UI/Loading';
-import AuthBtn from '../../UI/Button/AuthBtn';
+import AuthBtn from '../../UI/Button/AuthFormBtn';
 import SignUpInputs from '../../UI/Inputs/SignUpInput';
 
 //icon

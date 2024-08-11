@@ -17,7 +17,7 @@ import { AuthInputType } from '@/root/types';
 //action
 import LoadingUi from '../../UI/Loading';
 import { signIn } from 'next-auth/react';
-import AuthBtn from '../../UI/Button/AuthBtn';
+import AuthBtn from '../../UI/Button/AuthFormBtn';
 import SignInInputs from '../../UI/Inputs/SignInInputs';
 import { useTranslations } from 'next-intl';
 import { LoginSchema } from '@/src/schema/zodSchema/LoginSchema';
