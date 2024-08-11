@@ -14,9 +14,9 @@ import { useTranslations } from 'next-intl';
 const ClinicAndShelterCard = ({ href, data, headerText }: { href: string, data: clinicAndSheltersData[], headerText: string }) => {
   const t = useTranslations("Clinic.Card")
   return (
-    <div className='w-full min-h-screen flex flex-col items-center gap-4 pb-[2vmax]' dir='ltr'>
+    <div className='w-full space-y-4 my-4' dir='ltr'>
       <TextAnimations
-        boxClass={`text-7xl capitalize flex justify-center`}
+        boxClass='md:text-7xl text-5xl capitalize flex justify-center'
         text={headerText}
         typeAnimation='typing'
         el='h1'
@@ -29,29 +29,25 @@ const ClinicAndShelterCard = ({ href, data, headerText }: { href: string, data: 
           once
           yVal={40}
           key={item._id}
-          boxClass='w-[90%] md:h-[40vh]'
-          childClass='w-full h-full bg-gray-200 dark:bg-gray-900 rounded-[2.5rem] shadow-xl flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0 md:py-8 py-4 md:px-4'
+          boxClass='w-[90%] mx-auto'
+          childClass='bg-neutral-content dark:bg-neutral rounded-[2.5rem] shadow-xl
+           grid sm:grid-cols-3 grid-cols-1 place-content-center p-4 space-y-4 md:space-y-0'
         >
-          <div className='md:w-[30%] w-[90%] md:h-full flex items-center justify-center'>
             <Image src={item.attachmentFile} alt='clinic item img' width={300} height={300}
-              className='max-w-[80%] rounded-[2.5rem]' />
-          </div>
-          <div className='flex flex-col items-center md:items-start md:text-start text-center space-y-2 text-sm md:w-1/3 w-[90%]'>
-            <h3 className='md:text-lg text-base font-bold'>{item.name}</h3>
+              className='md:w-[85%] md:py-2 w-[90%] rounded-[2.5rem] mx-auto self-center' />
 
-            <div className='md:w-2/3 flex flex-col  space-y-2'>
+          <div className='md:text-start text-center space-y-2 self-center'>
+            <h3 className='md:text-lg sm:text-sm text-base font-bold'>{item.name}</h3>
               <CenterItems icon={<FaLocationDot />} text={item.address} />
               <CenterItems icon={<FaPhoneAlt />} text={item.phone} />
               <CenterItems icon={<FaUserDoctor />} text={item.doctorName} />
-            </div>
           </div>
-          <div className='flex flex-col items-center md:text-lg text-base font-bold md:w-1/3 w-[90%] space-y-8'>
-
-            <div className='text-center'>
-              <div>8:00 {t("am")} - 7:00 {t("pm")}</div>
-              <div>Sat <span className='text-petBlue'>Sun Mon Tu</span> Wed Thu <span className='text-petBlue'>Fri</span> </div>
+          <div className='md:text-lg text-base font-bold md:space-y-8 space-y-4 flex flex-col justify-center items-center'>
+            <div className='text-center sm:text-xs md:text-base text-sm'>
+              <p>8:00 {t("am")} - 7:00 {t("pm")}</p>
+              <p>Sat <span className='text-petBlue'>Sun Mon Tu</span> Wed Thu <span className='text-petBlue'>Fri</span> </p>
             </div>
-            <Link href={`${href}${item._id}`} className='w-[90%] !p-4 dark:bg-darkPetBlue bg-petBlue btn rounded-box'>
+            <Link href={`${href}${item._id}`} className='w-[80%] !p-4 dark:bg-darkPetBlue bg-petBlue btn rounded-box sm:text-xs md:text-base text-sm grid place-content-center'>
               {t("book")}
             </Link>
           </div>

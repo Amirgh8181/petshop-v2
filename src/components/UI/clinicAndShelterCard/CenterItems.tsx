@@ -1,11 +1,10 @@
-"use client"
 const CenterItems = ({ icon, text }: { icon: React.JSX.Element, text: string }) => {
     return (
-        <div className='flex space-x-2 w-full justify-center md:justify-start'>
-            <span className='text-lg lg:text-2xl'>
+        <div className='flex space-x-2 w-[70%] md:w-full mx-auto'>
+            <span className='text-xl lg:text-2xl '>
                 {icon}
             </span>
-            <p className='w-[70%] md:w-[90%] md:text-sm text-xs xl:text-lg  font-normal'>
+            <p className='md:text-sm sm:text-2xs text-xs xl:text-lg font-normal text-start'>
                 {text}
             </p>
         </div >
