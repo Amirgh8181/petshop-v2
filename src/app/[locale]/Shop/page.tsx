@@ -16,7 +16,9 @@ const Shop = async () => {
         bgImage={bgImage}
         title={t("title1")}
         title2={t("title2")}
-        desc={t("title3")} />
+        desc={t("title3")} 
+        faqLink='/Shop/#startShop'
+        />
       <CategoryPreview />
       <ProductPreview products={products} />
       <Collection />

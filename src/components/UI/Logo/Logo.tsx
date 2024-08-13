@@ -2,11 +2,12 @@ import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
 import blackLogo from "@/public/images/logo/logo.png"
+import StaticImageCopm from '../StaticImage'
 
 const Logo = () => {
     return (
-        <Link href={"/"} className="btn btn-ghost !px-0 text-xl flex justify-center items-center md:w-[15vmax] sm:w-[20vmax] w-[23vmax]">
-            <Image src={blackLogo} alt='logo' width={blackLogo.width} height={blackLogo.height} className='block w-full h-full object-contain' />
+        <Link href={"/"} className="btn btn-ghost p-1 xl:w-[10vmax] md:w-[15vmax]  w-[23vmax]">
+            <StaticImageCopm img={blackLogo} imgAlt='logo' imgClass='w-full block object-contain' />
         </Link>
     )
 }

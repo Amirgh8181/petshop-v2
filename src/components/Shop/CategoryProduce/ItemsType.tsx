@@ -4,7 +4,7 @@ const CategoryItemsType = ({ type, changeType }: { type: string, changeType: (ty
     const categ = ["All", "Beds", "Furnitures", "Treats", "Food", "Health", "Toys"]
     const t = useTranslations("ShopPage.category")
     return (
-        <ul className='flex items-center justify-around md:w-[60%] w-full h-full md:font-bold mt-[2vmax]'>
+        <ul id='startCategory' className='flex items-center justify-around md:w-[60%] w-full h-full md:font-bold mt-[2vmax]'>
             {categ.map(item =>
                 <div key={item} onClick={() => changeType(item)}
                     className={type === item ?

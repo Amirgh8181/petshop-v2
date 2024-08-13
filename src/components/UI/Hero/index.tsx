@@ -7,9 +7,10 @@ interface HeroProps {
     title?: string,
     title2?: string,
     desc?: string
+    faqLink:string
 }
 
-export const Hero = ({ bgImage, title, title2, desc }: HeroProps) => {
+export const Hero = ({ bgImage, title, title2, desc,faqLink }: HeroProps) => {
     return (
         <HeroContainer
             img={bgImage}
@@ -18,6 +19,7 @@ export const Hero = ({ bgImage, title, title2, desc }: HeroProps) => {
                 titleh1={title ?? ''}
                 titleh2={title2 ?? ''}
                 description={desc ?? ''}
+                FaqLink={faqLink}
             />
         </HeroContainer>
     )

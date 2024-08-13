@@ -7,7 +7,7 @@ const SheltersSinglePageRightSide = ({ img }: { img: string }) => {
 
 
     return (
-        <div className='w-full p-4 flex flex-col space-y-6 items-center'>
+        <div className='w-full p-4 flex flex-col space-y-6 items-center overflow-hidden'>
             <ScaleAnimation
                 boxClass='w-full grid place-content-center'
                 childClass='origin-top'

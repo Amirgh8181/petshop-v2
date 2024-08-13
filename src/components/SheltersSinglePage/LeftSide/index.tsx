@@ -7,7 +7,7 @@ import { useTranslations } from 'next-intl'
 const SheltersSinglePageLeftSide = ({ shelterData }: { shelterData: clinicAndSheltersData }) => {
     const t = useTranslations("Shelter.singlePage")
     return (
-        <TranslateAnimation boxClass='w-[90%] mx-auto py-4 text-center md:text-start' xVal={40} once>
+        <TranslateAnimation boxClass='w-[90%] mx-auto py-4 text-center md:text-start overflow-hidden' xVal={40} once>
             <h3>{shelterData.name}</h3>
             <p className='w-[80%] mx-auto md:mx-0'>{shelterData.shortDescription}</p>
             <div className='divider divider-primary' />

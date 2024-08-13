@@ -15,8 +15,9 @@ const Shelters = async () => {
                 bgImage={bgImage}
                 title={t("Hero.title")}
                 desc={t("Hero.description")}
+                faqLink='/Shelters/#startShelter'
                     />
-            <div className='w-full min-h-screen mt-6'>
+            <div className='w-full min-h-screen mt-6' id='startShelter'>
                 <ClinicAndShelterCard href='/Shelters/' data={req} headerText={t("Card.head")}/>
             </div>
         </>

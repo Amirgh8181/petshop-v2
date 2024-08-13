@@ -14,13 +14,13 @@ const NavBar = () => {
             <nav className='fixed top-0 bg-primary/50 origin-top backdrop-blur-2xl z-40 w-full' dir='ltr'>
 
 
-                <OpacityContent delay={0.5} boxClass="navbar xl:w-[70%] bg-transparent mx-auto" duration={1}>
+                <OpacityContent delay={0.5} boxClass="navbar bg-transparent mx-auto" duration={1}>
 
-                    <div className="navbar-start space-x-2">
+                    <div className="navbar-start md:space-x-0 space-x-2">
                         <HamMenuBtn/>
                         <Logo />
                     </div>
-                    <div className="navbar-center hidden md:flex">
+                    <div className="navbar-center hidden md:block">
                         <DesktopNavItem />
                     </div>
                     <div className="navbar-end">

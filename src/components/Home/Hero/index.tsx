@@ -13,14 +13,14 @@ const HeroSection = () => {
 
   return (
     <div
-      className='w-full md:h-screen h-[90dvh] flex justify-center items-center relative overflow-hidden'
+      className='w-full h-screen  flex justify-center items-center overflow-hidden'
     >
-      <WaveBg className="w-full md:h-[105%] h-[110%] absolute inset-0 text-primary xl:hidden" />
+      <WaveBg className="w-full h-full absolute inset-0 text-primary" />
       <div className=" w-[90%] md:h-[85%] h-[70%] xl:h-[70%] glass rounded-box mt-[6vmax]">
         <article className='w-full md:h-1/2 flex flex-col justify-end md:text-left text-center pt-6 md:px-10'>
           <TextAnimations
             text={t("title")}
-            boxClass='md:text-7xl text-4xl font-bold md:w-[80%] w-full'
+            boxClass='lg:text-7xl md:text-6xl text-4xl font-bold md:w-[80%] w-full'
             el='h1'
             staggerTime={0.1}
             duration={0.1}
