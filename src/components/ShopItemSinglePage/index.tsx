@@ -5,18 +5,15 @@ import ShopItemLeftSide from './LeftSide'
 import ScaleAnimation from '../UI/Animation/ScaleAnimation'
 
 const ShopItemSinglePageContainer = ({ product }: { product: ShopItem }) => {
-    if (typeof window !== "undefined") {
-        window.scrollTo(0, 0)
-    }
     return (
-        <div className='container flex flex-col md:flex-row md:justify-around items-center md:mt-6 md:mb-0 mb-10 mt-[15vmax]'>
-            <div className='md:w-1/2 w-[90vw] order-2 md:order-1 space-y-7 mt-6 md:mt-0'>
+        <div className='w-full min-h-screen grid grid-cols-1 sm:grid-cols-2 gap-4 mt-[17dvh] mb-6 sm:mt-[5dvh] sm:mb-0 md:mt-[11dvh]'>
+            <div className='order-2 sm:order-1 space-y-7 w-[90%] h-full grid place-content-center mx-auto'>
                 <ShopItemLeftSide product={product} />
             </div>
             <ScaleAnimation
                 scaleVal
-                boxClass='md:w-[40%] w-[90vw] order-1 md:order-2'
-                childClass='md:w-full w-[80%] mx-auto'
+                boxClass='w-[90%] order-1 sm:order-2 mx-auto flex justify-center items-center'
+                childClass='w-[90%] md:w-[80%]'
                 once
                 delay={1}
             >

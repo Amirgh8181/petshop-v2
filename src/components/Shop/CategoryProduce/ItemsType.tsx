@@ -4,15 +4,16 @@ const CategoryItemsType = ({ type, changeType }: { type: string, changeType: (ty
     const categ = ["All", "Beds", "Furnitures", "Treats", "Food", "Health", "Toys"]
     const t = useTranslations("ShopPage.category")
     return (
-        <ul id='startCategory' className='flex items-center justify-around md:w-[60%] w-full h-full md:font-bold mt-[2vmax]'>
+        <ul id='startCategory' className='flex items-center space-x-4 md:space-x-8 px-2'>
             {categ.map(item =>
-                <div key={item} onClick={() => changeType(item)}
-                    className={type === item ?
-                        'text-petBlue border-b-2 border-b-petBlue pb-2 text-sm md:text-lg cursor-pointer'
-                        :
-                        'text-petBlue/70 hover:text-petBlue pb-2 cursor-pointer border-b-2 border-b-transparent hover:border-b-petBlue text-sm md:text-lg transition-all duration-300'}>
+                <li key={item} onClick={() => changeType(item)}
+                    className={`xs:text-xs sm:text-sm md:text-lg xl:text-2xl md:font-bold
+                        ${type === item ?
+                            'text-petBlue border-b-2 border-b-petBlue pb-2 cursor-pointer'
+                            :
+                            'text-petBlue/70 hover:text-petBlue pb-2 cursor-pointer border-b-2 border-b-transparent hover:border-b-petBlue transition-all duration-300'}`}>
                     {t(item)}
-                </div>
+                </li>
             )}
         </ul>
     )

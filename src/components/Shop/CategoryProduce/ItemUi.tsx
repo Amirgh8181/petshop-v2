@@ -6,10 +6,10 @@ const CategoryItemUi = ({ data }: { data: ShopItem[] | undefined }) => {
         <>
             {data
                 ?
-                <div className='grid place-items-center md:grid-cols-4 grid-cols-2 gap-8 px-2'>
+                <div className='w-full grid md:grid-cols-4 grid-cols-2 gap-8 px-2'>
                     {
                         data?.map(item =>
-
+                                
                             <CardUi product={item} key={item._id}/>
                         )
 

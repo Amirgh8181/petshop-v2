@@ -7,7 +7,6 @@ import getShelterItemPage from '@/src/lib/getShelterItemPage';
 
 const ShelterPage = async ({ params }: { params: { shelterpage: string } }) => {
     const req: clinicAndSheltersData = await getShelterItemPage(params.shelterpage)
-    console.log(req);
 
     return (
         <div className='w-full relative'>

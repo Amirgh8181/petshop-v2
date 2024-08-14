@@ -9,7 +9,7 @@ const AddFavoriteListBtn = ({ itemDetails }: { itemDetails: ShopItem }) => {
     const { data: session } = useSession()
     const { setFavoriteList, FavoriteList } = useFavoriteList()
     const chekIncludes = FavoriteList.find(q => q._id === itemDetails._id)
-    const t=useTranslations("ShopPage.singlePage.favorite")
+    const t = useTranslations("ShopPage.singlePage.favorite")
 
     const addFavorite = (item: ShopItem) => {
         if (!session) {
@@ -21,10 +21,10 @@ const AddFavoriteListBtn = ({ itemDetails }: { itemDetails: ShopItem }) => {
     return (
         <>
             <div onClick={() => addFavorite(itemDetails)}
-                className='btn rounded-full md:w-1/2 w-[80%] font-bold md:text-base text-sm bg-primary
-                          border-2 border-primary dark:text-white mx-3'>
-                <span className={`${chekIncludes&& '!text-red-500'} text-xl`}><FaRegHeart /></span>
-                <span className={`${chekIncludes&& '!text-red-500'}`}>{chekIncludes ? t("remove") : t("add")}</span>
+                className='btn rounded-full md:w-1/2 w-[80%] font-bold text-sm md:text-base xl:text-xl bg-primary
+                          border-2 border-primary'>
+                <span className={`${chekIncludes && session && '!text-red-500'} text-lg md:text-xl xl:text-2xl`}><FaRegHeart /></span>
+                <span className={`${chekIncludes && session && '!text-red-500'}`}>{chekIncludes && session ? t("remove") : t("add")}</span>
             </div>
         </>
     )
