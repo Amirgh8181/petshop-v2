@@ -26,14 +26,11 @@ const EndQuestion = ({ QuestionScore, refreshQuest }: { QuestionScore: number, r
     }
     return (
         <div className='w-full grid place-content-center space-y-4 text-center'>
-            <p className='text-2xl font-bold'>{t("score")}</p>
-            <p className='text-2xl font-bold'>{QuestionScore}</p>
-            <p className='text-2xl font-bold'>{t("animal")}</p>
-            <p className='text-2xl font-bold'>{showAnimal(QuestionScore)}</p>
-
+            <p className='xl:text-3xl md:text-xl text-lg font-bold'>{t("score")} {QuestionScore}</p>
+            <p className='xl:text-3xl md:text-xl text-lg font-bold'>{t("animal")} {showAnimal(QuestionScore)}</p>
 
             <Link
-                className='w-[80%] aspect-[11/1] btn bg-primary text-lg mx-auto'
+                className='btn w-[70vw] sm:w-[30vw] bg-primary xl:text-2xl md:text-lg text-sm mx-auto capitalize'
                 href='/'
                 onClick={refreshQuest}
             >

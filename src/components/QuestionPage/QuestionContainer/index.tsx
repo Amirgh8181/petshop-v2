@@ -26,7 +26,7 @@ const QuestionContainer = () => {
     }
 
     return (
-        <div className='w-full flex flex-col items-center space-y-4'>
+        <>
 
             {QuestionNumber === 0
                 ?
@@ -34,7 +34,7 @@ const QuestionContainer = () => {
                 :
                 QuestionNumber <= 20 && QuestionNumber >= 1
                     ?
-                    <div className='w-[80%] space-y-4'>
+                    <div className='w-[80%] space-y-4 mx-auto'>
                         <CustomRadio Score={5} title={t(questionData[QuestionNumber][5])} number={1} handleQuestion={handleQusetionRadio} />
                         <CustomRadio Score={10} title={t(questionData[QuestionNumber][10])} number={2} handleQuestion={handleQusetionRadio} />
                         <CustomRadio Score={15} title={t(questionData[QuestionNumber][15])} number={3} handleQuestion={handleQusetionRadio} />
@@ -45,7 +45,7 @@ const QuestionContainer = () => {
                     <EndQuestion QuestionScore={QuestionScore} refreshQuest={setRefreshQuestion} />
             }
 
-            <progress className="progress progress-primary w-[70%]"
+            <progress className="progress progress-primary w-[70%] mx-auto mt-4"
                 value={
                     QuestionNumber < 21 && QuestionNumber > 0
                         ? `${QuestionNumber * 5 - 5}`
@@ -55,7 +55,7 @@ const QuestionContainer = () => {
                 max="100"
             />
 
-        </div>
+        </>
     )
 }
 

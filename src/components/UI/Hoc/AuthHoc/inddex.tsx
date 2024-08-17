@@ -20,9 +20,17 @@ const AuthHoc = ({
 
     const t = useTranslations("Auth.hoc")
     return (
-        <div className='flex md:flex-row flex-col w-[95vw] min-h-screen space-y-[6vmax] md:space-y-0 py-[7vmax]'>
-            {/* left side of auth page */}
+        <div className='flex flex-col md:flex-row items-center justify-center mt-[13dvh] mb-[5vmax] space-y-[8vmax] md:space-y-0'>
+            {/* right side of auth page */}
+            <HocUi
+                mainImage={mainImage}
+                leftImage={leftImage}
+                rightImage={rightImage}
+                text={text}
+                text1={text1}
+            />
 
+            {/* left side of auth page */}
             <div className='order-2 md:order-1 md:w-1/2 w-full flex flex-col items-center'>
                 <div className='md:space-y-8 w-[90%]'>
                     <div className='w-full h-16 btn shadow-inner shadow-primary/30 rounded-full bg-base-200'>
@@ -40,8 +48,7 @@ const AuthHoc = ({
                 </div>
             </div>
 
-            {/* right side of auth page */}
-            <HocUi mainImage={mainImage} leftImage={leftImage} rightImage={rightImage} text={text} text1={text1} />
+
         </div>
     )
 }

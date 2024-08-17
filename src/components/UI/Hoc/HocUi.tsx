@@ -17,50 +17,58 @@ interface HocUiProps {
 const HocUi = ({ text, text1, rightImage, mainImage, leftImage }: HocUiProps) => {
     const local = useLocale()
     return (
-        <div className='order-1 md:order-2 md:sticky md:top-[7vmax] md:self-start md:w-1/2 w-full md:h-auto grid place-items-center py-[10vmax] md:py-0'>
-            <div className='relative md:h-[80vh] h-[70vh] w-[80%] bg-primary rounded-badge p-4 mx-auto'>
-                <div className='md:p-6 p-3 h-1/2 space-y-3'>
+        <div className='order-1 sm:order-2 md:w-[80%] sm:w-full w-full md:my-0 mx-auto'>
+            <div className='relative xl:h-[60dvh] md:h-[80dvh] h-[70dvh] w-[80%] bg-primary rounded-badge p-4 mx-auto flex justify-center'>
+                <div className='space-y-3 mt-8'>
                     <TextAnimations
                         once
                         text={text}
                         typeAnimation='typing'
-                        boxClass='text-4xl md:text-5xl font-bold' />
+                        boxClass='text-2xl sm:text-3xl lg:text-5xl font-bold text-center'
+                        textClass='text-center'
+                    />
                     <TextAnimations
                         once
                         delay={1}
                         duration={0.5}
                         typeAnimation='lineOpacity'
                         text={text1}
-                        boxClass='w-3/4 text-base md:text-lg mx-auto md:mx-0' />
+                        boxClass='w-3/4 mx-auto xs:text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl'
+                        textClass='text-center'
+                    />
                 </div>
 
-                <div className='h-[110%] w-[105%] absolute inset-0'>
+                <div className='h-full xl:w-[115%] w-[110%] absolute top-0 overflow-hidden'>
                     <ScaleAnimation
                         scaleVal
-                        boxClass={`absolute ${local === "fa" ? 'md:-right-[2vmax] -right-[6vmax]' : 'md:-left-[4vmax] -left-[6vmax]'} bottom-[20vh] animate-bounce`}
+                        boxClass={`absolute  bottom-[20dvh] animate-bounce xl:w-[3vmax] md:w-[4vmax] sm:w-[5vmax] w-[7.5vmax]
+                        ${local === "fa" ? 'right-0' : 'left-0'}`
+                        }
                         delay={2.5}
                         once
                     >
-                        <StaticImageCopm img={leftImage} imgAlt='main-login' imgClass='scale-50' />
+                        <StaticImageCopm img={leftImage} imgAlt='left-hoc' imgClass='object-contain' />
                     </ScaleAnimation>
 
                     <ScaleAnimation
                         scaleVal
-                        boxClass={`absolute bottom-0 ${local === "fa" ? 'left-0' : 'right-0'} flex justify-end`}
+                        boxClass={`absolute bottom-0 w-full`}
                         delay={2}
                         once
                     >
-                        <StaticImageCopm img={mainImage} imgAlt='main-login' imgClass={`${local === "fa" && 'rotateY'} w-[90%]`}
+                        <StaticImageCopm img={mainImage} imgAlt='main-hoc' imgClass={`${local === "fa" && 'rotateY'} w-[70%] object-contain mx-auto`}
                         />
                     </ScaleAnimation>
 
                     <ScaleAnimation
                         scaleVal
-                        boxClass={`absolute  ${local === "fa" ? 'md:-left-[2vmax] -left-[7vmax]' : 'md:-right-[2vmax] -right-[7vmax]'} top-[15vh] animate-bounce`}
+                        boxClass={`absolute top-[15dvh] animate-bounce xl:w-[3vmax] md:w-[4vmax] sm:w-[5vmax] w-[7.5vmax] 
+                        ${local === "fa" ? 'left-0' : 'right-0'}`
+                        }
                         delay={2.5}
                         once
                     >
-                        <StaticImageCopm img={rightImage} imgAlt='main-login' imgClass='scale-50' />
+                        <StaticImageCopm img={rightImage} imgAlt='right-hoc' imgClass='object-contain' />
                     </ScaleAnimation>
 
                 </div>
@@ -70,3 +78,4 @@ const HocUi = ({ text, text1, rightImage, mainImage, leftImage }: HocUiProps) =>
 }
 
 export default HocUi
+

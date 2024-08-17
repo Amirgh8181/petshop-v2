@@ -5,15 +5,13 @@ import { useTranslations } from "next-intl"
 const StartQuestion = ({ startQuestion }: { startQuestion: () => void }) => {
     const t = useTranslations("PersonalityTest")
     const { data: session } = useSession()
-    console.log(session);
 
     const isStasrt = () => {
         session ? startQuestion() : signIn()
     }
 
     return <button onClick={isStasrt}
-        content='go to start question'
-        className='w-[80%] aspect-[11/1] btn bg-primary text-lg'
+        className='btn w-[80%] bg-primary xl:text-xl md:text-lg text-sm py-2 text-nowrap'
     >
         {t("start")}
     </button>
