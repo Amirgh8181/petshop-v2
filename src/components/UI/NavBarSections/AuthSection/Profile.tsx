@@ -6,39 +6,40 @@ import { FaHeart } from 'react-icons/fa'
 import { signOut } from 'next-auth/react'
 import { authSectionProps } from '.'
 import { useTranslations } from 'next-intl'
+import { IoPersonSharp } from "react-icons/io5";
 
 const Profile = ({ isAuth }: { isAuth: authSectionProps }) => {
-    const t=useTranslations("Profile")
+    const t = useTranslations("Profile")
     return (
         <>
             {isAuth &&
                 <div className="dropdown dropdown-end">
                     <div tabIndex={0} role="button" className="avatar placeholder">
-                        <div className="navbarBtn !p-4">
-                            <span className="text-3xl">{isAuth.user.username.split("")[0]}</span>
+                        <div className="navbarBtn">
+                            <span className="navIconSize"><IoPersonSharp /></span>
                         </div>
                     </div>
 
 
                     <ul
                         tabIndex={0}
-                        className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
+                        className="menu menu-sm dropdown-content rounded-box z-[1] mt-3 p-2 shadow space-y-4 bg-primary glass">
                         <li>
-                            <Link href={'/FavoriteList'} className="flex items-center space-x-2">
-                                <span className="text-2xl"> <FaHeart /> </span>
+                            <Link href={'/FavoriteList'} className="flex items-center space-x-2 hocTextSize3 text-nowrap">
+                                <span> <FaHeart /> </span>
                                 <span>{t("favorite")}</span>
                             </Link>
                         </li>
                         <li>
-                            <Link href={'/Cart'} className="flex items-center space-x-2">
-                                <span className="text-2xl"> <MdOutlineShoppingCart /> </span>
+                            <Link href={'/Cart'} className="flex items-center space-x-2 hocTextSize3 text-nowrap">
+                                <span> <MdOutlineShoppingCart /> </span>
                                 <span>{t("cart")}</span>
                             </Link>
                         </li>
                         <li>
-                            <div className="flex items-center space-x-2" onClick={() => signOut()}>
-                                <span className="text-2xl"><BiLogIn /></span>
-                                <span className="font-bold">{t("logout")}</span>
+                            <div className="flex items-center space-x-2 hocTextSize3 text-nowrap text-red-500" onClick={() => signOut()}>
+                                <span><BiLogIn /></span>
+                                <span>{t("logout")}</span>
                             </div>
                         </li>
                     </ul>

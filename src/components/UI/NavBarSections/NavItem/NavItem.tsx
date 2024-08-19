@@ -8,7 +8,7 @@ const NavItemRender = ({ name, href }:  NavItemProp ) => {
     const isCurrent = pathname.split("/")[1] === href.split("/")[1];
     return (
 
-        <li key={href} className="text-3xl md:text-base xl:text-lg mx-2">
+        <li key={href} className="text-3xl md:text-base xl:text-3xl lg:text-lg mx-2">
             <Link href={href}
                 className=
                 {

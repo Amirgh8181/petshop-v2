@@ -16,9 +16,9 @@ const SwitchTheme = () => {
                 {/* this hidden checkbox controls the state */}
                 <input type="checkbox" onClick={() => changeMode()} className='flex justify-center items-center'/>
                 {/* moon icon */}
-                <FaMoon className="dark:hidden block fill-current text-2xl text-darkPetBlue"/>
+                <FaMoon className="dark:hidden block fill-current text-darkPetBlue navIconSize"/>
                 {/* sun icon */}
-                <CiSun  className="dark:block hidden fill-current text-2xl text-yellow-500"/>
+                <CiSun  className="dark:block hidden fill-current text-yellow-500 navIconSize"/>
             </label>
         </div>
     )

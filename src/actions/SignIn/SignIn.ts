@@ -1,6 +1,5 @@
 import axios from "axios";
 const url = process.env.NEXT_PUBLIC_API_URL as string
-console.log(url);
 export async function SignIn({ email, password }: { email: string, password: string }) {
     const credentialDetail = { email, password }
     try {

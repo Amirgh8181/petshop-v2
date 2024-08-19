@@ -11,7 +11,7 @@ const NavBar = () => {
 
     return (
         <>
-            <nav className='fixed top-0 bg-primary/50 origin-top backdrop-blur-2xl z-40 w-full' dir='ltr'>
+            <nav className='fixed top-0 bg-primary/50 origin-top backdrop-blur-2xl z-40 w-full xl:py-4' dir='ltr'>
 
 
                 <OpacityContent delay={0.5} boxClass="navbar bg-transparent mx-auto" duration={1}>

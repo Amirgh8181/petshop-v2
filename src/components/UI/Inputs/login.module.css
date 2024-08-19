@@ -11,5 +11,5 @@
 }
 
 .inputStyle{
-  @apply border-2 border-primary rounded-btn input input-bordered input-primary xl:text-2xl md:text-lg text-sm;
+  @apply border-2 border-primary rounded-btn input input-bordered input-primary xl:text-3xl md:text-lg text-sm;
 }

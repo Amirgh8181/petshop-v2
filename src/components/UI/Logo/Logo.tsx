@@ -6,8 +6,8 @@ import StaticImageCopm from '../StaticImage'
 
 const Logo = () => {
     return (
-        <Link href={"/"} className="btn btn-ghost p-1 xl:w-[10vmax] md:w-[15vmax]  w-[23vmax]">
-            <StaticImageCopm img={blackLogo} imgAlt='logo' imgClass='w-full block object-contain' />
+        <Link href={"/"} className="btn btn-ghost p-1 xl:w-[12vmax] md:w-[15vmax]  w-[23vmax] h-full">
+            <StaticImageCopm img={blackLogo} imgAlt='logo' imgClass='w-full object-contain' />
         </Link>
     )
 }

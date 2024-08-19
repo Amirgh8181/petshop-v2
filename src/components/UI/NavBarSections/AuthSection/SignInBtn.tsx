@@ -11,8 +11,8 @@ const SignInBtn = ({isAuth}:{isAuth:authSectionProps}) => {
         <>{
             isAuth !== undefined && !isAuth &&
             <button onClick={() => signIn()} className="navbarBtn flex justify-center items-center font-bold">
-                <span className='md:flex hidden mx-1'>{t("sign in")}</span>
-                <RiLoginBoxFill className='text-2xl' />
+                <span className='md:flex hidden mx-1 hocTextSize2'>{t("sign in")}</span>
+                <RiLoginBoxFill className='navIconSize' />
             </button>
         }
         </>

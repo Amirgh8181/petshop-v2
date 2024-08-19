@@ -20,7 +20,7 @@ const LanguageChanger = () => {
     return (
         <div className="dropdown dropdown-end">
             <button tabIndex={0} role='button' className="navbarBtn">
-                <AiOutlineGlobal className='text-2xl' />
+                <AiOutlineGlobal className='navIconSize' />
             </button>
             <ul className="dropdown-content menu shadow bg-base-300 rounded-btn text-center space-y-1 mt-2">
                 {options.map((option, index) => (
@@ -32,7 +32,7 @@ const LanguageChanger = () => {
                             className={
                                 `${index === 0 ? "btn-disabled" : option.optionKey !== local ? "hover:bg-petBlue/40 hover:text-gray-100 cursor-pointer"
                                     : option.optionKey === local && "bg-petBlue/70 hover:bg-petBlue transition-colors duration-300 text-white cursor-default disabled"} 
-                                rounded-btn p-2 text-sm text-nowrap`}
+                                rounded-btn p-2 hocTextSize2 text-nowrap`}
 
                         >
                             {option.optionName}

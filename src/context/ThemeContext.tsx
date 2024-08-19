@@ -22,7 +22,6 @@ export const ThemeContext = createContext<themeContextType>(themeContextDefaultV
 
 const ThemeProvider = ({ children }: prop) => {
     const [theme, setTheme] = useState<themeType>("light")
-    console.log(theme);
 
     useEffect(() => {
         const storedTheme = localStorage.getItem("theme") || "light"

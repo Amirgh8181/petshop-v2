@@ -16,7 +16,6 @@ export const SignUpSchema = z.object({
         .refine(async (e) => {
 
             const req: dataProps[] = await getSignUpUsers()
-            console.log(req);
 
             let isExistName: boolean = true;
             req?.map(item => {

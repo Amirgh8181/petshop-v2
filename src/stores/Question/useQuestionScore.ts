@@ -67,9 +67,6 @@ export const useQuestionScore = create<State>()(
                 let stateNumber = useQuestionScore.getState().QuestionNumber
                 questionStateClone[stateNumber].value = questionValue
 
-                console.log(questionStateClone);
-                console.log(stateNumber);
-                console.log(questionStateClone);
 
                 set({
                     QuestionState: { ...questionStateClone },

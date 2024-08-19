@@ -19,9 +19,9 @@ const HamMenuBtn = () => {
         <label className="navbarBtn swap swap-rotate md:hidden" >
             <input type="checkbox" onClick={setToggleHam} />
             {isOpenHam ?
-                <RiCloseLargeLine className='text-2xl' />
+                <RiCloseLargeLine className='navIconSize' />
                 :
-                <RiMenu2Line className='text-2xl' />
+                <RiMenu2Line className='navIconSize' />
             }
         </label>
     )

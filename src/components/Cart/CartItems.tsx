@@ -13,7 +13,6 @@ const CartItems = () => {
     const [loading, setLoading] = useState<boolean>(true)
     const [items, setItems] = useState<CartItem[]>([])
     const { CartItem } = useCartItems()
-    console.log(CartItem);
 
     const t = useTranslations("Cart")
     useEffect(() => {
