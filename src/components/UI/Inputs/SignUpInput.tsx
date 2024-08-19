@@ -9,6 +9,7 @@ import { UseFormRegister } from 'react-hook-form'
 
 interface SignUpInputType extends AuthInputType {
     registerVal: "email" | "password" | "name",
+    
 }
 
 interface signUpFormValues {

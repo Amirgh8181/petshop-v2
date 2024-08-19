@@ -9,7 +9,7 @@ const InputLabel = ({ children, text }: { children: React.ReactNode, text: strin
   return (
     <div className={Styles.authLabel}>
       <div className={Styles.authLabelIcon}>{children}</div>
-      <div>{t(text)}</div>
+      <div className='hocTextSize2 font-bold'>{t(text)}</div>
     </div>
   )
 }

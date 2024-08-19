@@ -1,6 +1,5 @@
 "use client"
 import { notFound } from 'next/navigation'
-import { useState } from 'react'
 import { CustomRadio } from '../CustomRadio'
 import { useQuestionScore } from '@/src/stores/Question/useQuestionScore'
 import StartQuestion from '../StartQuestion'
@@ -45,7 +44,9 @@ const QuestionContainer = () => {
                     <EndQuestion QuestionScore={QuestionScore} refreshQuest={setRefreshQuestion} />
             }
 
-            <progress className="progress progress-primary w-[70%] mx-auto mt-4"
+            <progress
+                id='questionFaq'
+                className="progress progress-primary w-[70%] mx-auto mt-4"
                 value={
                     QuestionNumber < 21 && QuestionNumber > 0
                         ? `${QuestionNumber * 5 - 5}`

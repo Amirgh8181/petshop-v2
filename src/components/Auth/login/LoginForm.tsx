@@ -1,26 +1,30 @@
 "use client"
 
-import { useState } from 'react'
-import Link from 'next/link'
-import { useRouter, useSearchParams } from 'next/navigation';
+import { useEffect, useRef, useState } from 'react'
+import { usePathname, useRouter, useSearchParams } from 'next/navigation';
 // react-hook-form
 import { SubmitHandler, useForm } from 'react-hook-form'
 // zod
 import { zodResolver } from '@hookform/resolvers/zod';
 import { LoginDataType } from '@/src/types/AuthInput';
+import { LoginSchema } from '@/src/schema/zodSchema/LoginSchema';
 //icons
 import { MdLockOutline, MdOutlineEmail } from "react-icons/md";
 //sweet alert
 import sweetAl from '@/ui/Swal/swal';
 //type
 import { AuthInputType } from '@/root/types';
-//action
+//component
 import LoadingUi from '../../UI/Loading';
-import { signIn } from 'next-auth/react';
 import AuthBtn from '../../UI/Button/AuthFormBtn';
 import SignInInputs from '../../UI/Inputs/SignInInputs';
+import AuthDivider from '../../UI/AuthDivider';
+//next-auth
+import { signIn } from 'next-auth/react';
+//translate
 import { useTranslations } from 'next-intl';
-import { LoginSchema } from '@/src/schema/zodSchema/LoginSchema';
+//callback store
+import { useAuthCallBack } from '@/src/stores/Auth/useAuthCallBack';
 
 
 interface LoginInputType extends AuthInputType {
@@ -42,15 +46,27 @@ const LoginForm = () => {
     //state
     const [isLoading, setIsLoading] = useState(false)
     const router = useRouter()
-    const searchParams = useSearchParams().get('callbackUrl') ?? "/"
     const t = useTranslations("Auth.SignIn")
 
+    {/* because faq link in not correct working with callBackUrl cut this from url and save this in 
+        zustand store and show just pathname in url*/}
+    const path = usePathname()
+    const { callBackUrl, setCallBackUrl } = useAuthCallBack()
+    const search = useRef(useSearchParams().get('callbackUrl') ?? "/")
+    router.replace(path, undefined);
+
+    useEffect(() => {
+        checkCallbackUrl()
+    }, [search])
+
+    const checkCallbackUrl = () => {
+        if (search.current !== callBackUrl && search.current !== "/") {
+            setCallBackUrl(search.current)
+        }
+    }
 
     //submit hadler
     const onSubmit: SubmitHandler<LoginDataType> = async (e) => {
-        console.log(e.email);
-        console.log(e.password);
-
         setIsLoading(true)
         //next auth
         const req = await signIn('credentials', {
@@ -58,9 +74,7 @@ const LoginForm = () => {
             password: e.password,
             redirect: false,
         })
-
-        console.log(req);
-
+        //success login
         if (req?.ok) {
             sweetAl({
                 icon: "success",
@@ -68,10 +82,10 @@ const LoginForm = () => {
                 timer: 2000,
             })
             setTimeout(() => {
-                router.push(searchParams as string)
+                router.push(callBackUrl)
             }, 3000);
         }
-
+        //unsuccess login
         else {
             sweetAl({
                 icon: "warning",
@@ -93,20 +107,19 @@ const LoginForm = () => {
 
 
     return (
-        <div className="w-full flex flex-col justify-center items-center">
+        <div className="formContainer">
             <LoadingUi isLoading={isLoading} />
-            <form className="space-y-8 w-full glass p-4 rounded-box dark:bg-primary bg-primary/20" onSubmit={handleSubmit(onSubmit)}>
+            <form className="authForm origin-top" onSubmit={handleSubmit(onSubmit)}>
                 <SignInInputs inputCreateData={inputCreateData[0]} register={register} />
                 <SignInInputs inputCreateData={inputCreateData[1]} register={register} />
                 <AuthBtn isLoading={isLoading} />
             </form>
 
-            <div className="divider divider-primary" />
-            <div className='mt-4'>
-                <span>{t("question")}</span>
-                <Link href={`/Auth/SignUp?callbackUrl=${searchParams}`} className="text-blue-600 link mx-2">{t("authType")}</Link>
-            </div>
-
+            <AuthDivider
+                authType={t("authType")}
+                linkHref={`/Auth/SignUp?callbackUrl=${callBackUrl}`}
+                question={t("question")}
+            />
 
         </div>
     )

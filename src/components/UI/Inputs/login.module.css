@@ -2,14 +2,14 @@
   @apply flex justify-start items-center space-x-1 label label-text
 }
 .authLabelIcon{
-  @apply  text-xl mx-2
+  @apply xl:text-3xl text-xl mx-2
 }
 
 
 .authErr{
-  @apply text-red-600 ml-2 mt-2 text-xs
+  @apply text-red-600 ml-2 mt-2 xl:text-2xl md:text-lg text-sm
 }
 
 .inputStyle{
-  @apply border-2 border-primary rounded-box input input-bordered input-primary
+  @apply border-2 border-primary rounded-btn input input-bordered input-primary xl:text-2xl md:text-lg text-sm;
 }

@@ -1,9 +1,10 @@
 import { StaticImageData } from 'next/image'
 import React from 'react'
-import TextAnimations from '../Animation/TextAnimation'
-import ScaleAnimation from '../Animation/ScaleAnimation'
-import StaticImageCopm from '../StaticImage'
+import TextAnimations from '../../Animation/TextAnimation'
+import ScaleAnimation from '../../Animation/ScaleAnimation'
+import StaticImageCopm from '../../StaticImage'
 import { useLocale } from 'next-intl'
+import HocBtn from '../../Button/HocBtn'
 
 
 interface HocUiProps {
@@ -12,19 +13,20 @@ interface HocUiProps {
     leftImage: StaticImageData,
     mainImage: StaticImageData,
     rightImage: StaticImageData
+    faqLink: string
 }
 
-const HocUi = ({ text, text1, rightImage, mainImage, leftImage }: HocUiProps) => {
+const HocStaticSection = ({ text, text1, rightImage, mainImage, leftImage, faqLink }: HocUiProps) => {
     const local = useLocale()
     return (
-        <div className='order-1 sm:order-2 md:w-[80%] sm:w-full w-full md:my-0 mx-auto'>
-            <div className='relative xl:h-[60dvh] md:h-[80dvh] h-[70dvh] w-[80%] bg-primary rounded-badge p-4 mx-auto flex justify-center'>
-                <div className='space-y-3 mt-8'>
+        <div className='order-1 sm:order-2 md:w-[80%] w-full md:my-0 mx-auto relative'>
+            <div className='xl:h-[60dvh] md:h-[80dvh] sm:h-[70dvh] h-[440px] w-[80%] sticky top-[13dvh] bg-primary rounded-badge p-4 mx-auto flex justify-center'>
+                <div className='w-full inline-block relative z-10 space-y-3 mt-8'>
                     <TextAnimations
                         once
                         text={text}
                         typeAnimation='typing'
-                        boxClass='text-2xl sm:text-3xl lg:text-5xl font-bold text-center'
+                        boxClass='text-3xl sm:text-4xl lg:text-5xl xl:text-7xl font-bold text-center'
                         textClass='text-center'
                     />
                     <TextAnimations
@@ -33,9 +35,10 @@ const HocUi = ({ text, text1, rightImage, mainImage, leftImage }: HocUiProps) =>
                         duration={0.5}
                         typeAnimation='lineOpacity'
                         text={text1}
-                        boxClass='w-3/4 mx-auto xs:text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl'
+                        boxClass='w-3/4 mx-auto text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl'
                         textClass='text-center'
                     />
+                    <HocBtn faqLink={faqLink}/>
                 </div>
 
                 <div className='h-full xl:w-[115%] w-[110%] absolute top-0 overflow-hidden'>
@@ -77,5 +80,5 @@ const HocUi = ({ text, text1, rightImage, mainImage, leftImage }: HocUiProps) =>
     )
 }
 
-export default HocUi
+export default HocStaticSection
 

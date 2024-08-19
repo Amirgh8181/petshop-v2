@@ -139,3 +139,18 @@ h6 {
 .textShadow {
   text-shadow: 1px 1px 10px #000000;
 }
+.authForm {
+  @apply md:space-y-8 space-y-4 border-primary border-2 w-full p-4 rounded-box;
+}
+.formContainer {
+  @apply w-full flex flex-col justify-center items-center;
+}
+.hocTextSize {
+  @apply xl:text-xl md:text-lg text-sm;
+}
+.hocTextSize2 {
+  @apply xl:text-2xl md:text-lg text-sm;
+}
+.hocTextSize3 {
+  @apply xl:text-3xl md:text-lg text-sm;
+}

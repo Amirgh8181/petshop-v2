@@ -24,10 +24,11 @@ interface signUpFormValues {
 }
 export interface ChildComponentProps {
     register: UseFormRegister<loginFormValues>;
-    inputCreateData: LoginInputType
+    inputCreateData: LoginInputType,
+    inpId?: string
 }
 
-const SignInInputs = ({ inputCreateData, register }: ChildComponentProps) => {
+const SignInInputs = ({ inputCreateData, register, inpId }: ChildComponentProps) => {
     return (
         <label className="form-control w-full" key={inputCreateData.key}>
 
@@ -38,6 +39,7 @@ const SignInInputs = ({ inputCreateData, register }: ChildComponentProps) => {
                 className={styles.inputStyle}
                 type={inputCreateData.type}
                 {...register(inputCreateData.registerVal)}
+                id={inpId ?? "fake"}
             />
             {inputCreateData.err &&
                 <InputErr err={inputCreateData.err} />

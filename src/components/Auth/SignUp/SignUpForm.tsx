@@ -1,37 +1,32 @@
 "use client"
-
 import { useState } from 'react'
-import Link from 'next/link'
-import { useRouter, useSearchParams } from 'next/navigation';
+import { usePathname, useRouter } from 'next/navigation';
 // react hook form
 import { SubmitHandler, useForm } from 'react-hook-form'
-
 // zod
 import { zodResolver } from '@hookform/resolvers/zod';
 import { SignUpDataType } from '@/src/types/AuthInput';
-
+import { SignUpSchema } from '@/src/schema/zodSchema/SignUpSchema';
 //next-auth
 import { signIn } from 'next-auth/react';
-
 //component and styles
 import LoadingUi from '../../UI/Loading';
 import AuthBtn from '../../UI/Button/AuthFormBtn';
 import SignUpInputs from '../../UI/Inputs/SignUpInput';
-
+import AuthDivider from '../../UI/AuthDivider';
 //icon
 import { MdOutlineEmail, MdLockOutline } from 'react-icons/md';
 import { FaUser } from "react-icons/fa";
-
 //types
 import { AuthInputType } from '@/root/types';
 //action
 import { signUpUser } from '@/src/actions/SignUp/signUp';
 //sweet alert
-
-import { useTranslations } from 'next-intl';
 import sweetAl from '@/ui/Swal/swal';
-import { SignUpSchema } from '@/src/schema/zodSchema/SignUpSchema';
-
+//translate
+import { useTranslations } from 'next-intl';
+//callback store
+import { useAuthCallBack } from '@/src/stores/Auth/useAuthCallBack';
 
 interface SignUpInputType extends AuthInputType {
     registerVal: "email" | "password" | "name",
@@ -50,18 +45,25 @@ const SignUpForm = () => {
     //state
     const [isLoading, setIsLoading] = useState(false)
     const router = useRouter()
-    const searchParams = useSearchParams().get('callbackUrl') ?? "/"
     const t = useTranslations("Auth.SignUp")
+    {/* three line for callback url */ }
+    const path = usePathname()
+    const { callBackUrl } = useAuthCallBack()
+    router.replace(path, undefined);
+
+
     //submit hadler
     const onSubmit: SubmitHandler<SignUpDataType> = async (e) => {
         setIsLoading(true)
         const req = await signUpUser(e as SignUpDataType)
+        //success signup
         if (req) {
             const loginReq = await signIn('credentials', {
                 email: e.email,
                 password: e.password,
                 redirect: false,
             })
+            //success login
             if (loginReq?.ok) {
                 sweetAl({
                     icon: "success",
@@ -69,19 +71,23 @@ const SignUpForm = () => {
                     timer: 1000,
                 });
                 setTimeout(() => {
-                    router.push(searchParams)
+                    router.push(callBackUrl)
                 }, 1000);
-            } else {
+            }
+            //unsuccess login
+            else {
                 sweetAl({
                     icon: "warning",
                     title: t("unsuccessSwal"),
                     timer: 2000,
                 });
                 setTimeout(() => {
-                    router.push(`/Auth/SignIn?callbackUrl=${searchParams}`)
+                    router.push(`/Auth/SignIn?callbackUrl=${callBackUrl}`)
                 }, 3000);
             }
-        } else {
+        }
+        //unsuccess signup
+        else {
             sweetAl({
                 icon: "warning",
                 title: t("unsuccessSignUpSwal"),
@@ -102,20 +108,19 @@ const SignUpForm = () => {
     ] as const
 
     return (
-        <div className="w-full flex flex-col justify-center items-center">
+        <div className="formContainer">
             <LoadingUi isLoading={isLoading} />
-            <form className="space-y-8 w-full glass p-4 rounded-box dark:bg-primary bg-primary/20" onSubmit={handleSubmit(onSubmit)}>
+            <form className="authForm" onSubmit={handleSubmit(onSubmit)} id='authFaq'>
                 <SignUpInputs inputCreateData={inputCreateData[0]} register={register} />
                 <SignUpInputs inputCreateData={inputCreateData[1]} register={register} />
                 <SignUpInputs inputCreateData={inputCreateData[2]} register={register} />
                 <AuthBtn isLoading={isLoading} />
             </form>
 
-            <div className="divider divider-primary" />
-            <div className='mt-4'>
-                <span>{t("question")}</span>
-                <Link href={`/Auth/SignIn?callbackUrl=${searchParams}`} className="text-blue-600 link mx-2">{t("authType")}</Link>
-            </div>
+            <AuthDivider
+                authType={t("authType")}
+                linkHref={`/Auth/SignIn?callbackUrl=${callBackUrl}`}
+                question={t("question")} />
         </div>
 
     )
