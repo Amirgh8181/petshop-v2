@@ -9,28 +9,31 @@ const SheltersSinglePageLeftSide = ({ shelterData }: { shelterData: clinicAndShe
     return (
         <TranslateAnimation boxClass='w-[90%] mx-auto py-4 text-center md:text-start overflow-hidden' xVal={40} once>
             <h3>{shelterData.name}</h3>
-            <p className='w-[80%] mx-auto md:mx-0'>{shelterData.shortDescription}</p>
+            <p className='w-[80%] mx-auto md:mx-0 xl:text-xl lg:text-base text-sm'>{shelterData.shortDescription}</p>
             <div className='divider divider-primary' />
-            <div className='w-[80%] font-bold space-y-3 mx-auto md:mx-0'>
-                <p>
+            <div className='w-[80%] xl:text-3xl lg:text-lg space-y-1 mx-auto md:mx-0 opacity-100'>
+                <strong>
                     {t("location")}
-                    <br />
+                </strong>
+                <p>
                     {shelterData.address}
                 </p>
-                <p>
+                <strong>
                     {t("email")}
-                    <br />
-                    <span className='underline underline-offset-2'>
-                        info@humanecobb.com
-                    </span>
+                </strong>
+                <p className='underline underline-offset-2'>
+                    info@humanecobb.com
                 </p>
-                <p>
+                <strong>
                     {t("phone")}
-                    <br />
+                </strong>
+                <p>
                     {shelterData.phone}
                 </p>
-                <p>{t("fax")}
-                    <br />
+                <strong>
+                    {t("fax")}
+                </strong>
+                <p>
                     770-423-9386
                 </p>
                 <div className='flex space-x-3 text-3xl justify-center md:justify-start'>
