@@ -7,7 +7,7 @@ const ShelterPreview = () => {
     const t = useTranslations("Index.shelter")
 
     return (
-        <div className="w-full grid grid-cols-1 md:grid-cols-2 overflow-hidden">
+        <div className="w-full grid grid-cols-1 sm:grid-cols-2 overflow-hidden">
             <TranslateAnimation xVal={200} duration={1.5} boxClass="w-full mask mask-parallelogram">
                 <StaticImageCopm
                     img={mainImg}
@@ -22,13 +22,13 @@ const ShelterPreview = () => {
                 <h1 className="md:text-5xl text-2xl">
                     {t("title")}
                 </h1>
-                <h4 className="md:text-xl text-base">
+                <h4 className="xl:text-2xl md:text-xl text-base">
                     {t("title2")}
                 </h4>
                 <div className="w-full flex justify-center">
                     <Link
                         href={"/Shelters"}
-                        className='btn bg-primary capitalize !px-2 my-4'>
+                        className='btn bg-primary capitalize !px-2 my-4 xl:text-2xl md:text-base text-sm'>
                         {t("btnContent")}
                     </Link>
                 </div>

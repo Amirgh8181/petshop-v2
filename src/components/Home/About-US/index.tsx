@@ -6,18 +6,17 @@ const AboutUs = () => {
     const t = useTranslations("Index.About")
     const loremT = useTranslations("loremContent")
     return (
-        <section id='aboutUs' className='flex flex-col md:flex-row w-full items-center justify-center overflow-hidden'>
-            <TranslateAnimation once duration={1} xVal={40} yVal={40} boxClass=' md:order-1 order-2 md:w-1/2 w-full md:h-full flex md:items-center items-start justify-center mt-4 md:mt-0'>
-
+        <section id='aboutUs' className='grid grid-col-1 sm:grid-cols-2 overflow-hidden'>
+            <TranslateAnimation once duration={1} xVal={40} yVal={40} boxClass='sm:order-1 order-2 w-full mt-4 sm:my-0'>
                 <StaticImageCopm img={image} imgAlt='about-us'
-                    imgClass='w-[70%] aspect-square mx-auto my-[2vmax] md:my-0 mask mask-heart'
+                    imgClass='w-[60%] sm:w-[70%] aspect-square mx-auto my-[2vmax] md:my-0 mask mask-heart'
                 />
             </TranslateAnimation>
-            <TranslateAnimation once duration={1} xVal={-40} yVal={-40} boxClass='order-1 md:order-2 md:w-1/2 w-full flex flex-col justify-center items-center md:items-start md:text-start text-center md:text-start px-4'>
+            <TranslateAnimation once duration={1} xVal={-40} yVal={-40} boxClass='order-1 sm:order-2 w-full sm:text-start text-center space-y-2 xl:space-y-4 grid place-items-center'>
                 <h1 className='md:text-7xl text-4xl'>{t("title")}</h1>
-                <p className=' md:text-sm md:mb-3 text-xs mb-2'>{loremT("lorem")} </p>
-                <p className='md:text-xl text-base mb-2 md:w-[80%]'>{loremT("half lorem")}</p>
-                <p className='md:text-sm text-xs'>{loremT("cut1")}</p>
+                <p className='xl:text-lg md:text-sm text-xs'>{loremT("lorem")} </p>
+                <p className='xl:text-3xl md:text-xl text-base w-[80%] mx-auto sm:mx-0'>{loremT("half lorem")}</p>
+                <p className='xl:text-lg md:text-sm text-xs'>{loremT("cut1")}</p>
             </TranslateAnimation>
         </section>
     )

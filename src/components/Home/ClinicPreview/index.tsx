@@ -9,7 +9,7 @@ import { useTranslations } from 'next-intl'
 const ClinicPreview = () => {
     const t = useTranslations("Index.clinic")
     return (
-        <div className="w-full md:h-screen h-[60dvh] overflow-hidden grid md:place-content-center relative customGlass mt-[8dvh]"
+        <div className="w-full xl:h-[60dvh] md:h-screen sm:h-[50dvh] h-[40dvh] overflow-hidden grid md:place-content-center relative customGlass mt-[8dvh] xl:rounded-box"
         >
             <ScaleAnimation
                 scaleVal
@@ -22,6 +22,17 @@ const ClinicPreview = () => {
                     imgAlt='ClinicPreview'
                     imgClass='w-full aspect-square object-contain'
                 />
+            </ScaleAnimation>
+            <ScaleAnimation
+                scaleVal
+                delay={0.75}
+                once
+                childClass='w-[40%] absolute bottom-0 md:top-0 right-0 z-0'
+            >
+                <StaticImageCopm
+                    img={leftImg}
+                    imgAlt='ClinicPreview'
+                    imgClass='w-full aspect-square object-contain scale-95' />
             </ScaleAnimation>
             <div className='relative z-10 space-y-2 md:space-y-4 text-center md:text-white
                             md:bg-gradient-to-r from-petBlue to-darkPetBlue 
@@ -57,17 +68,7 @@ const ClinicPreview = () => {
                     </Link>
                 </ScaleAnimation>
             </div>
-            <ScaleAnimation
-                scaleVal
-                delay={0.75}
-                once
-                childClass='w-[40%] absolute bottom-0 md:top-0 right-0 z-0'
-            >
-                <StaticImageCopm
-                    img={leftImg}
-                    imgAlt='ClinicPreview'
-                    imgClass='w-full aspect-square object-contain scale-95' />
-            </ScaleAnimation>
+
         </div>
     )
 }

@@ -13,9 +13,9 @@ const HeroSection = () => {
 
   return (
     <div
-      className='w-full h-screen  flex justify-center items-center overflow-hidden'
+      className='w-full h-screen flex justify-center items-center overflow-hidden'
     >
-      <WaveBg className="w-full h-full absolute inset-0 text-primary" />
+      <WaveBg className="w-full sm:h-full h-[110%] absolute inset-0 text-primary" />
       <div className=" w-[90%] md:h-[85%] h-[70%] xl:h-[70%] glass rounded-box mt-[6vmax]">
         <article className='w-full md:h-1/2 flex flex-col justify-end md:text-left text-center pt-6 md:px-10'>
           <TextAnimations
@@ -29,7 +29,7 @@ const HeroSection = () => {
           />
           <TextAnimations
             text={[t("description1"), t("description2"), t("description3"), t("description4")]}
-            boxClass='py-6 md:text-lg text-base w-full mx-auto md:mx-0'
+            boxClass='py-6 xl:text-2xl lg:text-xl md:text-lg text-base w-full mx-auto md:mx-0'
             staggerTime={0.1}
             duration={0.75}
             delay={1}

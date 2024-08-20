@@ -26,10 +26,10 @@ const CardUi = ({ product, btnTxt }: CardUiProps) => {
                     className='w-full aspect-[16/9] md:aspect-[16/10] object-contain group-hover:scale-125 rounded-btn transition-transform duration-500' />
             </figure>
             <div className="card-body items-center w-full">
-                <h2 className="card-title text-xs md:text-lg xl:text-2xl text-center">{product.name}</h2>
-                <p className='text-xs md:text-sm xl:text-base textStrok'>{product.price}</p>
+                <h2 className="card-title text-xs sm:text-sm md:text-xl xl:text-3xl text-center">{product.name}</h2>
+                <p className='text-2xs sm:text-xs md:text-sm lg:text-base xl:text-xl textStrok'>{product.price}</p>
                 <div className="card-actions w-full">
-                    <Link href={`/Shop/${product._id}`} className="sm:w-[80%] w-[90%] bg-primary/80 hover:bg-primary/90 active:bg-primary xl:text-base md:text-sm text-2xs text-center py-1 sm:py-3 rounded-btn transition-all duration-300 mx-auto">{btnTxt ?? t("card")}</Link>
+                    <Link href={`/Shop/${product._id}`} className="sm:w-[80%] w-[90%] bg-primary/80 hover:bg-primary/90 active:bg-primary xl:text-xl lg:text-base md:text-sm text-2xs text-center py-1 sm:py-3 rounded-btn transition-all duration-300 mx-auto">{btnTxt ?? t("card")}</Link>
                 </div>
             </div>
         </div>

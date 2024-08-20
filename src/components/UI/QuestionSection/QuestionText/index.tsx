@@ -13,17 +13,15 @@ const QuestionText = () => {
             amountView={0.8}
             once
             boxClass='w-full h-full'
-            childClass='flex flex-col md:text-start text-center text-white md:space-y-8 space-y-4 px-2'
+            childClass='flex flex-col justify-center md:text-start text-center text-white md:space-y-8 space-y-4 px-2 h-full'
         >
             <h2 className='md:text-5xl text-3xl font-bold'>{t("title")}</h2>
-            <p className='md:text-base text-sm md:w-[80%] '>
+            <p className='xl:text-2xl md:text-base text-sm md:w-[80%] '>
                 {loremT("half lorem")}
             </p>
-            <div className='w-full aspect-[9/1] md:space-x-4 flex '>
-                <Link href={'/Question'} className='md:w-1/2 w-full aspect-[10/3] btn'>
-                    {t("start")}
-                </Link>
-            </div>
+            <Link href={'/Question'} className='md:w-1/2 w-full btn xl:text-2xl md:text-base text-sm'>
+                {t("start")}
+            </Link>
         </TranslateAnimation>
     )
 }
