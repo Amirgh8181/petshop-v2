@@ -17,7 +17,7 @@ const ProductPreview = ({ products }: { products: ShopItem[] }) => {
                     </ScaleAnimation>
                 )}
             </div>
-            <Link href={"/Shop/category/All"} className='btn bg-primary w-[50%] md:text-xl text-white'>
+            <Link href={"/Shop/category/All"} className='btn bg-primary lg:btn-lg w-[50%] text-white btnText'>
                 {t("btn")}
             </Link>
         </div>

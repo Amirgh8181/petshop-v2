@@ -145,4 +145,10 @@ html {
   .navIconSize {
     @apply xl:text-3xl md:text-xl text-2xl ;
   }
+  .btnText{
+    @apply xl:text-2xl lg:text-base md:text-sm text-2xs capitalize
+  }
+  .heroBtnText{
+    @apply xl:text-4xl lg:text-2xl md:text-lg text-base capitalize
+  }
 }

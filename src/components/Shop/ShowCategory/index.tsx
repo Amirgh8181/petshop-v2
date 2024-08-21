@@ -1,10 +1,16 @@
-import Image from 'next/image'
+import Image, { StaticImageData } from 'next/image'
 import Link from 'next/link'
 import ScaleAnimation from '../../UI/Animation/ScaleAnimation'
 import { useTranslations } from 'next-intl'
-
+import StaticImageCopm from '../../UI/StaticImage'
+import categoryPrev1 from '@/public/images/Shop/colection1.jpg'
+import categoryPrev2 from '@/public/images/Shop/colection2.jpg'
+import categoryPrev3 from '@/public/images/Shop/colection3.jpg'
+import categoryPrev4 from '@/public/images/Shop/colection4.jpg'
+import categoryPrev5 from '@/public/images/Shop/colection5.jpg'
+import categoryPrev6 from '@/public/images/Shop/colection6.jpg'
 interface categType {
-    image: string,
+    image: StaticImageData,
     link: string,
     type: string,
 }
@@ -13,12 +19,12 @@ const CategoryPreview = () => {
     const t = useTranslations("ShopPage.category")
 
     const categDetails: categType[] = [
-        { image: '/images/Shop/colection1.jpg', link: "/Shop/category/Beds", type: "Beds" },
-        { image: '/images/Shop/colection2.jpg', link: "/Shop/category/Furnitures", type: "Furnitures" },
-        { image: '/images/Shop/colection3.jpg', link: "/Shop/category/Treats", type: "Treats" },
-        { image: '/images/Shop/colection4.jpg', link: "/Shop/category/Food", type: "Food" },
-        { image: '/images/Shop/colection5.jpg', link: "/Shop/category/Health", type: "Health" },
-        { image: '/images/Shop/colection6.jpg', link: "/Shop/category/Toys", type: "Toys" }
+        { image: categoryPrev1, link: "/Shop/category/Beds", type: "Beds" },
+        { image: categoryPrev2, link: "/Shop/category/Furnitures", type: "Furnitures" },
+        { image: categoryPrev3, link: "/Shop/category/Treats", type: "Treats" },
+        { image: categoryPrev4, link: "/Shop/category/Food", type: "Food" },
+        { image: categoryPrev5, link: "/Shop/category/Health", type: "Health" },
+        { image: categoryPrev6, link: "/Shop/category/Toys", type: "Toys" }
     ]
 
     return (
@@ -27,16 +33,15 @@ const CategoryPreview = () => {
             <ScaleAnimation
                 once
                 scaleVal
-                childClass='flex'
-                boxClass='w-full flex justify-center mx-auto md:space-x-4 text-center'
-                >
+                childClass='grid grid-cols-3 sm:grid-cols-6 gap-4 px-2'
+            >
                 {categDetails.map(item =>
                     <Link href={`/Shop/category?search=${item.type}`} key={item.type}
-                        className='group flex flex-col justify-center items-center space-y-2 cursor-pointer'
+                        className='group space-y-2 cursor-pointer w-full grid place-items-center'
                     >
-                        <Image src={item.image} alt='categ img' width={100} height={100}
-                            className='w-[65%] aspect-square rounded-full border shadow-xl group-hover:scale-110 transition-all duration-400' />
-                        <div className='md:text-sm text-xs font-bold '>{t(item.type)}</div>
+                        <StaticImageCopm img={item.image} imgAlt='categ img'
+                            imgClass='xl:w-[55%] md:w-[45%] w-[60%] aspect-square rounded-full border shadow-xl group-hover:scale-110 transition-all duration-500' />
+                        <div className='xl:text-2xl lg:text-base md:text-sm text-xs font-bold '>{t(item.type)}</div>
                     </Link>
                 )}
             </ScaleAnimation>
