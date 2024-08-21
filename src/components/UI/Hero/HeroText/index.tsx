@@ -60,7 +60,7 @@ const HeroText = ({ titleh1, titleh2, description, FaqLink }: HeroText) => {
             >
                 <Link
                     href={FaqLink}
-                    className='w-full btn text-primary lg:btn-lg capitalize hover:bg-primary bg-white heroBtnText'>
+                    className='w-full btn text-primary lg:btn-lg capitalize hover:bg-primary hover:text-white bg-white heroBtnText'>
                     {t("HeroBtn")}
                 </Link>
             </ScaleAnimation>

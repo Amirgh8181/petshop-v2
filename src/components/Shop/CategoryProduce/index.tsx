@@ -7,7 +7,16 @@ import { useSearchParams } from 'next/navigation'
 
 const CategoryProducts = ({ data }: { data: ShopItem[] }) => {
     const [type, setType] = useState<string>("")
+    const [showProduct, setShowProduct] = useState<ShopItem[]>([])
     const search = useSearchParams()
+
+    useEffect(() => {
+        setShowProduct(type === 'All'
+            ? data
+            : data.filter(q => q.category === type)
+        )
+    }, [type])
+
     useEffect(() => {
         setType(search.get("search") ?? "All")
     }, [search.get("search")])
@@ -15,16 +24,13 @@ const CategoryProducts = ({ data }: { data: ShopItem[] }) => {
     const changeType = (type: string) => {
         setType(type)
     }
-    
-    const showProduct = type === 'All'
-        ? data
-        : data.filter(q => q.category === type)
+
 
     return (
-        <>
+        <div className='w-full bg-red-500 my-6'>
             <CategoryItemsType type={type} changeType={changeType} />
             <CategoryItemUi data={showProduct} />
-        </>
+        </div>
     )
 }
 

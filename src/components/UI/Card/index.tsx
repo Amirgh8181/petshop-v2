@@ -14,8 +14,8 @@ interface CardUiProps {
 const CardUi = ({ product, btnTxt }: CardUiProps) => {
     const t = useTranslations("Index.Shop")
     return (
-        <div className="card card-compact dark:bg-primary/60 bg-primary/10 glass w-[95%] shadow-inner 
-        shadow-primary group mx-auto">
+        <div className="card card-compact dark:bg-primary/60 bg-primary/10 glass !w-[90%] shadow-inner 
+        shadow-primary group mx-auto my-6">
 
             <figure className='group pt-3'>
                 <Image
@@ -23,7 +23,7 @@ const CardUi = ({ product, btnTxt }: CardUiProps) => {
                     alt={"item"}
                     width={300}
                     height={300}
-                    className='w-full aspect-[16/9] md:aspect-[16/10] object-contain group-hover:scale-125 rounded-btn transition-transform duration-500' />
+                    className='w-[90%] aspect-video object-contain bg-black' />
             </figure>
             <div className="card-body items-center w-full">
                 <h2 className="card-title text-xs sm:text-sm md:text-xl xl:text-3xl text-center">{product.name}</h2>
