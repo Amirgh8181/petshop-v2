@@ -6,7 +6,7 @@ import ThemeProvider from "@/src/context/ThemeContext";
 import Footer from "@/src/components/Footer";
 import { NextAuthProvider } from "@/src/providers/next-auth";
 import NavBar from "@/src/components/Header/Nav";
-import NprogressProviders from "@/src/providers/nprogress/indwx";
+import NprogressProviders from "@/src/providers/nprogress";
 
 
 export async function generateMetadata({ params: { locale } }: { params: { locale: string } }) {
