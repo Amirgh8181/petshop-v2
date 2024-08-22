@@ -6,6 +6,7 @@ import ThemeProvider from "@/src/context/ThemeContext";
 import Footer from "@/src/components/Footer";
 import { NextAuthProvider } from "@/src/providers/next-auth";
 import NavBar from "@/src/components/Header/Nav";
+import NprogressProviders from "@/src/providers/nprogress/indwx";
 
 
 export async function generateMetadata({ params: { locale } }: { params: { locale: string } }) {
@@ -72,11 +73,13 @@ export default async function RootLayout({
         <NextAuthProvider>
           <NextIntlClientProvider messages={messages} locale={local}>
             <ThemeProvider>
-              <NavBar />
-              <main className="xl:container min-h-screen mx-auto flex flex-col justify-center items-center space-y-[5vmax]">
-                {children}
-              </main>
-              <Footer />
+              <NprogressProviders>
+                <NavBar />
+                <main className="xl:container min-h-screen mx-auto flex flex-col justify-center items-center space-y-[5vmax]">
+                  {children}
+                </main>
+                <Footer />
+              </NprogressProviders>
             </ThemeProvider>
           </NextIntlClientProvider>
         </NextAuthProvider>
