@@ -1,16 +1,26 @@
-import { getServerSession, Session } from 'next-auth'
+"use client"
+import { Session } from 'next-auth'
 import Profile from './Profile'
 import SignInBtn from './SignInBtn'
-import { authOption } from '@/src/config/auth'
+import { useSession } from 'next-auth/react'
+import { useEffect, useState } from 'react'
 
 export type authSectionProps = Session | null | undefined
 
-const AuthSection = async () => {
-    const isAuth = await getServerSession(authOption)
+const AuthSection = () => {
+    const [isAuth, serIsAuth] = useState<Session | null>(null)
+    const { data: session } = useSession()
+    useEffect(() => {
+        serIsAuth(session)
+    }, [session])
     return (
         <>
-            <Profile isAuth={isAuth} />
-            <SignInBtn isAuth={isAuth} />
+            {
+                isAuth ?
+                    <Profile />
+                    :
+                    <SignInBtn />
+            }
         </>
     )
 }

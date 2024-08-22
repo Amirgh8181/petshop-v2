@@ -4,15 +4,12 @@ import { MdOutlineShoppingCart } from 'react-icons/md'
 import Link from 'next/link'
 import { FaHeart } from 'react-icons/fa'
 import { signOut } from 'next-auth/react'
-import { authSectionProps } from '.'
 import { useTranslations } from 'next-intl'
 import { IoPersonSharp } from "react-icons/io5";
 
-const Profile = ({ isAuth }: { isAuth: authSectionProps }) => {
+const Profile = () => {
     const t = useTranslations("Profile")
     return (
-        <>
-            {isAuth &&
                 <div className="dropdown dropdown-end">
                     <div tabIndex={0} role="button" className="avatar placeholder">
                         <div className="navbarBtn">
@@ -44,8 +41,7 @@ const Profile = ({ isAuth }: { isAuth: authSectionProps }) => {
                         </li>
                     </ul>
                 </div >
-            }
-        </>
+
 
     )
 }
