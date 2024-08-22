@@ -11,8 +11,9 @@ const DoctorSection = ({ clinicData }: { clinicData: clinicAndSheltersData }) =>
             yVal={40}
             once
             stiffness={120}
+            childClass=''
         >
-            <div className='w-full md:w-[80%] rounded-box customGlass flex items-center p-4 space-x-2' dir='ltr'>
+            <div className='w-full md:w-[80%] rounded-box customGlass flex items-center mx-auto p-4 space-x-2 hocTextSize2' dir='ltr'>
                 <StaticImageCopm img={doctorImg} imgAlt='doctor image'
                     imgClass='w-1/3 aspect-square object-contain mx-2 '
                 />

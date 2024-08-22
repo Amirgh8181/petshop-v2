@@ -18,18 +18,16 @@ const ClinicSinglePageRightSide = ({ clinicData }: { clinicData: clinicAndShelte
                 scaleVal
                 delay={0.5}
             >
-                <div className='w-full p-4 flex flex-col space-y-6 items-center'>
-
-                    <Image src={clinicData.attachmentFile} alt='adasd' width={500} height={300}
-                        className='w-[90%] aspect-[9/4] rounded-box border-2 border-primary object-cover'
+                <div className='w-full grid place-items-center space-y-6'>
+                    <Image src={clinicData.attachmentFile} alt='clinic img' width={500} height={300}
+                        className='w-full aspect-[9/5] rounded-t-box'
                     />
-
-                    <div className=' md:text-xl text-base font-bold'>
+                    <h3 className='text-center'>
                         {clinicData.name}
+                    </h3>
+                    <div className='w-[90%] mx-auto pb-4'>
+                        <Tabs renderData={tabData} />
                     </div>
-                </div>
-                <div className='w-full'>
-                    <Tabs renderData={tabData} />
                 </div>
             </ScaleAnimation>
         </>

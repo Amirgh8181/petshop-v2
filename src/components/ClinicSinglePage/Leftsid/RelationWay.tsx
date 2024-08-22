@@ -13,19 +13,19 @@ const RelationWay = ({ clinicData }: { clinicData: clinicAndSheltersData }) => {
             once
             stiffness={120}
         >
-            <div className='w-full md:w-[80%] rounded-box customGlass grid place-content-center space-y-4 p-6' dir='ltr'>
-                <div className='w-[80%] flex items-start space-x-2'>
-                    <span className='text-lg text-primary'><FaLocationDot /></span>
+            <div className='w-full md:w-[80%] rounded-box customGlass space-y-4 p-6 mx-auto' dir='ltr'>
+                <div className='w-[80%] flex items-center mx-auto space-x-2 hocTextSize2'>
+                    <span className='clinicIcon'><FaLocationDot /></span>
                     <span>{clinicData.address}</span>
                 </div>
-                <div className='w-[80%] flex items-start space-x-2'>
-                    <span className='text-lg text-primary'><FaPhoneAlt /></span>
+                <div className='w-[80%] flex items-center mx-auto space-x-2 hocTextSize2'>
+                    <span className='clinicIcon'><FaPhoneAlt /></span>
                     <span>{clinicData.phone}</span>
                 </div>
-                <div className='w-[80%] text-center mx-auto'>{t("relationDesc")}</div>
+                <div className='w-[80%] text-center mx-auto hocTextSize'>{t("relationDesc")}</div>
                 <div className='w-full flex flex-col items-center space-y-2'>
-                    <button className='w-[80%] bg-primary border-2 border-primary py-4 rounded-full text-xs md:text-base'>{t("book")}</button>
-                    <button className='w-[80%] dark:bg-base-200 border-2 border-primary py-4 rounded-full text-xs md:text-base'>{t("online")}</button>
+                    <button className='clinicPageBtn bg-primary btnText'>{t("book")}</button>
+                    <button className='clinicPageBtn dark:bg-base-200 btnText'>{t("online")}</button>
                 </div>
             </div>
         </TranslateAnimation>

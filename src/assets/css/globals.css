@@ -151,4 +151,10 @@ html {
   .heroBtnText{
     @apply xl:text-4xl lg:text-2xl md:text-lg text-base capitalize
   }
+  .clinicPageBtn{
+    @apply w-[80%] btn border-2 border-primary py-4 rounded-full lg:btn-lg
+  }
+  .clinicIcon{
+    @apply flex items-center xl:text-4xl sm:text-2xl text-lg  text-primary
+  }
 }
