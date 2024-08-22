@@ -21,7 +21,7 @@ const AddFavoriteListBtn = ({ itemDetails }: { itemDetails: ShopItem }) => {
     return (
         <>
             <div onClick={() => addFavorite(itemDetails)}
-                className='btn rounded-full md:w-1/2 w-[80%] font-bold text-sm md:text-base xl:text-xl bg-primary
+                className='btn rounded-full md:w-[70%] w-[80%] font-bold text-sm md:text-base xl:text-xl bg-primary
                           border-2 border-primary'>
                 <span className={`${chekIncludes && session && '!text-red-500'} text-lg md:text-xl xl:text-2xl`}><FaRegHeart /></span>
                 <span className={`${chekIncludes && session && '!text-red-500'}`}>{chekIncludes && session ? t("remove") : t("add")}</span>

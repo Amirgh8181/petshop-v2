@@ -22,29 +22,29 @@ const FavoriteItem = () => {
         setLoading(false)
     }, [FavoriteList])
     return (
-        <>
+        <div className='w-full min-h-screen flex items-start'>
             {loading ?
                 <LoadingUi isLoading />
                 :
                 items.length > 0
                     ?
-                    <div className='md:py-[6vmax] py-[10vmax] w-full min-h-screen space-y-[3vmax]'>
-                        <h1 className='text-5xl text-start p-4 capitalize w-full'>{t("title")}</h1>
+                    <div className='w-[90%] mx-auto mt-20 xl:mt-32'>
+                        <h1 className='capitalize w-full'>{t("title")}</h1>
                         <TranslateAnimation
-                            childClass='grid md:grid-cols-4 grid-cols-1 px-8 gap-8'
+                            childClass='grid md:grid-cols-4 sm:grid-cols-3 grid-cols-2'
                             once
                             yVal={60}
                             delay={1}
                         >
                             {
                                 items.map(item =>
-                                    <div className='w-full h-full relative' key={item._id}>
+                                    <div className='w-full relative' key={item._id}>
                                         <div
-                                            className='group absolute text-3xl top-2 md:right-[2vmax] right-[4vmax] z-10 cursor-pointer tooltip'
+                                            className='group absolute text-3xl xl:top-8 md:top-8 top-6 sm:right-6  right-6 z-10 cursor-pointer tooltip'
                                             data-tip={t("tooltip")}
                                             onClick={() => setFavoriteList(item)}
                                         >
-                                            <IoClose className='group-hover:rotate-90 group-hover:text-red-500 transition-all duration-300' />
+                                            <IoClose className='xl:text-4xl lg:text-2xl text-xl group-hover:rotate-90 group-hover:text-red-500 transition-all duration-300' />
                                         </div>
                                         <CardUi product={item} btnTxt={t("cardBtn")} />
                                     </div>
@@ -58,8 +58,9 @@ const FavoriteItem = () => {
                         <Link href={"/Shop"} className='btn bg-primary !px-2'>{t("goShop")}</Link>
                     </div>
             }
-        </>
+        </div>
     )
 }
 
 export default FavoriteItem
+

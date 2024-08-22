@@ -11,7 +11,7 @@ const SheltersSinglePageLeftSide = ({ shelterData }: { shelterData: clinicAndShe
             <h3>{shelterData.name}</h3>
             <p className='w-[80%] mx-auto md:mx-0 xl:text-xl lg:text-base text-sm'>{shelterData.shortDescription}</p>
             <div className='divider divider-primary' />
-            <div className='w-[80%] xl:text-3xl lg:text-lg space-y-1 mx-auto md:mx-0 opacity-100'>
+            <div className='w-[80%] hocTextSize2 space-y-1 mx-auto md:mx-0'>
                 <strong>
                     {t("location")}
                 </strong>

@@ -27,7 +27,7 @@ const CartItems = () => {
                     items?.map(item =>
                         <TranslateAnimation
                             childClass='w-[90%] flex justify-around items-center rounded-2xl bg-base-200 mx-auto
-                         p-4 relative'
+                        py-6 relative '
                             amountView={0.6}
                             yVal={20}
                             once
@@ -36,11 +36,11 @@ const CartItems = () => {
                             <Image src={item.attachmentFile} alt='cart item image' width={300} height={300}
                                 className='w-[20%] aspect-square bg-primary rounded-box object-contain' />
 
-                            <div className='md:text-2xl text-xs'>{item.name}</div>
+                            <div className='w-[30%] xl:text-3xl lg:text-2xl md:text-xl sm:text-lg text-sm text-center font-bold'>{item.name}</div>
 
                             <CartCounter count={item.count} id={item._id} />
 
-                            <span className='md:text-2xl text-base '>{item.price}</span>
+                            <span className='xl:text-3xl lg:text-2xl md:text-xl sm:text-base text-xs font-bold'>{item.price}</span>
 
                             <DeleteItem id={item._id} />
 

@@ -15,7 +15,7 @@ const CardUi = ({ product, btnTxt }: CardUiProps) => {
     const t = useTranslations("Index.Shop")
     return (
         <div className="card card-compact dark:bg-primary/60 bg-primary/10 glass w-[90%] shadow-inner 
-        shadow-primary group mx-auto my-6">
+        shadow-primary group mx-auto md:my-6 my-3">
 
             <figure className='group mt-5'>
                 <Image

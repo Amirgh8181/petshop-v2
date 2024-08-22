@@ -9,9 +9,9 @@ const Collection = () => {
   const t = useTranslations("ShopPage.uiSection")
   const local=useLocale()
   return (
-    <div className='md:w-[80%] w-[90%] grid grid-cols-1 sm:grid-cols-2 place-items-center rounded-box bg-primary mx-auto'
+    <div className='w-[90%] grid grid-cols-1 sm:grid-cols-2 place-items-center rounded-box bg-primary mx-auto'
     >
-      <StaticImageCopm img={img} imgAlt='ui cart img' imgClass={`w-full xl:aspect-[12/7] aspect-[12/9] object-cover ${local==="fa"?'sm:rounded-r-box sm:rounded-tl-none':'sm:rounded-l-box sm:rounded-tr-none'} rounded-t-box`}/>
+      <StaticImageCopm img={img} imgAlt='ui cart img' imgClass={`w-full aspect-square md:aspect-[4/2] ${local==="fa"?'sm:rounded-r-box sm:rounded-tl-none':'sm:rounded-l-box sm:rounded-tr-none'} rounded-t-box`}/>
       <div className='w-[90%] mx-auto text-center md:text-start text-white space-y-2 py-4'>
         <h3 className='w-[90%] mx-auto md:mx-0'>{loremT("cut2")}</h3>
         <p className='xl:text-lg md:text-sm sm:text-xs text-2xs w-[90%] mx-auto md:mx-0'>{loremT("half lorem")}</p>
