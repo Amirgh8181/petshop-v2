@@ -21,7 +21,7 @@ const CategoryItemUi = ({ data }: { data: ShopItem[] | undefined }) => {
                 <div className='w-full grid lg:grid-cols-4 sm:grid-cols-3 grid-cols-2 gap-2'>
                     {
                         showProduct?.map(item =>
-                            <div className='w-full'>
+                            <div className='w-full' key={item._id}>
                                 <CardUi product={item} key={item._id} />
                             </div>
                         )
