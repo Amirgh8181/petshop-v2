@@ -27,6 +27,7 @@ const CategoryPreview = () => {
                 {categPrevData.map(item =>
                     <div onClick={() => handleCategType(item.type)}
                         className='group space-y-2 cursor-pointer w-full grid place-items-center'
+                        key={item.type}
                     >
                         <StaticImageCopm img={item.image} imgAlt='categ img'
                             imgClass='xl:w-[55%] w-[60%] aspect-square rounded-full border shadow-xl group-hover:scale-110 transition-all duration-500' />
