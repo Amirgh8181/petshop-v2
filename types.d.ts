@@ -1,4 +1,5 @@
 import { AuthInput } from '@/types';
+import { StaticImageData } from 'next/image';
 export interface ShopItem {
   _id: string,
   name: string,
@@ -6,7 +7,7 @@ export interface ShopItem {
   price: string,
   shortDescription: string,
   description: string,
-  attachmentFile: string,
+  attachmentFile: string|StaticImageData,
   createdAt: string,
   updatedAt: string,
   __v: number
@@ -23,7 +24,7 @@ export interface clinicAndSheltersData {
   doctorName:string,
   shortDescription: string,
   doctorDescription: string,
-  attachmentFile: string,
+  attachmentFile: string|StaticImageData,
   createdAt: string,
   updatedAt: string,
   __v: number

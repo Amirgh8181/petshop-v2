@@ -1,13 +1,16 @@
 import ClinicAndShelterCard from '@/src/components/UI/clinicAndShelterCard'
 import { Hero } from '@/ui/Hero'
 import bgImage from "@/public/images/Shelters/hero-bg.jpg"
-import { getTranslations } from 'next-intl/server'
-import getShelters from '@/src/lib/getShelters'
+//import { getTranslations } from 'next-intl/server'
+//import getShelters from '@/src/lib/getShelters'
 import { clinicAndSheltersData } from '@/root/types'
+import { useTranslations } from 'next-intl'
+import { shelterData } from '@/src/data/SheltersData'
 
-const Shelters = async () => {
-    const req:clinicAndSheltersData[] = await getShelters()
-    const t = await getTranslations("Shelter")
+const Shelters =  () => {
+    //const req:clinicAndSheltersData[] = await getShelters()
+    const req=shelterData as clinicAndSheltersData[]
+    const t =useTranslations("Shelter")
 
     return (
         <>

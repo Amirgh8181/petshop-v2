@@ -1,8 +1,8 @@
-import Image from 'next/image'
+import Image, { StaticImageData } from 'next/image'
 import TranslateAnimation from '../../UI/Animation/TranslateAnimation'
 import ScaleAnimation from '../../UI/Animation/ScaleAnimation'
 
-const SheltersSinglePageRightSide = ({ img }: { img: string }) => {
+const SheltersSinglePageRightSide = ({ img }: { img: string|StaticImageData }) => {
 
 
 

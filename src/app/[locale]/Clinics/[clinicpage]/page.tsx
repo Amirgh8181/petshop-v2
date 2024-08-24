@@ -1,13 +1,15 @@
 import ClinicSinglePageRightSide from '@/src/components/ClinicSinglePage/RightSide';
 import DoctorSection from '@/src/components/ClinicSinglePage/Leftsid/DoctorSection';
 import RelationWay from '@/src/components/ClinicSinglePage/Leftsid/RelationWay';
-import getClinicItemPage from '@/src/lib/getClinicItemPage';
+//import getClinicItemPage from '@/src/lib/getClinicItemPage';
 import { clinicAndSheltersData } from '@/root/types';
 import OneLevelBackBtn from '@/src/components/UI/Button/OneLevelBack';
+import { clinicData } from '@/src/data/ClinicsData';
 
-const ClinicPage = async ({ params }: { params: { clinicpage: string } }) => {
+const ClinicPage = ({ params }: { params: { clinicpage: string } }) => {
 
-    const req: clinicAndSheltersData = await getClinicItemPage(params.clinicpage)
+    //const req: clinicAndSheltersData = await getClinicItemPage(params.clinicpage)
+    const req = clinicData.find(item => item._id === params.clinicpage) as clinicAndSheltersData
     return (
         <div className='w-full md:mt-[8vmax] md:mb-[2vmax] mt-[14vmax] mb-[6vmax] relative flex flex-col sm:flex-row space-y-4 sm:space-y-0'>
             <OneLevelBackBtn />

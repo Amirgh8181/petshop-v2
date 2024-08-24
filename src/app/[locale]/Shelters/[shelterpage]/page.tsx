@@ -2,11 +2,13 @@ import { clinicAndSheltersData } from '@/root/types';
 import SheltersSinglePageLeftSide from '@/src/components/SheltersSinglePage/LeftSide';
 import SheltersSinglePageRightSide from '@/src/components/SheltersSinglePage/RightSide';
 import OneLevelBackBtn from '@/src/components/UI/Button/OneLevelBack';
+import { shelterData } from '@/src/data/SheltersData';
 import getShelterItemPage from '@/src/lib/getShelterItemPage';
 
 
 const ShelterPage = async ({ params }: { params: { shelterpage: string } }) => {
-    const req: clinicAndSheltersData = await getShelterItemPage(params.shelterpage)
+    //const req: clinicAndSheltersData = await getShelterItemPage(params.shelterpage)
+    const req=shelterData.find(item=>item._id===params.shelterpage) as clinicAndSheltersData
 
     return (
         <div className='w-full relative'>
