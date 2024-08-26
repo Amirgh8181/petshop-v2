@@ -17,8 +17,13 @@ import { AuthInputType } from '@/root/types';
 //component
 import LoadingUi from '../../UI/Loading';
 import AuthBtn from '../../UI/Button/AuthFormBtn';
+<<<<<<< HEAD
 import AuthDivider from '../../UI/AuthDivider';
 import AuthInputs from '../../UI/Inputs/Inputs';
+=======
+import SignInInputs from '../../UI/Inputs/SignInInputs';
+import AuthDivider from '../../UI/AuthDivider';
+>>>>>>> f1a60312b8a95f8d771f747d00353e7231015bfb
 //next-auth
 import { signIn } from 'next-auth/react';
 //translate
@@ -27,6 +32,15 @@ import { useTranslations } from 'next-intl';
 import { useAuthCallBack } from '@/src/stores/Auth/useAuthCallBack';
 
 
+<<<<<<< HEAD
+=======
+interface LoginInputType extends AuthInputType {
+    registerVal: "email" | "password",
+}
+
+
+
+>>>>>>> f1a60312b8a95f8d771f747d00353e7231015bfb
 const LoginForm = () => {
     //hook form initialize 
     const {
@@ -94,9 +108,15 @@ const LoginForm = () => {
         reset()
     }
 
+<<<<<<< HEAD
     const inputCreateData: AuthInputType[] = [
         { key: "Email", type: "email", icon: <MdOutlineEmail />, registerVal: "email", err: errors.email?.message,placeholder:"email" },
         { key: "Password", type: "password", icon: <MdLockOutline />, registerVal: "password", err: errors.password?.message}
+=======
+    const inputCreateData: LoginInputType[] = [
+        { key: "Email", type: "email", icon: <MdOutlineEmail />, registerVal: "email", err: errors.email?.message },
+        { key: "Password", type: "password", icon: <MdLockOutline />, registerVal: "password", err: errors.password?.message }
+>>>>>>> f1a60312b8a95f8d771f747d00353e7231015bfb
     ]
 
 
@@ -104,8 +124,13 @@ const LoginForm = () => {
         <div className="formContainer">
             <LoadingUi isLoading={isLoading} />
             <form className="authForm origin-top" onSubmit={handleSubmit(onSubmit)}>
+<<<<<<< HEAD
                 <AuthInputs inputCreateData={inputCreateData[0]} register={register} placeholder={inputCreateData[0].placeholder}/>
                 <AuthInputs inputCreateData={inputCreateData[1]} register={register} />
+=======
+                <SignInInputs inputCreateData={inputCreateData[0]} register={register} />
+                <SignInInputs inputCreateData={inputCreateData[1]} register={register} />
+>>>>>>> f1a60312b8a95f8d771f747d00353e7231015bfb
                 <AuthBtn isLoading={isLoading} />
             </form>
 

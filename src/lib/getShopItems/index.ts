@@ -11,8 +11,11 @@ const getShopItems = async () => {
                 }
             }
         )        
+<<<<<<< HEAD
         console.log(req.data);
         
+=======
+>>>>>>> f1a60312b8a95f8d771f747d00353e7231015bfb
         return req.data
     }
     catch (e) {
