@@ -1,0 +1,234 @@
+{
+  "metadata": {
+    "title": "PetClub",
+    "description": "petClub is a site to maintain and improve the quality of life of your pets and animal",
+    "category": "animal",
+    "author": "amir gheybi",
+    "keywords": "pet",
+    "keywords1": "animal",
+    "keywords2": "petShop",
+    "keywords3": "animalShop",
+    "keywords4": "petToy",
+    "keywords5": "animalToy",
+    "keywords6": "petFood",
+    "keywords7": "animalFood"
+  },
+  "navItem": {
+    "Home": "Home",
+    "Shop": "Shop",
+    "Personality": "Personality Test",
+    "Clinics": "Clinics",
+    "Shelters": "Shelters",
+    "sign in": "SignIn"
+  },
+  "Index": {
+    "Hero": {
+      "title": "PetClub",
+      "description1": "Pet Club is a",
+      "description2": "site to increase the quality",
+      "description3": "of life and satisfaction",
+      "description4": "of your pets"
+    },
+    "About": {
+      "title": "About-Us"
+    },
+    "Shop": {
+      "title": "Shop",
+      "more": "more",
+      "card": "buy now"
+    },
+    "Test": {
+      "title": "Personality Test",
+      "start": "Start Test"
+    },
+    "clinic": {
+      "title": "your animal health",
+      "title2": "is our priority",
+      "btnContent": "go and visit clinics"
+    },
+    "shelter": {
+      "title": "Do you need a pet?",
+      "title2": "You can get a pet from the shelter section",
+      "btnContent": "go and visit shelters"
+    }
+  },
+  "ShopPage": {
+    "Hero": {
+      "title1": "Buy food that is good for your pet",
+      "title2": "Enjoy 15% money back",
+      "title3": "Good healthy pet food"
+    },
+    "category": {
+      "Hero": {
+        "title": "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Egestas purus viverra accumsan in nisl nisi. Arcu cursus vitae congue mauris rhoncus aenean vel elit scelerisque."
+      },
+      "head": "Shop by category",
+      "All": "All",
+      "Beds": "Beds",
+      "Furnitures": "Furnitures",
+      "Treats": "Treats",
+      "Food": "Food",
+      "Health": "Health",
+      "Toys": "Toys"
+    },
+    "shopSection": {
+      "head": "Top products of this week",
+      "btn": "view all"
+    },
+    "uiSection": {
+      "btn": "collections"
+    },
+    "singlePage": {
+      "color": "Available colors",
+      "tabHead1": "Product Details",
+      "tabHead2": "Specification",
+      "tabHead3": "Reviews",
+      "favorite": {
+        "add": "Add To FavoriteList",
+        "remove": "Remove From FavoriteList"
+      },
+      "cart": {
+        "add": "Add To Cart",
+        "remove": "Remove From Cart"
+      }
+    }
+  },
+  "PersonalityTest": {
+    "start": "go to start question",
+    "end": {
+      "score": "your score:",
+      "animal": "your best animal:",
+      "home": "go to Home"
+    },
+    "question": {
+      "lorem5": "lorem1",
+      "lorem10": "lorem2",
+      "lorem15": "lorem3",
+      "lorem20": "lorem4"
+    },
+    "hoc": {
+      "title": "pet club",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit"
+    },
+    "animal": {
+      "cat": "cat",
+      "dog": "dog",
+      "duck": "duck",
+      "parrot": "parrot"
+    }
+  },
+  "Clinic": {
+    "Hero": {
+      "title": "Lorem ipsum dolor sit amet",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Egestas purus viverra accumsan in nisl nisi. Arcu cursus vitae congue mauris rhoncus aenean vel elit scelerisque."
+    },
+    "Card": {
+      "head": "clinics",
+      "book": "Book an Appointment",
+      "am": "am",
+      "pm": "pm"
+    },
+    "singlePage": {
+      "about": "about",
+      "reviews": "reviews",
+      "relationDesc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Egestas purus viverra accumsan in nisl nisi. Arcu cursus vitae congue mauris rhoncus aenean vel elit scelerisque.",
+      "book": "Book an Appointment",
+      "online": "Online counseling services"
+    }
+  },
+  "Shelter": {
+    "Hero": {
+      "title": "Lorem ipsum dolor sit amet",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Egestas purus viverra accumsan in nisl nisi. Arcu cursus vitae congue mauris rhoncus aenean vel elit scelerisque."
+    },
+    "Card": {
+      "head": "Shelters"
+    },
+    "singlePage": {
+      "location": "location :",
+      "email": "email :",
+      "phone": "phone :",
+      "fax": "fax :"
+    }
+  },
+  "Cart": {
+    "cart": "cart",
+    "item": "{count, plural, =0 {no item yet} =1 {item} other {items}}",
+    "discount": "Any Discount Code?",
+    "discountInp": "type here",
+    "delivery": "Delivery Date",
+    "total": "Total Price",
+    "confirm": "confirm payment",
+    "found": "no item found",
+    "goShop": "go to shop"
+  },
+  "FavoriteList": {
+    "title": "my favorites",
+    "tooltip": "remove",
+    "cardBtn": "Show More",
+    "noItem": "no anything to show you",
+    "goShop": "go to shop"
+  },
+  "Auth": {
+    "hoc": {
+      "title": "Pet Club",
+      "description1": "All the Lorem Ipsum",
+      "description2": "generators on the Internet tend",
+      "description3": "to repeat",
+      "login": "Login",
+      "signUp": "SignUp",
+      "or": "or",
+      "google": "with google",
+      "email": "with Email"
+    },
+    "SignIn": {
+      "successSwal": "successfull login",
+      "unsuccessSwal": "unsuccessfull login",
+      "question": "you dont have existing account?",
+      "authType": "SignUp"
+    },
+    "SignUp": {
+      "successSwal": "successfull signUp and login",
+      "unsuccessSwal": "unsuccessfull SignIn",
+      "unsuccessSignUpSwal": "unsuccessfull SignUp",
+      "question": "you have existing account?",
+      "authType": "login"
+    },
+    "inputs": {
+      "UserName": "UserName",
+      "Email": "Email",
+      "Password": "Password"
+    },
+    "submit": "Submit",
+    "pending": "Pending"
+  },
+  "Footer": {
+    "phone": "phone",
+    "twitter": "twitter",
+    "instagram": "instagram",
+    "whatsapp": "whatsapp",
+    "Support": "Support",
+    "About": "About"
+  },
+  "Profile": {
+    "favorite": "Favorite List",
+    "cart": "Shopping Cart",
+    "logout": "Log Out"
+  },
+  "FileConvention": {
+    "notfound":"page not found",
+    "home": "go to home page",
+    "retry": "retry",
+    "wait": "please wait ..."
+  },
+  "loremContent": {
+    "lorem": "lorem ipsum",
+    "half lorem": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Egestas purus viverra accumsan in nisl nisi. Arcu cursus vitae congue mauris rhoncus aenean vel elit scelerisque.",
+    "lorem full": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Egestas purus viverra accumsan in nisl nisi. Arcu cursus vitae congue mauris rhoncus aenean vel elit scelerisque. In egestas erat imperdiet sed euismod nisi porta lorem mollis. Morbi tristique senectus et netus. Mattis pellentesque id nibh tortor id aliquet lectus proin. Sapien faucibus et molestie ac feugiat sed lectus vestibulum. Ullamcorper velit sed ullamcorper morbi tincidunt ornare massa eget. Dictum varius duis at consectetur lorem. Nisi vitae suscipit tellus mauris a diam maecenas sed enim. Velit ut tortor pretium viverra suspendisse potenti nullam. Et molestie ac feugiat sed lectus. Non nisi est sit amet facilisis magna. Dignissim diam quis enim lobortis scelerisque fermentum. Odio ut enim blandit volutpat maecenas volutpat. Ornare lectus sit amet est placerat in egestas erat. Nisi vitae suscipit tellus mauris a diam maecenas sed. Placerat duis ultricies lacus sed turpis tincidunt id aliquet.",
+    "cut1": "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+    "cut2":"Lorem ipsum dolor sit amet"
+  },
+  "HeroBtn":"Get Start",
+  "HocBtn":"start"
+}

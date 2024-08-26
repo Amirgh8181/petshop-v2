@@ -1,0 +1,30 @@
+{
+    "id": "1",
+    "theme_color": "#2EAECC",
+    "background_color": "#F1FBFF",
+    "display": "standalone",
+    "scope": "/",
+    "start_url": "/",
+    "name": "pet club",
+    "short_name": "pet",
+    "description": "petClub is a site to maintain and improve the quality of life of your pets and animal",
+    "orientation": "portrait",
+    "icons": [
+        {
+            "src": "/images/Pwa/logo-192x192.png",
+            "sizes": "192x192",
+            "type": "image/png",
+            "purpose": "any maskable"
+        },
+        {
+            "src": "/images/Pwa/logo-384x384.png",
+            "sizes": "384x384",
+            "type": "image/png"
+        },
+        {
+            "src": "/images/Pwa/logo-512x512.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ]
+}
