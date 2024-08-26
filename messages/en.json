@@ -173,15 +173,9 @@
   "Auth": {
     "hoc": {
       "title": "Pet Club",
-<<<<<<< HEAD
       "description1": "To improve quality",
       "description2": "Your pet's life",
       "description3": "Join our family",
-=======
-      "description1": "All the Lorem Ipsum",
-      "description2": "generators on the Internet tend",
-      "description3": "to repeat",
->>>>>>> f1a60312b8a95f8d771f747d00353e7231015bfb
       "login": "Login",
       "signUp": "SignUp",
       "or": "or",
@@ -206,7 +200,6 @@
       "Email": "Email",
       "Password": "Password"
     },
-<<<<<<< HEAD
     "inpErr":{
       "englishChar":"Use English characters",
       "nameRequire":"Name is required",
@@ -225,8 +218,7 @@
         "email":"Enter your email",
         "pass":"Enter your password"
     },
-=======
->>>>>>> f1a60312b8a95f8d771f747d00353e7231015bfb
+
     "submit": "Submit",
     "pending": "Pending"
   },

@@ -12,14 +12,8 @@ import { signIn } from 'next-auth/react';
 //component and styles
 import LoadingUi from '../../UI/Loading';
 import AuthBtn from '../../UI/Button/AuthFormBtn';
-<<<<<<< HEAD
 import AuthDivider from '../../UI/AuthDivider';
 import AuthInputs from '../../UI/Inputs/Inputs';
-
-=======
-import SignUpInputs from '../../UI/Inputs/SignUpInput';
-import AuthDivider from '../../UI/AuthDivider';
->>>>>>> f1a60312b8a95f8d771f747d00353e7231015bfb
 //icon
 import { MdOutlineEmail, MdLockOutline } from 'react-icons/md';
 import { FaUser } from "react-icons/fa";
@@ -34,13 +28,7 @@ import { useTranslations } from 'next-intl';
 //callback store
 import { useAuthCallBack } from '@/src/stores/Auth/useAuthCallBack';
 
-<<<<<<< HEAD
-=======
-interface SignUpInputType extends AuthInputType {
-    registerVal: "email" | "password" | "name",
-}
 
->>>>>>> f1a60312b8a95f8d771f747d00353e7231015bfb
 const SignUpForm = () => {
     //hook form import 
     const {
@@ -110,33 +98,21 @@ const SignUpForm = () => {
         reset()
     }
 
-<<<<<<< HEAD
     const inputCreateData: AuthInputType[] = [
         { key: "UserName", type: "text", icon: <FaUser />, registerVal: "name", err: errors.name?.message,placeholder:"name" },
         { key: "Email", type: "email", icon: <MdOutlineEmail />, registerVal: "email", err: errors.email?.message,placeholder:"email" },
         { key: "Password", type: "password", icon: <MdLockOutline />, registerVal: "password", err: errors.password?.message },
     ] 
-=======
-    const inputCreateData: SignUpInputType[] = [
-        { key: "UserName", type: "text", icon: <FaUser />, registerVal: "name", err: errors.name?.message },
-        { key: "Email", type: "email", icon: <MdOutlineEmail />, registerVal: "email", err: errors.email?.message },
-        { key: "Password", type: "password", icon: <MdLockOutline />, registerVal: "password", err: errors.password?.message },
-    ] as const
->>>>>>> f1a60312b8a95f8d771f747d00353e7231015bfb
+
 
     return (
         <div className="formContainer">
             <LoadingUi isLoading={isLoading} />
             <form className="authForm" onSubmit={handleSubmit(onSubmit)} id='authFaq'>
-<<<<<<< HEAD
                 <AuthInputs inputCreateData={inputCreateData[0]} register={register} placeholder={inputCreateData[0].placeholder}/>
                 <AuthInputs inputCreateData={inputCreateData[1]} register={register} placeholder={inputCreateData[1].placeholder}/>
                 <AuthInputs inputCreateData={inputCreateData[2]} register={register} />
-=======
-                <SignUpInputs inputCreateData={inputCreateData[0]} register={register} />
-                <SignUpInputs inputCreateData={inputCreateData[1]} register={register} />
-                <SignUpInputs inputCreateData={inputCreateData[2]} register={register} />
->>>>>>> f1a60312b8a95f8d771f747d00353e7231015bfb
+
                 <AuthBtn isLoading={isLoading} />
             </form>
 

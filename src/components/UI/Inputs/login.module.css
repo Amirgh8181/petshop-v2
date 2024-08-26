@@ -7,17 +7,9 @@
 
 
 .authErr{
-<<<<<<< HEAD
   @apply text-red-600 ml-2 mt-2 xl:text-xl md:text-sm text-xs
 }
 
 .inputStyle{
   @apply border-2 border-primary rounded-btn input input-bordered input-primary xl:text-3xl md:text-lg text-sm w-full;
-=======
-  @apply text-red-600 ml-2 mt-2 xl:text-2xl md:text-lg text-sm
-}
-
-.inputStyle{
-  @apply border-2 border-primary rounded-btn input input-bordered input-primary xl:text-3xl md:text-lg text-sm;
->>>>>>> f1a60312b8a95f8d771f747d00353e7231015bfb
 }
