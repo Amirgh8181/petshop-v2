@@ -34,11 +34,7 @@ export interface AuthInputType {
   type: string,
   icon: React.ReactNode,
   err: string | undefined
-}
-export interface LoginInputType extends AuthInput {
-  registerVal: "email" | "password",
-}
-export interface SignUpInputType extends AuthInput {
   registerVal: "email" | "password" | "name",
+  placeholder?:string
 }
 

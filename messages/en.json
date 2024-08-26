@@ -173,9 +173,9 @@
   "Auth": {
     "hoc": {
       "title": "Pet Club",
-      "description1": "All the Lorem Ipsum",
-      "description2": "generators on the Internet tend",
-      "description3": "to repeat",
+      "description1": "To improve quality",
+      "description2": "Your pet's life",
+      "description3": "Join our family",
       "login": "Login",
       "signUp": "SignUp",
       "or": "or",
@@ -199,6 +199,24 @@
       "UserName": "UserName",
       "Email": "Email",
       "Password": "Password"
+    },
+    "inpErr":{
+      "englishChar":"Use English characters",
+      "nameRequire":"Name is required",
+      "nameAvailble":"This name is available",
+      "emailFormat":"Email format is not correct",
+      "emailRequire":"Email is required",
+      "emailAvailble":"This email is available",
+      "passLength":"The password must be at least 8 characters long",
+      "passCapital":"The password must have at least one uppercase English letter",
+      "passSmall":"The password must have at least one lowercase English letter",
+      "passSpecial":"Password must have at least one special character",
+      "passNumber":"The password must have at least one English number"
+    },
+    "placeholder":{
+        "name":"Enter your name",
+        "email":"Enter your email",
+        "pass":"Enter your password"
     },
     "submit": "Submit",
     "pending": "Pending"

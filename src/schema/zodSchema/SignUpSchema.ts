@@ -2,7 +2,7 @@ import { z } from 'zod'
 import getSignUpUsers from '@/src/lib/getSuccessSignUpUsers/GetSignUpUsers';
 
 const emailRegex = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i;
-
+const englishCharRegex: RegExp = /^[A-Za-z0-9\s!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]*$/
 interface dataProps {
     name: string;
     email: string,
@@ -12,11 +12,10 @@ interface dataProps {
 export const SignUpSchema = z.object({
     name: z
         .string()
-        .min(1, { message: 'Name Required' })
+        .regex(englishCharRegex, "englishChar")
+        .min(1, { message: "nameRequire" })
         .refine(async (e) => {
-
             const req: dataProps[] = await getSignUpUsers()
-
             let isExistName: boolean = true;
             req?.map(item => {
                 if (item.name === e) {
@@ -25,12 +24,13 @@ export const SignUpSchema = z.object({
                 }
             })
             return isExistName;
-        }, { message: "UserName has been register please login" }),
+        }, { message: "nameAvailble" }),
 
     email: z
         .string()
-        .regex(emailRegex, "invalid email format")
-        .min(1, { message: "Email Required" })
+        .regex(englishCharRegex, "englishChar")
+        .min(1, { message: "emailRequire" })
+        .regex(emailRegex, "emailFormat")
         .refine(async (e) => {
             const req: dataProps[] = await getSignUpUsers()
             let isExistEmail: boolean = true;
@@ -41,10 +41,15 @@ export const SignUpSchema = z.object({
                 }
             })
             return isExistEmail;
-        }, { message: "email has been register please login" }),
+        }, { message: "emailAvailble" }),
 
     password: z
         .string()
-        .min(8, { message: "password should 8 character" })
+        .regex(englishCharRegex, "englishChar")
+        .min(8, "passLength")
+        .regex(/[A-Z]/, "passCapital")
+        .regex(/[a-z]/, "passSmall")
+        .regex(/\d/, "passNumber")
+        .regex(/[@$!%*?&#]/, "passSpecial")
 })
 

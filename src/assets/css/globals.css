@@ -127,10 +127,10 @@ html {
     @apply h-full xl:p-4 md:p-3 sm:p-2 p-1 bg-base-200/90 hover:bg-base-300 transition-all duration-300 cursor-pointer rounded-btn mx-1;
   }
   .authForm {
-    @apply md:space-y-8 space-y-4 border-primary border-2 w-full p-4 rounded-box;
+    @apply md:space-y-8 space-y-4 border-primary border-2 w-full p-4 rounded-box bg-primary/50;
   }
   .formContainer {
-    @apply w-full flex flex-col justify-center items-center;
+    @apply w-full flex flex-col justify-center items-center ;
   }
   .hocTextSize {
     @apply xl:text-xl md:text-lg text-sm;
