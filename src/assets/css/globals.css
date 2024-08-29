@@ -7,11 +7,7 @@
   margin: 0;
   box-sizing: border-box;
 }
-html {
-  font-family: var(--font-iranYekan), system-ui, -apple-system,
-    BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell,
-    "Open Sans", "Helvetica Neue", sans-serif;
-}
+
 :root {
   /* Minimum and maximum font sizes for headings */
   --min-h1: 2rem;
@@ -130,8 +126,7 @@ html {
     @apply md:space-y-8 space-y-4 border-primary border-2 w-full p-4 rounded-box bg-primary/50;
   }
   .formContainer {
-    @apply w-full flex flex-col justify-center items-center ;
-
+    @apply w-full flex flex-col justify-center items-center;
   }
   .hocTextSize {
     @apply xl:text-xl md:text-lg text-sm;
@@ -144,18 +139,24 @@ html {
   }
 
   .navIconSize {
-    @apply xl:text-3xl md:text-xl text-2xl ;
+    @apply xl:text-3xl md:text-xl text-2xl;
   }
-  .btnText{
-    @apply xl:text-2xl lg:text-base md:text-sm text-2xs capitalize
+  .btnText {
+    @apply xl:text-2xl lg:text-base md:text-sm text-2xs capitalize;
   }
-  .heroBtnText{
-    @apply xl:text-4xl lg:text-2xl md:text-lg text-base capitalize
+  .heroBtnText {
+    @apply xl:text-4xl lg:text-2xl md:text-lg text-base capitalize;
   }
-  .clinicPageBtn{
-    @apply w-[80%] btn border-2 border-primary py-4 rounded-full lg:btn-lg
+  .clinicPageBtn {
+    @apply w-[80%] btn border-2 border-primary py-4 rounded-full lg:btn-lg;
   }
-  .clinicIcon{
-    @apply flex items-center xl:text-4xl sm:text-2xl text-lg  text-primary
+  .clinicIcon {
+    @apply flex items-center xl:text-4xl sm:text-2xl text-lg  text-primary;
+  }
+  .endQuestionText {
+    @apply xl:text-3xl md:text-xl text-lg font-bold w-[90%] sm:w-[80%] mx-auto;
+  }
+  .questionBtn{
+    @apply btn lg:btn-lg w-[80%] sm:w-[70%] bg-primary xl:text-2xl md:text-lg text-sm mx-auto capitalize
   }
 }

@@ -13,9 +13,5 @@ export const LoginSchema = z.object({
         .string()
         .regex(englishCharRegex, "englishChar")
         .min(8, "passLength")
-        .regex(/[A-Z]/, "passCapital")
-        .regex(/[a-z]/, "passSmall")
-        .regex(/\d/, "passNumber")
-        .regex(/[@$!%*?&#]/, "passSpecial")
 })
 

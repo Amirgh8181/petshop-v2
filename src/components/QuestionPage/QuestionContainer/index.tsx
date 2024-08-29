@@ -10,12 +10,12 @@ import { useTranslations } from 'next-intl'
 const QuestionContainer = () => {
 
     const { QuestionScore, QuestionNumber, setQuestionState, setQuestionFinalScore, setStartQuestion, setRefreshQuestion } = useQuestionScore()
-    const t = useTranslations("PersonalityTest.question")
+    const t = useTranslations("PersonalityTest.questionData")
 
     const handleQusetionRadio = (questionValue: number) => {
         setQuestionState(questionValue)
 
-        if (QuestionNumber + 1 === 21) {
+        if (QuestionNumber + 1 === 11) {
             setQuestionFinalScore()
         }
         else {
@@ -25,38 +25,40 @@ const QuestionContainer = () => {
     }
 
     return (
-        <>
-
+        <div className='w-[90%] h-full space-y-4 xl:space-y-8 flex flex-col justify-center items-center mx-auto' id='questionFaq'>
             {QuestionNumber === 0
                 ?
                 <StartQuestion startQuestion={setStartQuestion} />
                 :
-                QuestionNumber <= 20 && QuestionNumber >= 1
+                QuestionNumber <= 10 && QuestionNumber >= 1
                     ?
                     <div className='w-[80%] space-y-4 mx-auto'>
-                        <CustomRadio Score={5} title={t(questionData[QuestionNumber][5])} number={1} handleQuestion={handleQusetionRadio} />
-                        <CustomRadio Score={10} title={t(questionData[QuestionNumber][10])} number={2} handleQuestion={handleQusetionRadio} />
-                        <CustomRadio Score={15} title={t(questionData[QuestionNumber][15])} number={3} handleQuestion={handleQusetionRadio} />
-                        <CustomRadio Score={20} title={t(questionData[QuestionNumber][20])} number={4} handleQuestion={handleQusetionRadio} />
+                        <h4>
+                            {QuestionNumber} - {t(questionData[QuestionNumber].question)}
+                        </h4>
+                        <CustomRadio Score={1} title={t(questionData[QuestionNumber][1])} number={1} handleQuestion={handleQusetionRadio} />
+                        <CustomRadio Score={2} title={t(questionData[QuestionNumber][2])} number={2} handleQuestion={handleQusetionRadio} />
+                        <CustomRadio Score={3} title={t(questionData[QuestionNumber][3])} number={3} handleQuestion={handleQusetionRadio} />
+                        <CustomRadio Score={4} title={t(questionData[QuestionNumber][4])} number={4} handleQuestion={handleQusetionRadio} />
                     </div>
                     :
-                    QuestionNumber === 21 &&
+                    QuestionNumber === 11 &&
                     <EndQuestion QuestionScore={QuestionScore} refreshQuest={setRefreshQuestion} />
             }
 
             <progress
-                id='questionFaq'
+                
                 className="progress progress-primary w-[70%] mx-auto mt-4"
                 value={
-                    QuestionNumber < 21 && QuestionNumber > 0
-                        ? `${QuestionNumber * 5 - 5}`
-                        : QuestionNumber === 21 ? "100"
+                    QuestionNumber < 11 && QuestionNumber > 0
+                        ? `${QuestionNumber * 10 - 10}`
+                        : QuestionNumber === 11 ? "100"
                             : "0"
                 }
                 max="100"
             />
 
-        </>
+        </div>
     )
 }
 

@@ -9,28 +9,29 @@ const EndQuestion = ({ QuestionScore, refreshQuest }: { QuestionScore: number, r
 
     const showAnimal = (arg: number) => {
         let animal: string = ""
-        if (arg === 100) {
-            animal = animalNameT('cat')
+        if (arg <= 15 && arg >= 10) {
+            animal = animalNameT('10-15')
         }
-        else if (arg <= 200 && arg > 100) {
-            animal = animalNameT('dog')
+        else if (arg <= 25 && arg > 16) {
+            animal = animalNameT('16-25')
         }
-        else if (arg <= 300 && arg > 200) {
-            animal = animalNameT('duck')
+        else if (arg <= 35 && arg > 26) {
+            animal = animalNameT('26-35')
         }
 
-        else if (arg <= 400 && arg > 300) {
-            animal = animalNameT('parrot')
+        else if (arg <= 40 && arg > 36) {
+            animal = animalNameT('36-40')
         }
         return animal
     }
     return (
         <div className='w-full grid place-content-center space-y-4 text-center'>
-            <p className='xl:text-3xl md:text-xl text-lg font-bold'>{t("score")} {QuestionScore}</p>
-            <p className='xl:text-3xl md:text-xl text-lg font-bold'>{t("animal")} {showAnimal(QuestionScore)}</p>
+            <p className='endQuestionText'>{t("score")} {QuestionScore}</p>
+            <p className='endQuestionText'>{t("animal")}</p>
+            <p className='endQuestionText'>{showAnimal(QuestionScore)}</p>
 
             <Link
-                className='btn w-[70vw] sm:w-[30vw] bg-primary xl:text-2xl md:text-lg text-sm mx-auto capitalize'
+                className='questionBtn'
                 href='/'
                 onClick={refreshQuest}
             >

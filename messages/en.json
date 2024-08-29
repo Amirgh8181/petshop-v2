@@ -95,27 +95,96 @@
     }
   },
   "PersonalityTest": {
-    "start": "go to start question",
+    "start": {
+      "content":"Welcome. Click the start button to find a pet that fits your needs",
+      "btn":"go to start question"
+    },
     "end": {
       "score": "your score:",
       "animal": "your best animal:",
       "home": "go to Home"
     },
-    "question": {
-      "lorem5": "lorem1",
-      "lorem10": "lorem2",
-      "lorem15": "lorem3",
-      "lorem20": "lorem4"
+    "questionData": {
+      "1":{
+        "quest":"How much time can you dedicate to your pet each day?",
+        "ans1":"Less than an hour",
+        "ans2":"1 to 2 hours",
+        "ans3":"2 to 4 hours",
+        "ans4":"More than 4 hours"
+      },
+      "2":{
+        "quest":"How familiar are you with the responsibilities of having a pet?",
+        "ans1":"Not very familiar",
+        "ans2":"Somewhat familiar",
+        "ans3":"Quite familiar",
+        "ans4":"Very familiar and experienced"
+      },
+      "3":{
+        "quest":"How much do you enjoy participating in outdoor activities with your pet?",
+        "ans1":"Not interested at all",
+        "ans2":"Occasionally interested",
+        "ans3":"Quite interested",
+        "ans4":"Very interested"
+      },
+      "4":{
+        "quest":"How much do you care about the cleanliness and tidiness of your home?",
+        "ans1":"Very much, I can't stand messiness",
+        "ans2":"Quite a bit, but I can tolerate some mess",
+        "ans3":"I don’t care much",
+        "ans4":"I even like a little messiness"
+      },
+      "5":{
+        "quest":"Do you or any of your family members have allergies to animals?",
+        "ans1":"Yes, very severe",
+        "ans2":"Yes, but it's tolerable",
+        "ans3":"No",
+        "ans4":"No, we even love animals"
+      },
+      "6":{
+        "quest":"How sensitive are you to noise?",
+        "ans1":"Very sensitive, I can’t tolerate loud noises",
+        "ans2":"Quite sensitive, but I can tolerate it",
+        "ans3":"I don’t mind noise",
+        "ans4":"I even enjoy the sound of animals"
+      },
+      "7":{
+        "quest":"How much do you enjoy playing and entertaining your pet?",
+        "ans1":"Not interested at all",
+        "ans2":"Occasionally interested",
+        "ans3":"Very interested",
+        "ans4":"Extremely interested"
+      },
+      "8":{
+        "quest":"How much is your monthly budget for pet care?",
+        "ans1":"Less than $10",
+        "ans2":"$10 to $20",
+        "ans3":"$20 to $40",
+        "ans4":"More than $40"
+      },
+      "9":{
+        "quest":"How much do you enjoy having a pet in your home environment?",
+        "ans1":"Not at all",
+        "ans2":"A little",
+        "ans3":"Somewhat",
+        "ans4":"A lot"
+      },
+      "10":{
+        "quest":"How easily can you make changes to your daily routine?",
+        "ans1":"Not at all, I am very organized and dislike changes",
+        "ans2":"Occasionally",
+        "ans3":"Yes, I can easily make changes",
+        "ans4":"Yes, I am very flexible"
+      }
     },
     "hoc": {
       "title": "pet club",
-      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit"
+      "description": "Find the best pet according to your personality and lifestyle by taking the personality test on our site"
     },
     "animal": {
-      "cat": "cat",
-      "dog": "dog",
-      "duck": "duck",
-      "parrot": "parrot"
+      "10-15": "It seems you have a busy lifestyle, and a low-maintenance pet like aquarium fish might be suitable for you.",
+      "16-25": " You could consider adopting pets like birds or hamsters, which require moderate care and attention.",
+      "26-35": "Your lifestyle is flexible enough for pets like cats, which require attention and affection but have fewer needs compared to dogs.",
+      "36-40": "You are fully prepared to adopt a highly active and attention-demanding pet like a dog. Your lifestyle allows you to give enough time and attention to your pet."
     }
   },
   "Clinic": {

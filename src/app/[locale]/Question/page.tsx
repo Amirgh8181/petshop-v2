@@ -1,4 +1,3 @@
-import QuestionHoc from '@/src/components/UI/Hoc/QuestionHoc'
 import QuestionContainer from '@/src/components/QuestionPage/QuestionContainer'
 import mainImage from "@/public/images/Question/main.png"
 import leftImage from "@/public/images/Question/secondary.png"
@@ -16,9 +15,7 @@ const Question = () => {
       text1={t("description")}
       faqLink='/Question/#questionFaq'
     >
-      <QuestionHoc>
         <QuestionContainer />
-      </QuestionHoc>
     </HocSection>
   )
 }

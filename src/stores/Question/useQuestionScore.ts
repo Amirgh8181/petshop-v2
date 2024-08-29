@@ -30,16 +30,6 @@ const INITIAL_STATE: initialData = {
         8: { value: 0 },
         9: { value: 0 },
         10: { value: 0 },
-        11: { value: 0 },
-        12: { value: 0 },
-        13: { value: 0 },
-        14: { value: 0 },
-        15: { value: 0 },
-        16: { value: 0 },
-        17: { value: 0 },
-        18: { value: 0 },
-        19: { value: 0 },
-        20: { value: 0 },
     }
 
 }
@@ -66,8 +56,6 @@ export const useQuestionScore = create<State>()(
                 const questionStateClone = useQuestionScore.getState().QuestionState;
                 let stateNumber = useQuestionScore.getState().QuestionNumber
                 questionStateClone[stateNumber].value = questionValue
-
-
                 set({
                     QuestionState: { ...questionStateClone },
                     QuestionNumber: stateNumber + 1
