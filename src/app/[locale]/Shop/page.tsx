@@ -6,12 +6,13 @@ import { getTranslations } from 'next-intl/server'
 import getShopItems from '@/src/lib/getShopItems'
 import CategoryPreview from '@/src/components/Shop/ShowCategory'
 import { ShopItem } from '@/root/types'
+import ShopSliders from '@/src/components/Shop/Sliders'
 
 const Shop = async () => {
   const products: ShopItem[] = await getShopItems()
   const t = await getTranslations("ShopPage.Hero")
   return (
-    <main className='space-y-[5vmax] xl:space-y-[2vmax] mb-7'>
+    <>
       <Hero
         bgImage={bgImage}
         title={t("title1")}
@@ -21,8 +22,9 @@ const Shop = async () => {
         />
       <CategoryPreview />
       <ProductPreview products={products} />
+      <ShopSliders data={products}/>
       <Collection />
-    </main>
+    </>
   )
 }
 

@@ -6,7 +6,6 @@ import TranslateAnimation from '../../Animation/TranslateAnimation';
 
 const QuestionText = () => {
     const t = useTranslations("Index.Test")
-    const loremT = useTranslations("loremContent")
     return (
         <TranslateAnimation
             xVal={30}
@@ -16,8 +15,8 @@ const QuestionText = () => {
             childClass='flex flex-col justify-center md:text-start text-center text-white md:space-y-8 space-y-4 px-2 h-full'
         >
             <h2 className='md:text-5xl text-3xl font-bold'>{t("title")}</h2>
-            <p className='xl:text-2xl md:text-base text-sm md:w-[80%] '>
-                {loremT("half lorem")}
+            <p className='xl:text-2xl md:text-base sm:text-sm text-xs md:w-[80%] '>
+                {t("content")}
             </p>
             <Link href={'/Question'} className='md:w-1/2 w-full btn xl:text-2xl md:text-base text-sm'>
                 {t("start")}

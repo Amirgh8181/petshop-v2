@@ -45,12 +45,12 @@ export default function Slider({ children, slideIn0, slideIn480, slideIn720 }: s
 
 
     return (
-        <div className='w-full flex justify-between items-center px-2'>
+        <div className='w-full flex justify-between items-center sm:px-2'>
 
-            <div onClick={() => swiperRef.current?.slidePrev()} className={`btn bg-primary p-1 ${local === "fa" && 'rotate-180'}`}>
+            <div onClick={() => swiperRef.current?.slidePrev()} className={`btn bg-primary p-1 hidden sm:flex ${local === "fa" && 'rotate-180'}`}>
                 <MdNavigateBefore className='md:text-3xl text-base' />
             </div>
-            <TranslateAnimation xVal={1000} once boxClass='sm:w-[90%] w-[80%] h-auto'>
+            <TranslateAnimation xVal={1000} once boxClass='w-[90%] mx-auto'>
                 <Swiper
 
                     breakpoints={sliderPerView}
@@ -77,7 +77,7 @@ export default function Slider({ children, slideIn0, slideIn480, slideIn720 }: s
                     {children}
                 </Swiper >
             </TranslateAnimation>
-            <div onClick={() => swiperRef.current?.slideNext()} className={`btn bg-primary p-1 ${local === "fa" && 'rotate-180'}`}>
+            <div onClick={() => swiperRef.current?.slideNext()} className={`btn bg-primary p-1 hidden sm:flex ${local === "fa" && 'rotate-180'}`}>
                 <MdNavigateNext className='md:text-3xl text-base' />
             </div>
         </div >

@@ -9,7 +9,7 @@ import { useTranslations } from 'next-intl'
 const ClinicPreview = () => {
     const t = useTranslations("Index.clinic")
     return (
-        <div className="w-full xl:h-[60dvh] md:h-screen sm:h-[50dvh] h-[40dvh] overflow-hidden grid md:place-content-center relative customGlass mt-[8dvh] xl:rounded-box"
+        <div className="w-full xl:h-[60dvh] md:h-screen sm:h-[50dvh] h-[37dvh] overflow-hidden grid md:place-content-center relative customGlass mt-[8dvh] xl:rounded-box"
         >
             <ScaleAnimation
                 scaleVal

@@ -30,7 +30,10 @@
       "description4": "of your pets"
     },
     "About": {
-      "title": "About-Us"
+      "title": "About-Us",
+      "subTit":"Dev Ventures",
+      "content":"We are a web development team of creative programmers and designers who build modern and efficient websites and applications. Focusing on using the latest technologies and designing an optimal user experience, we help businesses improve their digital presence.",
+      "last":"Our goal is to create innovative digital solutions that meet the needs of our customers."
     },
     "Shop": {
       "title": "Shop",
@@ -39,6 +42,7 @@
     },
     "Test": {
       "title": "Personality Test",
+      "content":"The personality test on our site will help you to know your personality traits better and discover your strengths and weaknesses. This test is designed based on scientific and psychological methods and provides accurate and reliable results. By completing this test, you can gain a better understanding of yourself and easily find the right pet for you.",
       "start": "Start Test"
     },
     "clinic": {
@@ -77,7 +81,9 @@
       "btn": "view all"
     },
     "uiSection": {
-      "btn": "collections"
+      "title":"collections",
+      "content":"Find the product you want by viewing our collections",
+      "btn": "see collections"
     },
     "singlePage": {
       "color": "Available colors",
