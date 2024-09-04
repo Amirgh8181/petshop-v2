@@ -30,7 +30,10 @@
       "description4": "of your pets"
     },
     "About": {
-      "title": "About-Us"
+      "title": "About-Us",
+      "subTit":"Dev Ventures",
+      "content":"We are a web development team of creative programmers and designers who build modern and efficient websites and applications. Focusing on using the latest technologies and designing an optimal user experience, we help businesses improve their digital presence.",
+      "last":"Our goal is to create innovative digital solutions that meet the needs of our customers."
     },
     "Shop": {
       "title": "Shop",
@@ -39,6 +42,7 @@
     },
     "Test": {
       "title": "Personality Test",
+      "content":"The personality test on our site will help you to know your personality traits better and discover your strengths and weaknesses. This test is designed based on scientific and psychological methods and provides accurate and reliable results. By completing this test, you can gain a better understanding of yourself and easily find the right pet for you.",
       "start": "Start Test"
     },
     "clinic": {
@@ -60,8 +64,8 @@
     },
     "category": {
       "Hero": {
-        "title": "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
-        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Egestas purus viverra accumsan in nisl nisi. Arcu cursus vitae congue mauris rhoncus aenean vel elit scelerisque."
+        "title": "The best products and supplies for pets",
+        "description": "Find all the products your pet needs in just a few clicks and bring comfort and peace to your pet"
       },
       "head": "Shop by category",
       "All": "All",
@@ -77,7 +81,9 @@
       "btn": "view all"
     },
     "uiSection": {
-      "btn": "collections"
+      "title":"collections",
+      "content":"Find the product you want by viewing our collections",
+      "btn": "see collections"
     },
     "singlePage": {
       "color": "Available colors",
@@ -95,33 +101,102 @@
     }
   },
   "PersonalityTest": {
-    "start": "go to start question",
+    "start": {
+      "content":"Welcome. Click the start button to find a pet that fits your needs",
+      "btn":"go to start question"
+    },
     "end": {
       "score": "your score:",
       "animal": "your best animal:",
       "home": "go to Home"
     },
-    "question": {
-      "lorem5": "lorem1",
-      "lorem10": "lorem2",
-      "lorem15": "lorem3",
-      "lorem20": "lorem4"
+    "questionData": {
+      "1":{
+        "quest":"How much time can you dedicate to your pet each day?",
+        "ans1":"Less than an hour",
+        "ans2":"1 to 2 hours",
+        "ans3":"2 to 4 hours",
+        "ans4":"More than 4 hours"
+      },
+      "2":{
+        "quest":"How familiar are you with the responsibilities of having a pet?",
+        "ans1":"Not very familiar",
+        "ans2":"Somewhat familiar",
+        "ans3":"Quite familiar",
+        "ans4":"Very familiar and experienced"
+      },
+      "3":{
+        "quest":"How much do you enjoy participating in outdoor activities with your pet?",
+        "ans1":"Not interested at all",
+        "ans2":"Occasionally interested",
+        "ans3":"Quite interested",
+        "ans4":"Very interested"
+      },
+      "4":{
+        "quest":"How much do you care about the cleanliness and tidiness of your home?",
+        "ans1":"Very much, I can't stand messiness",
+        "ans2":"Quite a bit, but I can tolerate some mess",
+        "ans3":"I don’t care much",
+        "ans4":"I even like a little messiness"
+      },
+      "5":{
+        "quest":"Do you or any of your family members have allergies to animals?",
+        "ans1":"Yes, very severe",
+        "ans2":"Yes, but it's tolerable",
+        "ans3":"No",
+        "ans4":"No, we even love animals"
+      },
+      "6":{
+        "quest":"How sensitive are you to noise?",
+        "ans1":"Very sensitive, I can’t tolerate loud noises",
+        "ans2":"Quite sensitive, but I can tolerate it",
+        "ans3":"I don’t mind noise",
+        "ans4":"I even enjoy the sound of animals"
+      },
+      "7":{
+        "quest":"How much do you enjoy playing and entertaining your pet?",
+        "ans1":"Not interested at all",
+        "ans2":"Occasionally interested",
+        "ans3":"Very interested",
+        "ans4":"Extremely interested"
+      },
+      "8":{
+        "quest":"How much is your monthly budget for pet care?",
+        "ans1":"Less than $10",
+        "ans2":"$10 to $20",
+        "ans3":"$20 to $40",
+        "ans4":"More than $40"
+      },
+      "9":{
+        "quest":"How much do you enjoy having a pet in your home environment?",
+        "ans1":"Not at all",
+        "ans2":"A little",
+        "ans3":"Somewhat",
+        "ans4":"A lot"
+      },
+      "10":{
+        "quest":"How easily can you make changes to your daily routine?",
+        "ans1":"Not at all, I am very organized and dislike changes",
+        "ans2":"Occasionally",
+        "ans3":"Yes, I can easily make changes",
+        "ans4":"Yes, I am very flexible"
+      }
     },
     "hoc": {
       "title": "pet club",
-      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit"
+      "description": "Find the best pet according to your personality and lifestyle by taking the personality test on our site"
     },
     "animal": {
-      "cat": "cat",
-      "dog": "dog",
-      "duck": "duck",
-      "parrot": "parrot"
+      "10-15": "It seems you have a busy lifestyle, and a low-maintenance pet like aquarium fish might be suitable for you.",
+      "16-25": " You could consider adopting pets like birds or hamsters, which require moderate care and attention.",
+      "26-35": "Your lifestyle is flexible enough for pets like cats, which require attention and affection but have fewer needs compared to dogs.",
+      "36-40": "You are fully prepared to adopt a highly active and attention-demanding pet like a dog. Your lifestyle allows you to give enough time and attention to your pet."
     }
   },
   "Clinic": {
     "Hero": {
-      "title": "Lorem ipsum dolor sit amet",
-      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Egestas purus viverra accumsan in nisl nisi. Arcu cursus vitae congue mauris rhoncus aenean vel elit scelerisque."
+      "title": "The best pet clinics near you",
+      "description": "Looking for the best pet clinics? Here you can find complete information about reputable clinics, services provided, and customer reviews and make the best choice for your pet's care."
     },
     "Card": {
       "head": "clinics",
@@ -139,8 +214,8 @@
   },
   "Shelter": {
     "Hero": {
-      "title": "Lorem ipsum dolor sit amet",
-      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Egestas purus viverra accumsan in nisl nisi. Arcu cursus vitae congue mauris rhoncus aenean vel elit scelerisque."
+      "title": "Discover animal shelters, rescues, support and endless love",
+      "description": "Are you looking for a safe place for stray animals? Here you can find complete information about accredited animal shelters, services provided, and ways to support and help these lovely creatures."
     },
     "Card": {
       "head": "Shelters"
@@ -173,9 +248,9 @@
   "Auth": {
     "hoc": {
       "title": "Pet Club",
-      "description1": "All the Lorem Ipsum",
-      "description2": "generators on the Internet tend",
-      "description3": "to repeat",
+      "description1": "To improve quality",
+      "description2": "Your pet's life",
+      "description3": "Join our family",
       "login": "Login",
       "signUp": "SignUp",
       "or": "or",
@@ -200,6 +275,25 @@
       "Email": "Email",
       "Password": "Password"
     },
+    "inpErr":{
+      "englishChar":"Use English characters",
+      "nameRequire":"Name is required",
+      "nameAvailble":"This name is available",
+      "emailFormat":"Email format is not correct",
+      "emailRequire":"Email is required",
+      "emailAvailble":"This email is available",
+      "passLength":"The password must be at least 8 characters long",
+      "passCapital":"The password must have at least one uppercase English letter",
+      "passSmall":"The password must have at least one lowercase English letter",
+      "passSpecial":"Password must have at least one special character",
+      "passNumber":"The password must have at least one English number"
+    },
+    "placeholder":{
+        "name":"Enter your name",
+        "email":"Enter your email",
+        "pass":"Enter your password"
+    },
+
     "submit": "Submit",
     "pending": "Pending"
   },

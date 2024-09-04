@@ -1,3 +1,4 @@
+"use client"
 import { clinicAndSheltersData } from '@/root/types'
 import Image from 'next/image'
 import { FaUserDoctor } from "react-icons/fa6";
@@ -8,13 +9,28 @@ import Link from 'next/link';
 import TranslateAnimation from '../Animation/TranslateAnimation';
 import TextAnimations from '../Animation/TextAnimation';
 import { useTranslations } from 'next-intl';
-
-
+import { useEffect, useState } from 'react';
 
 const ClinicAndShelterCard = ({ href, data, headerText }: { href: string, data: clinicAndSheltersData[], headerText: string }) => {
+  const ITEM_PER_PAGE: number = 5
+  const totalPage: number = Math.ceil(data.length / ITEM_PER_PAGE)
+  
   const t = useTranslations("Clinic.Card")
+  const [currentPage, setCurrentPage] = useState<number>(1)
+  const [renderData, setRenderData] = useState<clinicAndSheltersData[]>([])
+
+  useEffect(() => {
+    pageItems(currentPage)
+  }, [currentPage])
+
+  const pageItems = (pageNum: number) => {
+    const startIndex: number = (pageNum - 1) * ITEM_PER_PAGE
+    const lastIndex: number = startIndex + ITEM_PER_PAGE
+    setRenderData(data.slice(startIndex, lastIndex))
+  }
+
   return (
-    <div className='w-full xl:space-y-10 lg:space-y-6 space-y-4 mb-4 md:mb-12 xl:mb-24' dir='ltr'>
+    <div className='w-full grid items-center xl:space-y-10 lg:space-y-6 space-y-4 mb-4 md:mb-12 xl:mb-24' dir='ltr'>
       <TextAnimations
         boxClass='md:text-7xl text-5xl capitalize flex justify-center'
         text={headerText}
@@ -24,7 +40,7 @@ const ClinicAndShelterCard = ({ href, data, headerText }: { href: string, data: 
       />
 
       {
-        data.map(item =>
+        renderData.map(item =>
           <TranslateAnimation
             once
             yVal={40}
@@ -37,7 +53,7 @@ const ClinicAndShelterCard = ({ href, data, headerText }: { href: string, data: 
               className='md:w-[85%] md:py-2 w-[90%] rounded-[2.5rem] mx-auto self-center' />
 
             <div className='md:text-start text-center space-y-2 self-center'>
-              <h4>{item.name}</h4>
+              <h5>{item.name}</h5>
               <CenterItems icon={<FaLocationDot />} text={item.address} />
               <CenterItems icon={<FaPhoneAlt />} text={item.phone} />
               <CenterItems icon={<FaUserDoctor />} text={item.doctorName} />
@@ -54,6 +70,11 @@ const ClinicAndShelterCard = ({ href, data, headerText }: { href: string, data: 
 
           </TranslateAnimation>
         )}
+      <div className="join mx-auto">
+        <button className="join-item btn" onClick={() => setCurrentPage(currentPage - 1)} disabled={currentPage === 1}>«</button>
+        <button className="join-item btn">Page {currentPage}</button>
+        <button className="join-item btn" onClick={() =>setCurrentPage(currentPage + 1)} disabled={currentPage === totalPage}>»</button>
+      </div>
     </div >
   )
 }

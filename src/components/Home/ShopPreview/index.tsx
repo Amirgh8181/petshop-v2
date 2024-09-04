@@ -1,23 +1,15 @@
- import { ShopItem } from '@/root/types';
-import PreviewSectionsHeader from '@/components/UI/previewHeader';
-import SwiperItem from "./ShopItem"
-import { getTranslations } from 'next-intl/server';
-import getShopItems from '@/src/lib/getShopItems';
-import { useTranslations } from 'next-intl';
+import { ShopItem } from '@/root/types';
 import { productData } from '@/src/data/ProductsData';
+import SliderUi from '../../UI/SliderUi';
 
 
 
-const ShopPreview = () => {
-//let req: ShopItem[] = await getShopItems()
-const req = productData as ShopItem[]
-const t = useTranslations("Index.Shop")
+const ShopPreview = async () => {
+    //let req: ShopItem[] = await getShopItems()
+    const req = productData as ShopItem[]
     return (
-        <section id="ShopPreview" className='w-full overflow-hidden space-y-[4dvh] py-[10dvh]'>
-            <PreviewSectionsHeader previewLink='/Shop' previewSectionName={t("title")} />
-            <SwiperItem data={req}/>
-        </section>
+        <SliderUi link='/Shop' req={req} title="Index.Shop.title" marginY/>
     )
 }
-
 export default ShopPreview
+

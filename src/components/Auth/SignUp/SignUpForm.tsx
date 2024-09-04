@@ -12,8 +12,8 @@ import { signIn } from 'next-auth/react';
 //component and styles
 import LoadingUi from '../../UI/Loading';
 import AuthBtn from '../../UI/Button/AuthFormBtn';
-import SignUpInputs from '../../UI/Inputs/SignUpInput';
 import AuthDivider from '../../UI/AuthDivider';
+import AuthInputs from '../../UI/Inputs/Inputs';
 //icon
 import { MdOutlineEmail, MdLockOutline } from 'react-icons/md';
 import { FaUser } from "react-icons/fa";
@@ -28,9 +28,6 @@ import { useTranslations } from 'next-intl';
 //callback store
 import { useAuthCallBack } from '@/src/stores/Auth/useAuthCallBack';
 
-interface SignUpInputType extends AuthInputType {
-    registerVal: "email" | "password" | "name",
-}
 
 const SignUpForm = () => {
     //hook form import 
@@ -101,19 +98,21 @@ const SignUpForm = () => {
         reset()
     }
 
-    const inputCreateData: SignUpInputType[] = [
-        { key: "UserName", type: "text", icon: <FaUser />, registerVal: "name", err: errors.name?.message },
-        { key: "Email", type: "email", icon: <MdOutlineEmail />, registerVal: "email", err: errors.email?.message },
+    const inputCreateData: AuthInputType[] = [
+        { key: "UserName", type: "text", icon: <FaUser />, registerVal: "name", err: errors.name?.message,placeholder:"name" },
+        { key: "Email", type: "email", icon: <MdOutlineEmail />, registerVal: "email", err: errors.email?.message,placeholder:"email" },
         { key: "Password", type: "password", icon: <MdLockOutline />, registerVal: "password", err: errors.password?.message },
-    ] as const
+    ] 
+
 
     return (
         <div className="formContainer">
             <LoadingUi isLoading={isLoading} />
             <form className="authForm" onSubmit={handleSubmit(onSubmit)} id='authFaq'>
-                <SignUpInputs inputCreateData={inputCreateData[0]} register={register} />
-                <SignUpInputs inputCreateData={inputCreateData[1]} register={register} />
-                <SignUpInputs inputCreateData={inputCreateData[2]} register={register} />
+                <AuthInputs inputCreateData={inputCreateData[0]} register={register} placeholder={inputCreateData[0].placeholder}/>
+                <AuthInputs inputCreateData={inputCreateData[1]} register={register} placeholder={inputCreateData[1].placeholder}/>
+                <AuthInputs inputCreateData={inputCreateData[2]} register={register} />
+
                 <AuthBtn isLoading={isLoading} />
             </form>
 

@@ -6,15 +6,16 @@ import Collection from '@/src/components/Shop/othersection'
 //import getShopItems from '@/src/lib/getShopItems'
 import CategoryPreview from '@/src/components/Shop/ShowCategory'
 import { ShopItem } from '@/root/types'
-import { productData } from '@/src/data/ProductsData'
 import { useTranslations } from 'next-intl'
+import { productData } from '@/src/data/ProductsData'
+import ShopSliders from '@/src/components/Shop/Sliders'
 
 const Shop = () => {
   //const products: ShopItem[] = await getShopItems()
   const products = productData as ShopItem[]
   const t = useTranslations("ShopPage.Hero")
   return (
-    <main className='space-y-[5vmax] xl:space-y-[2vmax] mb-7'>
+    <>
       <Hero
         bgImage={bgImage}
         title={t("title1")}
@@ -24,8 +25,9 @@ const Shop = () => {
         />
       <CategoryPreview />
       <ProductPreview products={products} />
+      <ShopSliders data={products}/>
       <Collection />
-    </main>
+    </>
   )
 }
 

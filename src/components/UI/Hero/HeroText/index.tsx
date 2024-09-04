@@ -24,8 +24,8 @@ const HeroText = ({ titleh1, titleh2, description, FaqLink }: HeroText) => {
                     duration={1}
                     staggerTime={0.02}
                     el='h1'
-                    childClass={`xl:text-9xl md:text-7xl sm:text-5xl text-3xl font-bold ${shadowStyle}`}
-                    textClass='text-center md:w-[80%] w-[90%] mx-auto'
+                    childClass={`xl:text-9xl lg:text-7xl md:text-6xl sm:text-5xl text-3xl font-bold ${shadowStyle}`}
+                    textClass='text-center xl:w-[80%] md:w-[85%] w-[90%] mx-auto leading-[2.5rem] sm:leading-[4rem] md:leading-[6rem] xl:leading-[9rem]'
                 />
             }
             {
@@ -38,7 +38,7 @@ const HeroText = ({ titleh1, titleh2, description, FaqLink }: HeroText) => {
                     duration={1}
                     el='h2'
                     delay={titleh1 ? 1 : 0}
-                    childClass={`xl:text-7xl md:text-5xl sm:text-3xl text-xl ${shadowStyle}`}
+                    childClass={`xl:text-6xl md:text-4xl sm:text-2xl text-lg ${shadowStyle}`}
                     textClass='text-center mx-auto md:w-[70%] w-[80%]'
                 />
             }
@@ -67,5 +67,4 @@ const HeroText = ({ titleh1, titleh2, description, FaqLink }: HeroText) => {
         </div>
     )
 }
-
 export default HeroText

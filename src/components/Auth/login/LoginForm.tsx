@@ -1,5 +1,4 @@
 "use client"
-
 import { useEffect, useRef, useState } from 'react'
 import { usePathname, useRouter, useSearchParams } from 'next/navigation';
 // react-hook-form
@@ -17,21 +16,14 @@ import { AuthInputType } from '@/root/types';
 //component
 import LoadingUi from '../../UI/Loading';
 import AuthBtn from '../../UI/Button/AuthFormBtn';
-import SignInInputs from '../../UI/Inputs/SignInInputs';
 import AuthDivider from '../../UI/AuthDivider';
+import AuthInputs from '../../UI/Inputs/Inputs';
 //next-auth
 import { signIn } from 'next-auth/react';
 //translate
 import { useTranslations } from 'next-intl';
 //callback store
 import { useAuthCallBack } from '@/src/stores/Auth/useAuthCallBack';
-
-
-interface LoginInputType extends AuthInputType {
-    registerVal: "email" | "password",
-}
-
-
 
 const LoginForm = () => {
     //hook form initialize 
@@ -100,9 +92,9 @@ const LoginForm = () => {
         reset()
     }
 
-    const inputCreateData: LoginInputType[] = [
-        { key: "Email", type: "email", icon: <MdOutlineEmail />, registerVal: "email", err: errors.email?.message },
-        { key: "Password", type: "password", icon: <MdLockOutline />, registerVal: "password", err: errors.password?.message }
+    const inputCreateData: AuthInputType[] = [
+        { key: "Email", type: "email", icon: <MdOutlineEmail />, registerVal: "email", err: errors.email?.message,placeholder:"email" },
+        { key: "Password", type: "password", icon: <MdLockOutline />, registerVal: "password", err: errors.password?.message}
     ]
 
 
@@ -110,8 +102,8 @@ const LoginForm = () => {
         <div className="formContainer">
             <LoadingUi isLoading={isLoading} />
             <form className="authForm origin-top" onSubmit={handleSubmit(onSubmit)}>
-                <SignInInputs inputCreateData={inputCreateData[0]} register={register} />
-                <SignInInputs inputCreateData={inputCreateData[1]} register={register} />
+                <AuthInputs inputCreateData={inputCreateData[0]} register={register} placeholder={inputCreateData[0].placeholder}/>
+                <AuthInputs inputCreateData={inputCreateData[1]} register={register} />
                 <AuthBtn isLoading={isLoading} />
             </form>
 

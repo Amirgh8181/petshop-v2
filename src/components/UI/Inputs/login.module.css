@@ -7,9 +7,9 @@
 
 
 .authErr{
-  @apply text-red-600 ml-2 mt-2 xl:text-2xl md:text-lg text-sm
+  @apply text-red-600 ml-2 mt-2 xl:text-xl md:text-sm text-xs
 }
 
 .inputStyle{
-  @apply border-2 border-primary rounded-btn input input-bordered input-primary xl:text-3xl md:text-lg text-sm;
+  @apply border-2 border-primary rounded-btn input input-bordered input-primary xl:text-3xl md:text-lg text-sm w-full;
 }

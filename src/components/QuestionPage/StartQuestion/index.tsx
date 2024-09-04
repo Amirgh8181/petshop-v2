@@ -3,18 +3,23 @@ import { signIn, useSession } from "next-auth/react"
 import { useTranslations } from "next-intl"
 
 const StartQuestion = ({ startQuestion }: { startQuestion: () => void }) => {
-    const t = useTranslations("PersonalityTest")
+    const t = useTranslations("PersonalityTest.start")
     const { data: session } = useSession()
 
     const isStasrt = () => {
         session ? startQuestion() : signIn()
     }
 
-    return <button onClick={isStasrt}
-        className='btn w-[80%] bg-primary xl:text-xl md:text-lg text-sm py-2 text-nowrap'
-    >
-        {t("start")}
-    </button>
+    return (
+        <>
+            <h6 className="w-[90%] mx-auto text-center font-bold">{t("content")}</h6>
+            <button onClick={isStasrt}
+                className='questionBtn'
+            >
+                {t("btn")}
+            </button>
+        </>
+    )
 
 }
 

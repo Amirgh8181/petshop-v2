@@ -9,11 +9,11 @@ export default function Home() {
   return (
     <>
       <HeroSection />
-      <AboutUs />
       <ShopPreview />
       <QuestionPreview />
       <ClinicPreview />
       <ShelterPreview />
+      <AboutUs />
     </>
   );
 }

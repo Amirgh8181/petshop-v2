@@ -143,5 +143,70 @@ export const shelterData:clinicAndSheltersData[]=[
       createdAt: "2024-01-27T14:43:45.029Z",
       updatedAt: "2024-01-27T14:43:45.029Z",
       __v: 0
-    }
+    },
+    {
+      _id: "65b516a166ddb49c98c336f3",
+      name: "Veterinarian New Braunfels",
+      address: "1631 McQueeney Rd, New Braunfels, TX 78130",
+      phone: "+1 2233445566",
+      doctorName: "+1 2233445566",
+      shortDescription: "Lorem Ipsum Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups.",
+      doctorDescription: "Lorem Ipsum Lorem ipsum is placeholder text commonly used in the graphic, print,",
+      attachmentFile: shelterImg,
+      createdAt: "2024-01-27T14:43:45.029Z",
+      updatedAt: "2024-01-27T14:43:45.029Z",
+      __v: 0
+    },
+    {
+      _id: "65b516a166ddb49c98c336f5",
+      name: "Veterinarian New Braunfels",
+      address: "1631 McQueeney Rd, New Braunfels, TX 78130",
+      phone: "+1 2233445566",
+      doctorName: "+1 2233445566",
+      shortDescription: "Lorem Ipsum Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups.",
+      doctorDescription: "Lorem Ipsum Lorem ipsum is placeholder text commonly used in the graphic, print,",
+      attachmentFile: shelterImg,
+      createdAt: "2024-01-27T14:43:45.029Z",
+      updatedAt: "2024-01-27T14:43:45.029Z",
+      __v: 0
+    },
+    {
+      _id: "65b516a166ddb49c98c336f7",
+      name: "Veterinarian New Braunfels",
+      address: "1631 McQueeney Rd, New Braunfels, TX 78130",
+      phone: "+1 2233445566",
+      doctorName: "+1 2233445566",
+      shortDescription: "Lorem Ipsum Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups.",
+      doctorDescription: "Lorem Ipsum Lorem ipsum is placeholder text commonly used in the graphic, print,",
+      attachmentFile: shelterImg,
+      createdAt: "2024-01-27T14:43:45.029Z",
+      updatedAt: "2024-01-27T14:43:45.029Z",
+      __v: 0
+    },
+    {
+      _id: "65b516a166ddb49c98c336f9",
+      name: "Veterinarian New Braunfels",
+      address: "1631 McQueeney Rd, New Braunfels, TX 78130",
+      phone: "+1 2233445566",
+      doctorName: "+1 2233445566",
+      shortDescription: "Lorem Ipsum Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups.",
+      doctorDescription: "Lorem Ipsum Lorem ipsum is placeholder text commonly used in the graphic, print,",
+      attachmentFile: shelterImg,
+      createdAt: "2024-01-27T14:43:45.029Z",
+      updatedAt: "2024-01-27T14:43:45.029Z",
+      __v: 0
+    },
+    {
+      _id: "65b516a166ddb49c98c336fb",
+      name: "Veterinarian New Braunfels",
+      address: "1631 McQueeney Rd, New Braunfels, TX 78130",
+      phone: "+1 2233445566",
+      doctorName: "+1 2233445566",
+      shortDescription: "Lorem Ipsum Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups.",
+      doctorDescription: "Lorem Ipsum Lorem ipsum is placeholder text commonly used in the graphic, print,",
+      attachmentFile: shelterImg,
+      createdAt: "2024-01-27T14:43:45.029Z",
+      updatedAt: "2024-01-27T14:43:45.029Z",
+      __v: 0
+    },
   ]

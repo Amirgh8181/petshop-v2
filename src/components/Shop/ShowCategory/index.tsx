@@ -5,8 +5,6 @@ import StaticImageCopm from '../../UI/StaticImage'
 import { useRouter } from 'next/navigation'
 import { useCategType } from '@/src/stores/Category/useCategType'
 import { categPrevData } from './data'
-
-
 const CategoryPreview = () => {
     const t = useTranslations("ShopPage.category")
     const router = useRouter()
@@ -15,7 +13,6 @@ const CategoryPreview = () => {
         setType(type)
         router.push("/Shop/category")
     }
-
     return (
         <div id='startShop' className='w-full md:w-[80%] flex flex-col items-center justify-center space-y-6 overflow-hidden mx-auto'>
             <h3>{t("head")}</h3>
@@ -38,5 +35,4 @@ const CategoryPreview = () => {
         </div>
     )
 }
-
 export default CategoryPreview

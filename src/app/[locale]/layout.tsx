@@ -7,6 +7,7 @@ import Footer from "@/src/components/Footer";
 import { NextAuthProvider } from "@/src/providers/next-auth";
 import NavBar from "@/src/components/Header/Nav";
 import NprogressProviders from "@/src/providers/nprogress";
+import { iranYekan } from "@/src/config/font";
 
 
 export async function generateMetadata({ params: { locale } }: { params: { locale: string } }) {
@@ -69,7 +70,7 @@ export default async function RootLayout({
 
   return (
     <html lang={local} dir={local === "fa" ? "rtl" : "ltr"} className="scroll-smooth transition-colors duration-500">
-      <body className='dark:text-white text-black'>
+      <body className={`${local==="fa"?iranYekan.className:"font-sans"} dark:text-white text-black`}>
         <NextAuthProvider>
           <NextIntlClientProvider messages={messages} locale={local}>
             <ThemeProvider>

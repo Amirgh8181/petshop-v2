@@ -7,7 +7,6 @@ const CategoryItemsType = () => {
     const categ = ["All", "Beds", "Furnitures", "Treats", "Food", "Health", "Toys"]
     const {type,setType}=useCategType()
     const t = useTranslations("ShopPage.category")   
-
     return (
         <div id='startCategory' className='w-full space-y-4 sm:space-y-0 py-4'>
             <div className='w-full sm:hidden flex px-2'>
@@ -35,5 +34,4 @@ const CategoryItemsType = () => {
         </div>
     )
 }
-
 export default CategoryItemsType

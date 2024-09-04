@@ -36,5 +36,4 @@ const CategoryItemUi = ({ data }: { data: ShopItem[] | undefined }) => {
         </>
     )
 }
-
 export default CategoryItemUi
