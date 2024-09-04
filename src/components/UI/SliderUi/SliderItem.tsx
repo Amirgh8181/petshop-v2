@@ -3,7 +3,6 @@ import { SwiperSlide } from "swiper/react"
 import CardUi from "../Card"
 import { ShopItem } from "@/root/types"
 import Slider from "../Slider/Slider"
-
 const SwiperItem = ({ data }: { data: ShopItem[] }) => {
     return (
         <Slider >
@@ -16,5 +15,4 @@ const SwiperItem = ({ data }: { data: ShopItem[] }) => {
         </Slider>
     )
 }
-
 export default SwiperItem

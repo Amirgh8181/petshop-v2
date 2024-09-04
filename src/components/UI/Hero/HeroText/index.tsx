@@ -67,5 +67,4 @@ const HeroText = ({ titleh1, titleh2, description, FaqLink }: HeroText) => {
         </div>
     )
 }
-
 export default HeroText

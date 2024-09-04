@@ -4,13 +4,11 @@ import { ShopItem } from '@/root/types'
 import { MdOutlineAddShoppingCart } from 'react-icons/md'
 import { signIn, useSession } from 'next-auth/react'
 import { useTranslations } from 'next-intl'
-
 const AddCartBtn = ({ itemDetails }: { itemDetails: ShopItem }) => {
     const { setCartItem, CartItem } = useCartItems()
     const chekIncludes = CartItem.find(q => q._id === itemDetails._id)
     const { data: session } = useSession()
     const t = useTranslations("ShopPage.singlePage.cart")
-
     const addCart = (item: ShopItem) => {
         if (!session) {
             signIn()

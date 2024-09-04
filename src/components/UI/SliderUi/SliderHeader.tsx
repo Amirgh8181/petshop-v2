@@ -3,11 +3,9 @@ import { useCategType } from '@/src/stores/Category/useCategType'
 import { useTranslations } from 'next-intl'
 import Link from 'next/link'
 import React from 'react'
-
 const PreviewSectionsHeader = ({ previewSectionName, previewLink, type }: { previewSectionName: string, previewLink: string, type?: string }) => {
     const t = useTranslations("Index.Shop")
     const { setType } = useCategType()
-
     const changeType = () => {
         type && setType(type)
     }
@@ -23,5 +21,4 @@ const PreviewSectionsHeader = ({ previewSectionName, previewLink, type }: { prev
         </div>
     )
 }
-
 export default PreviewSectionsHeader

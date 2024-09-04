@@ -1,7 +1,6 @@
 import { StaticImageData } from 'next/image'
 import HeroContainer from './HerosContainer/HeroContainer'
 import HeroText from './HeroText'
-
 interface HeroProps {
     bgImage: StaticImageData,
     title?: string,
@@ -9,7 +8,6 @@ interface HeroProps {
     desc?: string
     faqLink:string
 }
-
 export const Hero = ({ bgImage, title, title2, desc,faqLink }: HeroProps) => {
     return (
         <HeroContainer

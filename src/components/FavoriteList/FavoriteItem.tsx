@@ -8,15 +8,11 @@ import { IoClose } from 'react-icons/io5'
 import CardUi from '../UI/Card'
 import { ShopItem } from '@/root/types'
 import LoadingUi from '../UI/Loading'
-
 const FavoriteItem = () => {
     const { FavoriteList, setFavoriteList } = useFavoriteList()
-
     const [loading, setLoading] = useState<boolean>(true)
     const [items, setItems] = useState<ShopItem[]>([])
-
     const t = useTranslations("FavoriteList")
-
     useEffect(() => {
         setItems(FavoriteList)
         setLoading(false)

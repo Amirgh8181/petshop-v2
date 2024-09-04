@@ -22,8 +22,6 @@ interface sliderProps {
     slideIn1280?: number
 }
 
-
-
 export default function Slider({ children, slideIn0, slideIn480, slideIn720 }: sliderProps) {
 
     const local = useLocale()

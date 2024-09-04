@@ -1,8 +1,6 @@
 import { StaticImageData } from "next/image"
 import StaticImageCopm from "../../StaticImage"
-
 const HeroContainer = ({ children, img }: { children: React.ReactNode, img: StaticImageData }) => {
-
     return (
         <div className="w-full h-screen">
             <div className="w-full absolute inset-0">
@@ -16,5 +14,4 @@ const HeroContainer = ({ children, img }: { children: React.ReactNode, img: Stat
         </div>
     )
 }
-
 export default HeroContainer

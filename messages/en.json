@@ -64,8 +64,8 @@
     },
     "category": {
       "Hero": {
-        "title": "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
-        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Egestas purus viverra accumsan in nisl nisi. Arcu cursus vitae congue mauris rhoncus aenean vel elit scelerisque."
+        "title": "The best products and supplies for pets",
+        "description": "Find all the products your pet needs in just a few clicks and bring comfort and peace to your pet"
       },
       "head": "Shop by category",
       "All": "All",
@@ -195,8 +195,8 @@
   },
   "Clinic": {
     "Hero": {
-      "title": "Lorem ipsum dolor sit amet",
-      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Egestas purus viverra accumsan in nisl nisi. Arcu cursus vitae congue mauris rhoncus aenean vel elit scelerisque."
+      "title": "The best pet clinics near you",
+      "description": "Looking for the best pet clinics? Here you can find complete information about reputable clinics, services provided, and customer reviews and make the best choice for your pet's care."
     },
     "Card": {
       "head": "clinics",
@@ -214,8 +214,8 @@
   },
   "Shelter": {
     "Hero": {
-      "title": "Lorem ipsum dolor sit amet",
-      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Egestas purus viverra accumsan in nisl nisi. Arcu cursus vitae congue mauris rhoncus aenean vel elit scelerisque."
+      "title": "Discover animal shelters, rescues, support and endless love",
+      "description": "Are you looking for a safe place for stray animals? Here you can find complete information about accredited animal shelters, services provided, and ways to support and help these lovely creatures."
     },
     "Card": {
       "head": "Shelters"

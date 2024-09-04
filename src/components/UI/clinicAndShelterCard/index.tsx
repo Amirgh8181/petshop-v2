@@ -1,3 +1,4 @@
+"use client"
 import { clinicAndSheltersData } from '@/root/types'
 import Image from 'next/image'
 import { FaUserDoctor } from "react-icons/fa6";
@@ -8,13 +9,34 @@ import Link from 'next/link';
 import TranslateAnimation from '../Animation/TranslateAnimation';
 import TextAnimations from '../Animation/TextAnimation';
 import { useTranslations } from 'next-intl';
-
-
+import { useState } from 'react';
 
 const ClinicAndShelterCard = ({ href, data, headerText }: { href: string, data: clinicAndSheltersData[], headerText: string }) => {
   const t = useTranslations("Clinic.Card")
+  const [page, setPage] = useState<number>(1)
+  const [productRangeShow, setProductRangeShow] = useState<{ min: number, max: number }>({ min: 0, max: 5 })
+
+
+  const nextView = (pageNum: number) => {
+    setPage(pageNum + 1)
+    if ((pageNum + 1) * 6 > data.length) {
+      setProductRangeShow({ min: pageNum * 5, max: data.length })
+    } else {
+      setProductRangeShow({ min: pageNum * 5, max: (pageNum + 1) * 5 - 1 })
+    }
+
+  }
+  const prevView = (pageNum: number) => {
+    setPage(pageNum - 1)
+    if (pageNum - 1 === 1) {
+      setProductRangeShow({ min: 0, max: 5 })
+    } else {
+      setProductRangeShow({ min: (pageNum - 1) * 5, max: pageNum * 5 })
+    }
+  
+  }
   return (
-    <div className='w-full xl:space-y-10 lg:space-y-6 space-y-4 mb-4 md:mb-12 xl:mb-24' dir='ltr'>
+    <div className='w-full grid items-center xl:space-y-10 lg:space-y-6 space-y-4 mb-4 md:mb-12 xl:mb-24' dir='ltr'>
       <TextAnimations
         boxClass='md:text-7xl text-5xl capitalize flex justify-center'
         text={headerText}
@@ -24,7 +46,7 @@ const ClinicAndShelterCard = ({ href, data, headerText }: { href: string, data: 
       />
 
       {
-        data.map(item =>
+        data.slice(productRangeShow.min, productRangeShow.max).map(item =>
           <TranslateAnimation
             once
             yVal={40}
@@ -37,7 +59,7 @@ const ClinicAndShelterCard = ({ href, data, headerText }: { href: string, data: 
               className='md:w-[85%] md:py-2 w-[90%] rounded-[2.5rem] mx-auto self-center' />
 
             <div className='md:text-start text-center space-y-2 self-center'>
-              <h4>{item.name}</h4>
+              <h5>{item.name}</h5>
               <CenterItems icon={<FaLocationDot />} text={item.address} />
               <CenterItems icon={<FaPhoneAlt />} text={item.phone} />
               <CenterItems icon={<FaUserDoctor />} text={item.doctorName} />
@@ -54,6 +76,11 @@ const ClinicAndShelterCard = ({ href, data, headerText }: { href: string, data: 
 
           </TranslateAnimation>
         )}
+      <div className="join mx-auto">
+        <button className="join-item btn" onClick={() => prevView(page)} disabled={page === 1}>«</button>
+        <button className="join-item btn">Page {page}</button>
+        <button className="join-item btn" onClick={() => nextView(page)} disabled={page * 5 >= data.length}>»</button>
+      </div>
     </div >
   )
 }

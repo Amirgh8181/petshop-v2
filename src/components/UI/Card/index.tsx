@@ -3,13 +3,10 @@ import { ShopItem } from '@/root/types'
 import { useLocale, useTranslations } from 'next-intl'
 import Image from 'next/image'
 import Link from 'next/link'
-
 interface CardUiProps {
     product: ShopItem,
     btnTxt?: string
 }
-
-
 const CardUi = ({ product, btnTxt }: CardUiProps) => {
     const local = useLocale()
     const t = useTranslations("Index.Shop")
@@ -24,7 +21,6 @@ const CardUi = ({ product, btnTxt }: CardUiProps) => {
     return (
         <div className="card card-compact dark:bg-primary/60 bg-primary/10 glass w-[90%] shadow-inner 
         shadow-primary group mx-auto md:my-6 my-3">
-
             <figure className='group mt-5'>
                 <Image
                     src={product.attachmentFile}
