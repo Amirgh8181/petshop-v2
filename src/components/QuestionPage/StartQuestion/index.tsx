@@ -7,7 +7,8 @@ const StartQuestion = ({ startQuestion }: { startQuestion: () => void }) => {
     const { data: session } = useSession()
 
     const isStasrt = () => {
-        session ? startQuestion() : signIn()
+        //session ? startQuestion() : signIn()
+        startQuestion()
     }
 
     return (

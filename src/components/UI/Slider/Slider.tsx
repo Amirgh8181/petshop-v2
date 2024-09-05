@@ -39,9 +39,6 @@ export default function Slider({ children, slideIn0, slideIn480, slideIn720 }: s
 
     }
 
-
-
-
     return (
         <div className='w-full flex justify-between items-center sm:px-2'>
 
