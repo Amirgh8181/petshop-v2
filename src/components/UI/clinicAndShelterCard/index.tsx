@@ -13,15 +13,19 @@ import { useEffect, useState } from 'react';
 
 const ClinicAndShelterCard = ({ href, data, headerText }: { href: string, data: clinicAndSheltersData[], headerText: string }) => {
   const ITEM_PER_PAGE: number = 5
-  const totalPage: number = Math.ceil(data.length / ITEM_PER_PAGE)
   
   const t = useTranslations("Clinic.Card")
   const [currentPage, setCurrentPage] = useState<number>(1)
   const [renderData, setRenderData] = useState<clinicAndSheltersData[]>([])
+  const [totalPage, setTotalPage] = useState<number>()
 
   useEffect(() => {
     pageItems(currentPage)
   }, [currentPage])
+  
+  useEffect(() => {
+    setTotalPage(Math.ceil(data.length / ITEM_PER_PAGE))
+  }, [data])
 
   const pageItems = (pageNum: number) => {
     const startIndex: number = (pageNum - 1) * ITEM_PER_PAGE

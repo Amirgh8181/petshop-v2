@@ -13,7 +13,7 @@ const CategoryItemUi = ({ data }: { data: ShopItem[] | undefined }) => {
             ? data
             : data?.filter(q => q.category === type)
         )
-    }, [type])
+    }, [type,data])
     return (
         <>
             {showProduct

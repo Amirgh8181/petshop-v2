@@ -12,14 +12,14 @@ const EndQuestion = ({ QuestionScore, refreshQuest }: { QuestionScore: number, r
         if (arg <= 15 && arg >= 10) {
             animal = animalNameT('10-15')
         }
-        else if (arg <= 25 && arg > 16) {
+        else if (arg <= 25 && arg >= 16) {
             animal = animalNameT('16-25')
         }
-        else if (arg <= 35 && arg > 26) {
+        else if (arg <= 35 && arg >= 26) {
             animal = animalNameT('26-35')
         }
 
-        else if (arg <= 40 && arg > 36) {
+        else if (arg <= 40 && arg >= 36) {
             animal = animalNameT('36-40')
         }
         return animal

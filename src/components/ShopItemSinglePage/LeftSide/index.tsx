@@ -6,7 +6,8 @@ import React from 'react'
 import Tabs, { TabsProps } from '../../UI/Tabs'
 import TextAnimations from '../../UI/Animation/TextAnimation'
 import TranslateAnimation from '../../UI/Animation/TranslateAnimation'
-import { useTranslations } from 'next-intl'
+import { useLocale, useTranslations } from 'next-intl'
+import { useExchangePrice } from '@/src/hooks/useExchangePrice'
 
 const ShopItemLeftSide = ({ product }: { product: ShopItem }) => {
     const t = useTranslations("ShopPage.singlePage")
@@ -15,6 +16,7 @@ const ShopItemLeftSide = ({ product }: { product: ShopItem }) => {
         { head: t("tabHead2"), content: product.description },
         { head: t("tabHead3"), content: product.description }
     ]
+    const local = useLocale()
     return (
         <>
             <div>
@@ -25,7 +27,7 @@ const ShopItemLeftSide = ({ product }: { product: ShopItem }) => {
                     once
                 />
                 <TranslateAnimation delay={0.5} yVal={20} once>
-                    <p className='text-petBlue text-center md:text-start xl:text-xl'>{product?.price}</p>
+                    <p className='text-petBlue text-center md:text-start xl:text-xl'>{useExchangePrice(product.price, local)}</p>
                 </TranslateAnimation>
             </div>
             <TranslateAnimation delay={0.75} yVal={20} childClass='flex space-x-4 items-center w-full xl:text-xl' once>

@@ -1,5 +1,6 @@
 "use client"
 import { ShopItem } from '@/root/types'
+import { useExchangePrice } from '@/src/hooks/useExchangePrice'
 import { useLocale, useTranslations } from 'next-intl'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -10,14 +11,7 @@ interface CardUiProps {
 const CardUi = ({ product, btnTxt }: CardUiProps) => {
     const local = useLocale()
     const t = useTranslations("Index.Shop")
-    const exchangePrice = (arg: string) => {
-        if (local === "fa") {
-            let price = parseFloat(arg.replace("$", ""))
-            return `${price * 50000}  تومان`
-        } else {
-            return arg
-        }
-    }
+
     return (
         <div className="card card-compact dark:bg-primary/60 bg-primary/10 glass w-[90%] shadow-inner 
         shadow-primary group mx-auto md:my-6 my-3">
@@ -31,7 +25,7 @@ const CardUi = ({ product, btnTxt }: CardUiProps) => {
             </figure>
             <div className="card-body items-center w-full">
                 <h2 className="card-title text-xs sm:text-sm md:text-xl xl:text-3xl text-center">{product.name}</h2>
-                <p className='text-2xs sm:text-xs md:text-sm lg:text-base xl:text-xl textStrok'>{exchangePrice(product.price)}</p>
+                <p className='text-2xs sm:text-xs md:text-sm lg:text-base xl:text-xl textStrok'>{useExchangePrice(product.price, local)}</p>
                 <div className="card-actions w-full">
                     <Link
                         href={`/Shop/${product._id}`}
