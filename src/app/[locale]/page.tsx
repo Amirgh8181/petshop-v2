@@ -1,9 +1,11 @@
-import HeroSection from '@/src/components/Home/Hero';
-import AboutUs from '@/src/components/Home/About-US';
-import ShopPreview from '@/src/components/Home/ShopPreview';
-import ClinicPreview from '@/src/components/Home/ClinicPreview';
-import ShelterPreview from '@/src/components/Home/ShelterPreview';
-import QuestionPreview from '@/src/components/Home/QuestionPreview';
+import dynamic from 'next/dynamic';
+
+const HeroSection = dynamic(() => import('@/src/components/Home/Hero'));
+const AboutUs = dynamic(() => import('@/src/components/Home/About-US'));
+const ShopPreview = dynamic(() => import('@/src/components/Home/ShopPreview'));
+const ClinicPreview = dynamic(() => import('@/src/components/Home/ClinicPreview'));
+const ShelterPreview = dynamic(() => import('@/src/components/Home/ShelterPreview'));
+const QuestionPreview = dynamic(() => import('@/src/components/Home/QuestionPreview'));
 
 export default function Home() {
   return (

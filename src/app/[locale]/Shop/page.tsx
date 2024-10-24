@@ -1,14 +1,20 @@
-import ProductPreview from '@/src/components/Shop/ShopItem'
-import { Hero } from '@/ui/Hero'
 import bgImage from "@/public/images/Shop/heroBg.jpg"
-import Collection from '@/src/components/Shop/othersection'
 //import { getTranslations } from 'next-intl/server'
 //import getShopItems from '@/src/lib/getShopItems'
-import CategoryPreview from '@/src/components/Shop/ShowCategory'
 import { ShopItem } from '@/root/types'
 import { useTranslations } from 'next-intl'
 import { productData } from '@/src/data/ProductsData'
-import ShopSliders from '@/src/components/Shop/Sliders'
+import dynamic from 'next/dynamic';
+
+const Hero = dynamic(() => import('@/ui/Hero').then(HeroComp=>HeroComp.Hero));
+const CategoryPreview = dynamic(() => import('@/src/components/Shop/ShowCategory'));
+const ProductPreview = dynamic(() => import('@/src/components/Shop/ShopItem'));
+const ShopSliders = dynamic(() => import('@/src/components/Shop/Sliders'));
+const Collection = dynamic(() => import('@/src/components/Shop/othersection'));
+
+
+
+
 
 const Shop = () => {
   //const products: ShopItem[] = await getShopItems()
